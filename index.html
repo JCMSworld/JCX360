@@ -2,101 +2,391 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>John Christopher — Cloud, AI & Enterprise Architecture</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Christopher | JCX360</title>
+  <meta name="description" content="Enterprise Architecture, Cloud Platforms, AI Systems, and Delivery Leadership" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, var(--bg) 40%), var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 60px 24px;
+      padding: 0 24px;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11,18,32,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    h2 {
-      margin-top: 2.5rem;
-      font-size: 1.4rem;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 0.5rem;
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
     }
-    p {
-      color: #cbd5f5;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    a {
-      color: #60a5fa;
-      text-decoration: none;
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #020617;
     }
-    .tagline {
-      font-size: 1.1rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
+
+    .brand h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0.3px;
     }
-    ul {
-      padding-left: 1.2rem;
+
+    .brand span {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 13px;
+      display: block;
     }
-    li {
-      margin-bottom: 0.5rem;
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
     }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(79,124,255,0.12);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      color: #020617;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #0f1a30, #0b1220);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hero-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .hero-card li:last-child { border-bottom: none; }
+
+    /* Sections */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 720px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .card h4 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Series */
+    .series {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .series-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .series-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .series-item h5 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .series-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Footer */
     footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #94a3b8;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .series-list { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 34px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>John Christopher</h1>
-    <div class="tagline">
-      Enterprise Architecture • Cloud Platforms • AI Systems • Delivery Leadership
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Replace this with your actual logo image -->
+        <div class="logo">JC</div>
+        <div>
+          <h1>John Christopher</h1>
+          <span>JCX360 · Enterprise Architecture & AI Systems</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#focus">Focus</a>
+        <a href="#series">Series</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </header>
 
-    <p>
-      I work at the intersection of enterprise architecture, cloud-native platforms, and responsible AI systems.
-      My focus is on designing and operating secure, scalable, and sustainable platforms across complex, regulated environments.
-    </p>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Architecture · Cloud · AI · Delivery</div>
+          <h2>Designing Secure, Scalable, And Sustainable Enterprise Platforms</h2>
+          <p>
+            I work at the intersection of enterprise architecture, cloud-native platforms, and responsible AI systems.
+            My focus is on building platforms that scale, operate reliably, and stand up to real-world complexity.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#series">Explore Architecture Series</a>
+            <a class="btn" href="https://www.linkedin.com" target="_blank">Connect On LinkedIn</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Architecture Focus</h3>
+          <ul>
+            <li>Azure Cloud-Native Architecture</li>
+            <li>AI Orchestration & Multi-Agent Systems</li>
+            <li>Event-Driven Platforms</li>
+            <li>Landing Zones, Governance & Compliance</li>
+            <li>Observability, SRE & Platform Operations</li>
+            <li>DevSecOps & Delivery Architecture</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>Architecture Focus</h2>
-    <ul>
-      <li>Azure Cloud-Native Architecture</li>
-      <li>AI Orchestration & Multi-Agent Systems</li>
-      <li>Event-Driven Platforms</li>
-      <li>Landing Zones, Governance & Compliance</li>
-      <li>Observability, SRE & Platform Operations</li>
-      <li>DevSecOps & Delivery Architecture</li>
-    </ul>
+    <!-- Focus Areas -->
+    <section id="focus">
+      <div class="container">
+        <h3 class="section-title">What I Focus On</h3>
+        <p class="section-subtitle">
+          My work blends technical architecture with delivery leadership, ensuring platforms are designed for both
+          engineering excellence and operational reality.
+        </p>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Enterprise Cloud Platforms</h4>
+            <p>Designing governed, scalable Azure platforms that support modern workloads and regulated environments.</p>
+          </div>
+          <div class="card">
+            <h4>AI Systems Architecture</h4>
+            <p>Responsible AI, multi-agent orchestration, evaluation pipelines, and explainable decisioning systems.</p>
+          </div>
+          <div class="card">
+            <h4>Platform Operations & Reliability</h4>
+            <p>Observability, SRE, DevSecOps, and operating models that keep platforms healthy at scale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2>JCX Architecture Series</h2>
-    <p>
-      I publish a structured series on LinkedIn covering modern enterprise architecture and AI systems:
-    </p>
-    <ul>
-      <li>AI-Powered Cloud Platforms</li>
-      <li>Azure AI Foundry & LLM Orchestration</li>
-      <li>Multi-Agent Decisioning Systems</li>
-      <li>Azure Landing Zones</li>
-      <li>Observability & Platform Reliability</li>
-      <li>DevSecOps, SRE & Delivery Architecture</li>
-    </ul>
+    <!-- Series -->
+    <section id="series" class="series">
+      <div class="container">
+        <h3 class="section-title">Architecture Series</h3>
+        <p class="section-subtitle">
+          A structured series exploring modern enterprise architecture, AI systems, and cloud-native platforms.
+        </p>
+        <div class="series-list">
+          <div class="series-item">
+            <h5>Series 1 — Cloud-Native & Responsible AI Foundations</h5>
+            <span>Landing Zones · AI Orchestration · Observability · DevSecOps · JCX-3S</span>
+          </div>
+          <div class="series-item">
+            <h5>Series 2 — Advanced Enterprise Architecture & AI Systems</h5>
+            <span>Event-Driven AI · Multi-Agent Systems · Platform Engineering · Operating AI At Scale</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Connect</h2>
-    <p>
-      LinkedIn: <a href="https://www.linkedin.com/in/mjohnchristopher/" target="_blank">My LinkedIn</a><br />
-      GitHub: <a href="https://github.com/JCMSworld" target="_blank">My Github</a>
-    </p>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h3 class="section-title">Get In Touch</h3>
+        <p class="section-subtitle">
+          If you’re working on large-scale cloud, AI, or enterprise architecture initiatives, I’m always happy to exchange ideas.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/mjohnchristopher/" target="_blank">Connect On LinkedIn</a>
+          <a class="btn" href="mailto:jcx360@outlook.ie">Email Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer>
-      JCX-3S — Secure • Scale • Sustain
-    </footer>
-  </div>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 · Secure · Scale · Sustain
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
