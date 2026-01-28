@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>From Zero to Production: GitHub Pages + Custom Domain (Free)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How to host a secure personal site on GitHub Pages with a custom domain and HTTPS for free." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, var(--bg) 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11,18,32,0.7);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #020617;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    main {
+      padding: 60px 0;
+    }
+
+    h1 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .post-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin-top: 48px;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      margin: 18px 0;
+      color: #d1d5db;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 16px 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    .check::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 32px 0;
+    }
+
+    .series-nav {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">JC</div>
+      <div>
+        <strong>John Christopher</strong><br>
+        <span style="font-size:12px;color:var(--muted);">JCX360 · Enterprise Architecture & AI Systems</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/series/series-1.html">Series</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1>From Zero to Production: Hosting a Secure Site on GitHub Pages with a Custom Domain (for Free)</h1>
+    <div class="post-meta">
+      Platform & Delivery · GitHub Pages · DNS · HTTPS · Personal Platform
+    </div>
+
+
+    <p>
+      I built and deployed my personal platform (JCX360.com) using GitHub Pages, a custom domain, and HTTPS — all without paying for hosting.
+    </p>
+
+    <p>
+      What surprised me wasn’t how powerful the setup is, but how many small, non-obvious steps are
+      required to get it right. I’ve already had several friends ask how I did it, so here’s a
+      practical, end-to-end guide based on real-world experience.
+    </p>
+
+    <p>
+      This isn’t a marketing checklist — it’s the exact workflow I used, including the common pitfalls.
+    </p>
+
+    <h2>Why GitHub Pages + Custom Domain?</h2>
+
+    <p>For architects, consultants, and engineers, this setup is ideal:</p>
+
+    <p class="check">Free static hosting</p>
+    <p class="check">Built-in global CDN</p>
+    <p class="check">Native HTTPS via Let’s Encrypt</p>
+    <p class="check">Tight integration with GitHub workflows</p>
+    <p class="check">Perfect for blogs, portfolios, documentation, and technical platforms</p>
+
+    <h2>High-Level Architecture</h2>
+
+    <p>
+      At a high level, the setup looks like this:
+    </p>
+
+    <div class="callout">
+      Domain Registrar → DNS (A + CNAME) → GitHub Pages → TLS Certificate → Static Site
+    </div>
+
+    <p>
+      Simple in theory. Finicky in practice.
+    </p>
+
+    <h2>Step 1 — Create Your GitHub Pages Repository</h2>
+
+    <ul>
+      <li>Create a public GitHub repo</li>
+      <li>Add an <code>index.html</code> at the root</li>
+      <li>Go to: Settings → Pages</li>
+      <li>Set Source = main branch</li>
+      <li>Confirm your site works on <code>github.io</code></li>
+    </ul>
+
+    <h2>Step 2 — Add a Custom Domain in GitHub</h2>
+
+    <ul>
+      <li>Settings → Pages → Custom domain</li>
+      <li>Add: <code>yourdomain.com</code></li>
+      <li>GitHub will create a CNAME file automatically</li>
+    </ul>
+
+    <h2>Step 3 — Configure DNS (The Critical Bit)</h2>
+
+    <p><strong>A Records (root domain):</strong></p>
+
+    <div class="callout">
+      185.199.108.153<br>
+      185.199.109.153<br>
+      185.199.110.153<br>
+      185.199.111.153
+    </div>
+
+    <p><strong>CNAME for www:</strong></p>
+
+    <div class="callout">
+      www → &lt;username&gt;.github.io
+    </div>
+
+    <h2>Step 4 — Wait for DNS Propagation</h2>
+
+    <p>
+      This is where most people panic. DNS can take minutes or hours.
+      Until it’s correct:
+    </p>
+
+    <p class="check">HTTPS will be unavailable</p>
+    <p class="check">You may see certificate errors</p>
+    <p class="check">GitHub will show “DNS check in progress”</p>
+
+    <h2>Step 5 — Enable HTTPS</h2>
+
+    <p>
+      Once GitHub shows DNS check successful, you can:
+    </p>
+
+    <div class="callout">
+      ☑ Enforce HTTPS
+    </div>
+
+    <p>
+      GitHub will automatically issue and bind a TLS certificate.
+    </p>
+
+    <h2>Common Pitfalls (I Hit These)</h2>
+
+    <p class="check">Incorrect A records</p>
+    <p class="check">CNAME pointing to wrong repo</p>
+    <p class="check">HTTPS unavailable until DNS is 100% correct</p>
+    <p class="check">Browser caching old cert errors</p>
+    <p class="check">Confusion between apex and www domains</p>
+
+    <h2>Why This Matters Beyond a Personal Site</h2>
+
+    <p>
+      This pattern mirrors real enterprise platform design:
+    </p>
+
+    <p class="check">CDN-backed static hosting</p>
+    <p class="check">DNS + TLS automation</p>
+    <p class="check">Infrastructure as configuration</p>
+    <p class="check">Zero-infrastructure operational overhead</p>
+
+    <h2>Final Thoughts</h2>
+
+    <p>
+      What I like about this approach is that it combines strong architecture principles with delivery pragmatism
+      and security by default — without overengineering.
+    </p>
+
+    <p>
+      It’s a great lightweight pattern for personal platforms, technical blogs, documentation, and internal portals.
+    </p>
+
+    <div class="series-nav">
+      <a href="/series/series-1.html">← Back to Series</a>
+      <a href="/">Home →</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> John Christopher · JCX360-3S (Secure · Scale · Sustain)
+  </div>
+  <span class="footer-note">
+    JCX360 is a personal architecture, delivery, and thought leadership platform by John Christopher, focused on cloud, AI, and enterprise-scale platform systems.
+    </span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
