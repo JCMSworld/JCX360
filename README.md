@@ -1,75 +1,9 @@
-John Christopher — Cloud, AI & Enterprise Architecture
+I am a Hybrid Technical Delivery Manager and Solution Architect with a little over 20 years of experience helping organisations build cloud-native, AI-enabled, and enterprise-scale platforms. My career has taken me across Europe, the US, India, and APAC, and the common thread throughout has been connecting architecture with delivery — making sure great designs actually turn into working, reliable systems.
 
-Welcome. This repository hosts my personal site and professional hub, focused on modern enterprise architecture, cloud platforms, and AI systems.
+I have led large, distributed engineering teams, modernised legacy platforms, and delivered major ERP/HCM programmes across Workday, SuccessFactors, and ADP. I have also spent a lot of time on cloud transformation, particularly on Azure, where I have designed platforms using AKS, Event Hub, Service Bus, microservices, and event-driven patterns.
 
-My work sits at the intersection of:
+On the AI side, I design practical LLM and AI workflows using Azure AI Foundry and LangChain/LangGraph, focusing on things like prompt flow orchestration, model evaluation, and explainability — all wrapped in responsible AI practices that meet GDPR, ISO 27001, SOC2, DORA and EU Sovereign Cloud expectations.
 
-Enterprise Architecture
+My leadership style is grounded in predictable delivery, clear governance, and strong collaboration across engineering, security, data, and business teams. I care about building teams that work well together, simplifying complex architecture, and delivering systems that are secure, resilient, and ready for real-world use.
 
-Cloud-Native Platforms (Microsoft Azure)
-
-AI Engineering & Multi-Agent Systems
-
-Event-Driven Architecture
-
-Platform Engineering & SRE
-
-DevSecOps, Governance & Delivery Architecture
-
-This site is designed as a simple, durable home for my thinking and professional narrative.
-
-Architecture Focus Areas
-
-Azure Cloud-Native Architecture
-
-AI Orchestration & Multi-Agent Systems
-
-Event-Driven Platforms
-
-Landing Zones, Identity & Governance
-
-Observability, SRE & Platform Reliability
-
-DevSecOps & Delivery Architecture
-
-FinOps, GreenOps & Sustainable Platforms
-
-JCX Architecture Series
-
-I publish a structured thought leadership series on LinkedIn covering modern enterprise architecture and AI systems. Key themes include:
-
-AI-Powered Cloud Platforms
-
-Azure AI Foundry & LLM Orchestration
-
-Multi-Agent Decisioning Systems
-
-Azure Landing Zones & Governance
-
-Observability & Platform Operations
-
-DevSecOps, SRE & Delivery Architecture
-
-JCX-3S Framework (Secure • Scale • Sustain)
-
-The goal of the series is to connect architecture, delivery, and operations into a single, coherent platform narrative.
-
-Philosophy
-
-Modern platforms don’t succeed on technology alone.
-
-They succeed when:
-
-Security is designed in, not added later
-
-Scale is architectural, not reactive
-
-Operations are observable, not opaque
-
-Delivery is predictable, not heroic
-
-Governance enables speed, not friction
-
-Sustainability is treated as a first-class concern
-
-This repository reflects that philosophy.
+At the end of the day, I enjoy solving complex problems and making technology work in a way that brings actual value to the organisations I partner with.
