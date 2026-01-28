@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title><!-- POST TITLE --> | JCX360</title>
+  <meta name="description" content="Enterprise architecture, cloud-native platforms, and responsible AI systems." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Christopher | JCX360</title>
-  <meta name="description" content="Enterprise Architecture, Cloud Platforms, AI Systems, and Delivery Leadership" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0b1220;
@@ -25,19 +27,18 @@
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, var(--bg) 40%), var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Header */
     header {
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(6px);
@@ -58,11 +59,12 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      font-weight: 700;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 8px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       display: flex;
@@ -73,16 +75,14 @@
     }
 
     .brand h1 {
-      font-size: 18px;
+      font-size: 16px;
       margin: 0;
-      font-weight: 700;
-      letter-spacing: 0.3px;
     }
 
     .brand span {
+      font-size: 12px;
       color: var(--muted);
       font-weight: 400;
-      font-size: 13px;
       display: block;
     }
 
@@ -93,598 +93,151 @@
       opacity: 0.85;
     }
 
-    /* Hero */
-    .hero {
-      padding: 80px 0 60px;
-      position: relative;
-      overflow: hidden;
+    /* Blog Layout */
+
+    .post-header {
+      padding: 48px 0 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(79,124,255,0.12);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .hero h2 {
-      font-size: 42px;
+    .post-header h2 {
+      font-size: 36px;
       line-height: 1.2;
-      margin: 0 0 16px;
+      margin-bottom: 12px;
       letter-spacing: -0.5px;
     }
 
-    .hero p {
-      font-size: 17px;
+    .post-meta {
       color: var(--muted);
-      margin-bottom: 28px;
+      font-size: 13px;
     }
 
-    .cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    .post-content h2 {
+      margin-top: 40px;
+      font-size: 22px;
     }
 
-    .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border: none;
-      color: #020617;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, #0f1a30, #0b1220);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    }
-
-    .hero-card h3 {
-      margin-top: 0;
+    .post-content h3 {
+      margin-top: 32px;
       font-size: 18px;
     }
 
-    .hero-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .post-content p {
+      margin: 18px 0;
+      color: var(--text);
     }
 
-    .hero-card li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
+    .post-content ul {
+      margin: 16px 0 24px 20px;
     }
 
-    .hero-card li:last-child { border-bottom: none; }
-    
-
-    /* Sections */
-    section {
-      padding: 20px 0;
+    .post-content li {
+      margin-bottom: 10px;
     }
 
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 12px;
-      letter-spacing: -0.3px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      margin-bottom: 32px;
-      max-width: 720px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
-    }
-
-    .card h4 {
-      margin-top: 0;
-      font-size: 16px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* Series */
-    .series {
-      background: var(--bg-alt);
+    .post-nav {
+      margin-top: 48px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
     }
 
-    .series-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .series-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .series-item h5 {
-      margin: 0 0 6px;
-      font-size: 15px;
-    }
-
-    .series-item span {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Footer */
     footer {
       padding: 40px 0;
       border-top: 1px solid var(--border);
       text-align: center;
       color: var(--muted);
       font-size: 13px;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .series-list { grid-template-columns: 1fr; }
-      .hero h2 { font-size: 34px; }
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <!-- Replace this with your actual logo image -->
-        <div class="logo">JC</div>
-        <div>
-          <h1>John Christopher</h1>
-          <span>JCX360 · Enterprise Architecture & AI Systems</span>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#how-i-work">How I Work</a>
-        <a href="#engagement-models">Engagement</a>
-        <a href="#outcomes">Outcomes</a>
-        <a href="#focus">Focus</a>
-        <a href="#series">Series</a>
-        <a href="#contact">Contact</a>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">JC</div>
+      <div>
+        <h1>John Christopher</h1>
+        <span>JCX360 · Enterprise Architecture & AI Systems</span>
       </div>
     </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">Architecture · Cloud · AI · Delivery</div>
-          <h2>Designing Secure, Scalable, And Sustainable Enterprise Platforms</h2>
-          <p>
-            I work at the intersection of enterprise architecture, cloud-native platforms, and responsible AI systems.
-            My focus is on building platforms that scale, operate reliably, and stand up to real-world complexity.
-          </p>
-          <div class="cta">
-            <a class="btn btn-primary" href="#series">Explore Architecture Series</a>
-            <a class="btn" href="https://www.linkedin.com/in/mjohnchristopher/" target="_blank">Connect On LinkedIn</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <h3>Architecture Focus</h3>
-          <ul>
-            <li>Azure Cloud-Native Architecture</li>
-            <li>AI Orchestration & Multi-Agent Systems</li>
-            <li>Event-Driven Platforms</li>
-            <li>Landing Zones, Governance & Compliance</li>
-            <li>Observability, SRE & Platform Operations</li>
-            <li>DevSecOps & Delivery Architecture</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-<!-- About -->
-<section id="about">
-  <div class="container">
-    <h3 class="section-title">About Myself (JC)</h3>
-    <p class="section-subtitle">
-      Connecting architecture with delivery to build platforms that work in the real world.
-    </p>
-
-    <div class="card">
-      <p>
-        I am a hybrid Technical Delivery Manager and Solution Architect with over 20 years of experience helping
-        organisations turn complex technology programmes into platforms that actually work in the real world.
-      </p>
-
-      <p>
-        My career has taken me across Europe, the US, India, and APAC, and a consistent theme has been connecting
-        good architecture with strong delivery. I care about making sure that well-designed systems don’t just
-        look good on paper, but are implemented properly, adopted by teams, and operated reliably day-to-day.
-      </p>
-
-      <p>
-        A big part of my background is in global HR and payroll platforms. I’ve led large HCM and payroll
-        transformations across Workday, SAP SuccessFactors, Oracle, and ADP, covering everything from core
-        system implementations to complex integrations, testing programmes, and payment and payroll control
-        platforms. That work has given me a deep appreciation for how critical these systems are to
-        organisations — and how important it is to get them right.
-      </p>
-
-      <p>
-        Alongside enterprise SaaS delivery, I have spent many years leading cloud and application modernisation
-        programmes. I have helped organisations migrate and redesign business-critical platforms on Azure and AWS,
-        working with container platforms, microservices, and event-driven architectures to build systems that
-        are more scalable, resilient, and easier to operate.
-      </p>
-
-      <p>
-        I’ve led large, distributed engineering and delivery teams, often working across time zones and cultures.
-        I enjoy building teams that work well together, putting the right delivery structures in place, and
-        creating an environment where people can focus on solving the right problems instead of fighting
-        process or technical debt.
-      </p>
-
-      <p>
-        Technically, I stay close enough to the detail to understand how systems are really built — from APIs and
-        integrations to CI/CD, automation, and cloud-native platforms — while keeping my main focus on outcomes,
-        governance, and making sure delivery stays predictable.
-      </p>
-
-      <p>
-        At the end of the day, what I enjoy most is taking complex, messy problems and turning them into platforms
-        and solutions that are simpler, more reliable, and genuinely useful for the people who depend on them.
-      </p>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/series/series-1.html">Series</a>
+      <a href="/#contact">Contact</a>
     </div>
   </div>
-</section>
+</header>
 
+<main class="container">
 
-<!-- Key Capabilities -->
-<section id="capabilities">
-  <div class="container">
-    <h3 class="section-title">Key Capabilities through Project Delivery</h3>
-    <p class="section-subtitle">
-      Where I focus my time and the value I most often help organisations unlock.
-    </p>
+  <!-- Post Content -->
+  <article class="post-content">
+    <h2>Series 1. Part 3 - AI Decisioning Engine – A Practical Look at How I am Exploring LangChain & Azure AI Foundry</h2>
+    <p>
+ <p>How do we make AI-driven decisions fair, explainable, and accountable — not just “smart”?.
+</p>
+<p>
+⭐ I am sharing a simplified version of the “AI Decisioning Engine” model I’ve been working on.
+It’s something I am personally excited about because it blends architecture, governance, and real-world practicality:
+</p>
+<p>
+🧩 1. Ingestion & Normalisation <br>
+Take any unstructured input — documents, profiles, forms, notes — and standardise them.
+Sensitive fields are stripped out to reduce bias before the AI ever sees the data.<br>
+<br>🔎 2. Semantic Understanding (Embeddings)<br>
+Everything gets converted into embeddings so the system can understand context, not just keywords.
+This is where relevance becomes more meaningful.<br>
 
-    <div class="grid-3">
-      <div class="card">
-        <h4>Enterprise SaaS & HCM Platforms</h4>
-        <p>
-          Workday, SAP SuccessFactors, Oracle, ADP, and large-scale global payroll and HR transformations.
-        </p>
-      </div>
+<br>🤖 3. Multi-Agent LLM Orchestration<br>
+Using LangChain/LangGraph, multiple “agents” look at the problem from different angles:<br>
+Relevance ➡️ Context ➡️ Risks ➡️ Domain fit ➡️ Scoring.<br>
+Each agent contributes its own perspective — almost like a digital panel.<br>
 
-      <div class="card">
-        <h4>Cloud Platforms & Modernisation</h4>
-        <p>
-          Azure and AWS, application migration and modernisation, container platforms (AKS/Kubernetes),
-          and cloud-first operating models.
-        </p>
-      </div>
+<br>⚖️ 4. Responsible AI Guardrails<br>
+This is the part I care about the most.<br>
+Using Azure AI Foundry, you wrap the whole process in guardrails:<br>
+bias checks, fairness scoring, explainability, audit logs, and compliance controls (GDPR, ISO 27001, DORA, SOC2, EU AI Act).<br>
 
-      <div class="card">
-        <h4>Architecture That Ships</h4>
-        <p>
-          Designing scalable, secure architectures that are grounded in delivery reality — not just diagrams.
-        </p>
-      </div>
+<br>📊 5. Transparent Review<br>
+The engine produces structured, ranked outputs with a full trace of how it got there.<br>
+Humans stay in control — they review, override, and validate.<br>
 
-      <div class="card">
-        <h4>Integration & Event-Driven Systems</h4>
-        <p>
-          API-led integrations, event-driven architectures, middleware, and connecting complex enterprise
-          systems reliably.
-        </p>
-      </div>
+</p>
+<p>⭐ “AI shouldn’t replace human judgement — it should support it with clarity, structure, and scale.”
+</p>
+<p><b>JCX-3S (Secure. Scale. Sustain) — John Christopher (JC)</b>
 
-      <div class="card">
-        <h4>AI & Intelligent Workflows</h4>
-        <p>
-          Practical use of LLMs and AI workflows to improve decisioning, automation, and operational insight,
-          with a strong focus on responsible use.
-        </p>
-      </div>
+  </article>
 
-      <div class="card">
-        <h4>Programme & Delivery Leadership</h4>
-        <p>
-          Leading large, distributed teams, predictable delivery, governance, and turning complex programmes
-          into successful outcomes.
-        </p>
-      </div>
+  <div class="post-nav">
+    <div>
+      <a href="/series/series-1.html">← Back to Series</a>
+    </div>
+    <div>
+      <a href="/">Home →</a>
     </div>
   </div>
-</section>
 
-<!-- How I Work -->
-<section id="how-i-work">
+</main>
+
+<footer>
   <div class="container">
-    <h3 class="section-title">How I Work</h3>
-    <p class="section-subtitle">
-      A practical, delivery-focused approach grounded in real-world constraints.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h4>Architecture with Delivery in Mind</h4>
-        <p>
-          I design architectures that teams can actually build, operate, and evolve — not just
-          diagrams that look good in presentations.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Predictable, Governed Delivery</h4>
-        <p>
-          I focus on clear milestones, realistic plans, and strong governance so complex programmes
-          move forward with confidence and transparency.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Close to the Detail, Focused on Outcomes</h4>
-        <p>
-          I stay close enough to the technical detail to make good decisions, while keeping my
-          main focus on business outcomes and value.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Strong Collaboration</h4>
-        <p>
-          I work across engineering, security, data, HR, and business teams to keep everyone aligned
-          and moving in the same direction.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Simplicity Over Complexity</h4>
-        <p>
-          I aim to simplify architectures and operating models so platforms are easier to run,
-          support, and scale over time.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Delivery Reality First</h4>
-        <p>
-          I optimise for what will work in real organisations — with real people, constraints,
-          and regulatory environments.
-        </p>
-      </div>
-    </div>
+    © <span id="year"></span> John Christopher · JCX360-3S (Secure · Scale · Sustain)
   </div>
-</section>
+  <span class="footer-note">
+      JCX360 is a personal knowledge-sharing and thought leadership platform by John Christopher.
+    </span>
+</footer>
 
-<!-- Engagement Models -->
-<section id="engagement-models">
-  <div class="container">
-    <h3 class="section-title">How I Typically Engage</h3>
-    <p class="section-subtitle">
-      Flexible engagement models depending on the stage and needs of the organisation.
-    </p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-    <div class="grid-3">
-      <div class="card">
-        <h4>Architecture & Platform Advisory</h4>
-        <p>
-          Providing strategic guidance on enterprise architecture, cloud platforms, and
-          operating models to support long-term platform direction.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Programme & Transformation Leadership</h4>
-        <p>
-          Leading complex transformation programmes to ensure architecture, delivery,
-          and business outcomes stay aligned.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Cloud & Platform Strategy</h4>
-        <p>
-          Helping organisations define and execute cloud strategies, modernisation
-          roadmaps, and platform engineering approaches.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Delivery Recovery & Stabilisation</h4>
-        <p>
-          Supporting programmes that are off-track or under pressure, bringing structure,
-          clarity, and practical recovery plans.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Integration & Platform Architecture</h4>
-        <p>
-          Designing and guiding API, event-driven, and integration architectures for
-          complex enterprise landscapes.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Executive & Team Enablement</h4>
-        <p>
-          Working with leadership and delivery teams to improve ways of working,
-          delivery maturity, and platform ownership.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- What Clients Get -->
-<section id="outcomes">
-  <div class="container">
-    <h3 class="section-title">What Clients Typically Get</h3>
-    <p class="section-subtitle">
-      Practical outcomes that make a measurable difference.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h4>Clear Platform Direction</h4>
-        <p>
-          A realistic architecture and platform roadmap that teams can execute against.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Improved Delivery Predictability</h4>
-        <p>
-          Stronger planning, governance, and execution that reduces surprises and delivery risk.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Simpler, More Operable Platforms</h4>
-        <p>
-          Architectures and operating models that are easier to run, support, and scale.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Better Cross-Team Alignment</h4>
-        <p>
-          Stronger collaboration between business, HR, engineering, security, and data teams.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Reduced Technical & Delivery Debt</h4>
-        <p>
-          Practical steps to clean up legacy complexity and delivery bottlenecks.
-        </p>
-      </div>
-
-      <div class="card">
-        <h4>Platforms Ready for Real Use</h4>
-        <p>
-          Systems designed for real-world constraints, not just theoretical best practice.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-    <!-- Focus Areas -->
-    <section id="focus">
-      <div class="container">
-        <h3 class="section-title">What I Focus On</h3>
-        <p class="section-subtitle">
-          My work blends technical architecture with delivery leadership, ensuring platforms are designed for both
-          engineering excellence and operational reality.
-        </p>
-        <div class="grid-3">
-          <div class="card">
-            <h4>Enterprise Cloud Platforms</h4>
-            <p>Designing governed, scalable Azure platforms that support modern workloads and regulated environments.</p>
-          </div>
-          <div class="card">
-            <h4>AI Systems Architecture</h4>
-            <p>Responsible AI, multi-agent orchestration, evaluation pipelines, and explainable decisioning systems.</p>
-          </div>
-          <div class="card">
-            <h4>Platform Operations & Reliability</h4>
-            <p>Observability, SRE, DevSecOps, and operating models that keep platforms healthy at scale.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Series -->
-    <section id="series" class="series">
-      <div class="container">
-        <h3 class="section-title">Architecture Series</h3>
-        <p class="section-subtitle">
-          A structured series exploring modern enterprise architecture, AI systems, and cloud-native platforms.
-        </p>
-        <div class="series-list">
-          <div class="series-item">
-            <h5>Series 1 — Cloud-Native & Responsible AI Foundations</h5>
-            <span>Landing Zones · AI Orchestration · Observability · DevSecOps · JCX360-3S</span>
-          </div>
-          <div class="series-item">
-            <h5>Series 2 — Advanced Enterprise Architecture & AI Systems</h5>
-            <span>Event-Driven AI · Multi-Agent Systems · Platform Engineering · Operating AI At Scale</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h3 class="section-title">Get In Touch</h3>
-        <p class="section-subtitle">
-          If you are working on large-scale cloud, AI, or enterprise architecture initiatives, I’m always happy to exchange ideas.
-        </p>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/mjohnchristopher/" target="_blank">Connect On LinkedIn</a>
-          <a class="btn" href="mailto:jcx360@outlook.ie">Email Me</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> John Christopher · JCX360—3S (· Secure · Scale · Sustain)
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
