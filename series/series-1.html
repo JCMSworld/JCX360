@@ -2,91 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Series 1 — Cloud-Native & Responsible AI Foundations | JCX360</title>
-  <meta name="description" content="Series on cloud-native architecture, responsible AI, Azure platforms, observability, and delivery governance." />
+  <title><!-- POST TITLE --> | JCX360</title>
+  <meta name="description" content="Enterprise architecture, cloud-native platforms, and responsible AI systems." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, var(--bg) 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11,18,32,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #020617;
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    /* Blog Layout */
+
+    .post-header {
+      padding: 48px 0 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .post-header h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .post-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .post-content h2 {
+      margin-top: 40px;
+      font-size: 22px;
+    }
+
+    .post-content h3 {
+      margin-top: 32px;
+      font-size: 18px;
+    }
+
+    .post-content p {
+      margin: 18px 0;
+      color: var(--text);
+    }
+
+    .post-content ul {
+      margin: 16px 0 24px 20px;
+    }
+
+    .post-content li {
+      margin-bottom: 10px;
+    }
+
+    .post-nav {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Series 1 — Cloud-Native & Responsible AI Foundations</h1>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">JC</div>
+      <div>
+        <h1>John Christopher</h1>
+        <span>JCX360 · Enterprise Architecture & AI Systems</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/series/series-1.html">Series</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</header>
 
-<p>
-This series explores how modern enterprises can design, govern, and operate
-cloud-native and AI-enabled platforms in a way that is secure, scalable,
-and aligned with real-world regulatory and delivery constraints.
-</p>
+<main class="container">
 
-<p>
-Across these articles, I cover practical architecture patterns, responsible AI
-governance, Azure platform foundations, observability, and the delivery
-disciplines required to run these systems reliably at scale.
-</p>
+  <!-- Post Content -->
+  <article class="post-content">
 
-<hr />
+    <!-- PASTE YOUR FULL BLOG CONTENT HERE -->
 
-<div class="post-list">
+    <h2>Series 1 - Cloud-Native & Responsible AI: Foundations for the Modern Enterprise</h2>
 
-  <h3>
-    <a href="/series/series-1-post-1.html">
-      🚀 Designing an AI-Powered, Event-Driven, Cloud-Native Recruitment Platform on Azure
-    </a>
-  </h3>
-  <small>12 Nov 2025</small>
-  <p>Enterprise blueprint combining event-driven microservices, explainable AI, and responsible governance.</p>
+  <p class="check">Part 1 — Building an AI-Powered, Event-Driven Recruitment Platform on Azure</p>
+<p class="check">Part 2 — Azure AI Foundry for Responsible, Enterprise-Scale AI</p>
+<p class="check">Part 3 — Designing an Explainable AI Decisioning Engine</p>
+<p class="check">Part 4 — Why Azure Landing Zones Matter for AI-First Enterprises</p>
+<p class="check">Part 5 — Observability as a First-Class Architecture Layer</p>
+<p class="check">Part 6 — The Delivery Layer — DevSecOps, SRE & Governance</p>
+<p class="check">Part 7 — JCX-3S: A Framework for Secure, Scalable, and Sustainable Platforms</p>
 
-  <h3>
-    <a href="/series/series-1-post-2.html">
-      🚀 Azure AI Foundry & LLM Orchestration — Responsible, Enterprise-Scale AI
-    </a>
-  </h3>
-  <small>19 Nov 2025</small>
-  <p>How Azure AI Foundry enables governed LLM workflows with evaluation and guardrails.</p>
 
-  <h3>
-    <a href="/series/series-1-post-3.html">
-      🤖 AI Decisioning Engine — Practical LangChain & Azure AI Foundry
-    </a>
-  </h3>
-  <small>03 Dec 2025</small>
-  <p>Designing explainable, multi-agent AI decision workflows for enterprise use.</p>
+  </article>
 
-  <h3>
-    <a href="/series/series-1-post-4.html">
-      🚀 Azure Landing Zones — Why They Matter in an AI-First Enterprise
-    </a>
-  </h3>
-  <small>17 Dec 2025</small>
-  <p>Cloud foundations that make secure, scalable AI and microservices possible.</p>
+  <!-- Post Navigation -->
+  <div class="post-nav">
+    <div>
+      <a href="#"><!-- ← Previous --></a>
+    </div>
+    <div>
+      <a href="#"><!-- Next → --></a>
+    </div>
+  </div>
 
-  <h3>
-    <a href="/series/series-1-post-5.html">
-      🚀 Observability — The Architecture Layer That Keeps Systems Honest
-    </a>
-  </h3>
-  <small>07 Jan 2026</small>
-  <p>End-to-end visibility for microservices, event streams, and AI pipelines.</p>
+</main>
 
-  <h3>
-    <a href="/series/series-1-post-6.html">
-      🚀 The Delivery Layer — DevSecOps, SRE & Governance
-    </a>
-  </h3>
-  <small>28 Jan 2026</small>
-  <p>How delivery, security, and reliability disciplines keep platforms running safely.</p>
+<footer>
+  <div class="container">
+    © <span id="year"></span> John Christopher · JCX360-3S (Secure · Scale · Sustain)
+  </div>
+</footer>
 
-  <h3>
-    <a href="/series/series-1-post-7.html">
-      🚀 JCX-3S — Secure. Scale. Sustain.
-    </a>
-  </h3>
-  <small>11 Feb 2026</small>
-  <p>The framework I use to design modern cloud and AI platforms.</p>
-
-</div>
-
-<hr />
-
-<p><a href="/">← Back to JCX360 Home</a></p>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
