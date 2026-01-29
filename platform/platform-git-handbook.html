@@ -12,93 +12,146 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://jcx360.com/series/platform-git-handbook.html" />
 
-  <style>
+    <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, #0b1220 40%), #0b1220;
-      color: #e5e7eb;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, var(--bg) 40%), var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 0 24px;
     }
 
-    h1, h2, h3 {
-      color: #f9fafb;
-      letter-spacing: -0.3px;
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11,18,32,0.7);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: #9ca3af;
-      margin-bottom: 32px;
-      font-size: 15px;
-    }
-
-    .card {
-      background: #111827;
-      border: 1px solid #1f2933;
-      border-radius: 14px;
-      padding: 28px;
-      margin: 28px 0;
-    }
-
-    code, pre {
-      background: #020617;
-      border: 1px solid #1f2933;
-      border-radius: 8px;
-      padding: 12px 14px;
-      display: block;
-      overflow-x: auto;
-      font-size: 13px;
-      color: #c7d2fe;
-      margin: 12px 0 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(79,124,255,0.12);
-      color: #4f7cff;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .nav-links {
+    .nav {
       display: flex;
       justify-content: space-between;
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid #1f2933;
-      font-size: 14px;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #020617;
     }
 
     .nav-links a {
-      color: #4f7cff;
-      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
     }
 
-    .nav-links a:hover {
-      text-decoration: underline;
+    main {
+      padding: 60px 0;
+    }
+
+    h1 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .post-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin-top: 48px;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      margin: 18px 0;
+      color: #d1d5db;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 16px 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    .check::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 32px 0;
+    }
+
+    .series-nav {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
     }
 
     footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid #1f2933;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
       text-align: center;
+      color: var(--muted);
       font-size: 13px;
-      color: #9ca3af;
     }
   </style>
 </head>
