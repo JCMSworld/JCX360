@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Practical Git Handbook — How I Run a Free Personal Site on GitHub Pages</title>
+  <meta name="description" content="A practical Git handbook for running a free personal website on GitHub Pages. Real-world commands for syncing, publishing, and staying in control." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- OpenGraph for LinkedIn -->
+  <meta property="og:title" content="My Practical Git Handbook — Running a Free Site on GitHub Pages" />
+  <meta property="og:description" content="The exact Git commands and workflow I use to run a free personal website on GitHub Pages with a custom domain." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jcx360.com/series/platform-git-handbook.html" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, #0b1220 40%), #0b1220;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    h1, h2, h3 {
+      color: #f9fafb;
+      letter-spacing: -0.3px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #9ca3af;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1f2933;
+      border-radius: 14px;
+      padding: 28px;
+      margin: 28px 0;
+    }
+
+    code, pre {
+      background: #020617;
+      border: 1px solid #1f2933;
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: block;
+      overflow-x: auto;
+      font-size: 13px;
+      color: #c7d2fe;
+      margin: 12px 0 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(79,124,255,0.12);
+      color: #4f7cff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #1f2933;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #4f7cff;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #1f2933;
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <span class="tag">Platform Setup • GitHub Pages • Free Hosting</span>
+
+    <h1>My Practical Git Handbook</h1>
+    <p class="subtitle">
+      How I run a free personal website on GitHub Pages — and the exact Git commands I use to stay sane.
+    </p>
+
+    <p>
+      After setting up <strong>JCX360</strong> on GitHub Pages with a custom domain, a few friends asked how I actually
+      manage updates, publishing, and syncing between GitHub and my local machine.
+    </p>
+
+    <p>
+      This is not a theoretical Git guide. This is the <strong>real, practical workflow</strong> I use day-to-day to:
+    </p>
+
+    <ul>
+      <li>Pull the latest changes</li>
+      <li>Edit locally in VS Code</li>
+      <li>Publish updates to a live site</li>
+      <li>Avoid conflicts and lost work</li>
+    </ul>
+
+    <div class="card">
+      <h2>🔄 Always Start by Getting the Latest</h2>
+      <p>If you edited anything on GitHub.com, always sync first:</p>
+
+      <pre>git pull</pre>
+
+      <p>
+        This keeps your local copy aligned and prevents painful merge issues.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>✏️ See What You Changed</h2>
+      <pre>git status</pre>
+
+      <p>
+        This shows which files you modified, added, or are ready to commit.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>➕ Stage Your Changes</h2>
+      <p>Stage everything:</p>
+
+      <pre>git add .</pre>
+
+      <p>Or stage a single file:</p>
+
+      <pre>git add index.html</pre>
+    </div>
+
+    <div class="card">
+      <h2>💾 Commit (Save a Snapshot)</h2>
+      <pre>git commit -m "Update hero messaging and delivery focus"</pre>
+
+      <p>
+        Think of commits as clean restore points — small, meaningful, and descriptive.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Push (Publish to Live Site)</h2>
+      <pre>git push</pre>
+
+      <p>
+        This uploads your changes to GitHub and automatically redeploys your GitHub Pages site.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🔁 My Daily Flow (Muscle Memory)</h2>
+      <pre>
+git pull
+git status
+git add .
+git commit -m "Describe update"
+git push
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>🛑 Discard Local Changes (If You Messed Up)</h2>
+      <pre>
+git reset --hard
+git pull
+      </pre>
+
+      <p>
+        ⚠️ This deletes uncommitted local changes and resets to GitHub’s version.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Why This Works for a Personal Platform</h2>
+      <ul>
+        <li><strong>Simple</strong> — No build pipelines required</li>
+        <li><strong>Free</strong> — GitHub Pages + custom domain</li>
+        <li><strong>Safe</strong> — Full version history</li>
+        <li><strong>Scalable</strong> — Works as content grows</li>
+      </ul>
+
+      <p>
+        It’s a lightweight but enterprise-grade workflow — which fits perfectly with how I think about platforms:
+        simple, governed, and sustainable.
+      </p>
+    </div>
+
+    <div class="nav-links">
+      <a href="/series/series-1.html">← Back to Series</a>
+      <a href="/">Home →</a>
+    </div>
+
+    <footer>
+      © 2026 John Christopher · JCX360-3S (Secure · Scale · Sustain)<br/>
+      JCX360 is a personal architecture, delivery, and thought leadership platform by John Christopher.
+    </footer>
+
+  </div>
+
+</body>
+</html>
