@@ -191,6 +191,20 @@
   font-size: 13px;
 }
 
+a.subtle-link {
+  color: inherit;              /* same as normal text */
+  text-decoration: none;       /* no underline */
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+a.subtle-link:hover {
+  color: var(--primary);       /* your blue */
+  border-bottom: 1px solid var(--primary);
+}
+
+
     footer {
       padding: 40px 0;
       border-top: 1px solid var(--border);
@@ -206,7 +220,7 @@
 <header>
   <div class="container nav">
     <div class="brand">
-      <div class="logo"><a href="/index.html">JCX360</a></div>
+      <div class="logo"><a href="/index.html" class="subtle-link">JCX360</a></div>
       <div>
         <h1>John Christopher</h1>
         <span>Hybrid Technology Leader (Arch + Delivery)</span>
