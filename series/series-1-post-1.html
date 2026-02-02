@@ -189,6 +189,13 @@ a.brand-link:active {
   text-decoration: none;
   color: inherit;
 }
+
+.brand-logo {
+  height: 50px;        
+  width: auto;
+  display: block;
+}
+
     footer {
       padding: 40px 0;
       border-top: 1px solid var(--border);
@@ -204,7 +211,11 @@ a.brand-link:active {
 <header>
   <div class="container nav">
     <div class="brand">
-      <a href="/index.html" class="brand-link"><div class="logo">JCX360</div></a>
+      <a href="/" aria-label="JCX360 Home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo"/>
+      </a>
+
+      <!-- <a href="/index.html" class="brand-link"><div class="logo">JCX360</div></a> -->
       <div>
         <h1>John Christopher</h1>
         <span>Hybrid Technology Leader (Arch + Delivery)</span>
