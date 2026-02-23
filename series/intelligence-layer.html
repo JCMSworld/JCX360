@@ -1,95 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Intelligence Layer: ML → DL → LLM → RAG → Vector DB | JCX360</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>JCX360 - From Zero to Production: GitHub Pages + Custom Domain (Free)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How to host a secure personal site on GitHub Pages with a custom domain and HTTPS for free." />
 
-    <meta name="description" content="Understanding the modern AI stack: ML, DL, LLM, RAG and Vector Databases — and how enterprise intelligence systems actually work.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #0F172A;
-            color: #E2E8F0;
-            line-height: 1.6;
-        }
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    * { box-sizing: border-box; }
 
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-        }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #13224a 0%, var(--bg) 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        h2 {
-            margin-top: 50px;
-            color: #60A5FA;
-        }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        p {
-            margin: 15px 0;
-        }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .tag {
-            display: inline-block;
-            background: #1E293B;
-            color: #60A5FA;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-        }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11,18,32,0.7);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        .highlight {
-            color: #22C55E;
-            font-weight: 500;
-        }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
 
-        .runtime-flow {
-            background: #1E293B;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-weight: 500;
-            color: #F8FAFC;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        hr {
-            border: none;
-            border-top: 1px solid #334155;
-            margin: 50px 0;
-        }
+    .logo {
+      width: 70px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #020617;
+    }
 
-        .closing {
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
 
-        .signature {
-            margin-top: 40px;
-            color: #94A3B8;
-        }
+    main {
+      padding: 60px 0;
+    }
 
-        a {
-            color: #60A5FA;
-            text-decoration: none;
-        }
+    h1 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .post-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin-top: 48px;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      margin: 18px 0;
+      color: #d1d5db;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 16px 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    .check::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 32px 0;
+    }
+
+    .series-nav {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    a.brand-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.brand-link:hover,
+a.brand-link:focus,
+a.brand-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-logo {
+  height: 50px;        
+  width: auto;
+  display: block;
+}
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+<header>
+  <div class="container nav">
+    <div class="brand">
+     <a href="/" aria-label="JCX360 Home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo"/>
+      </a>
+
+      <!-- <a href="/index.html" class="brand-link"><div class="logo">JCX360</div></a> -->
+      <div>
+        <strong>John Christopher</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Hybrid Technology Leader (Arch + Delivery)</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/series/series-1.html">Series</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
 
     <div class="tag">AI Architecture · Enterprise Intelligence · Platform Design</div>
 
@@ -232,11 +336,29 @@
         it’s how intelligence is embedded into secure, observable, governable platforms.
     </p>
 
-    <div class="signature">
-        JCX-3S — John Christopher (JC)
+</div>
+
+    <div class="series-nav">
+      <a href="/series/series-1.html">← Back to Series</a>
+      <a href="/">Home →</a>
     </div>
 
-</div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> John Christopher · JCX360-3S (Secure · Scale · Sustain)
+  </div>
+  <span class="footer-note">
+    JCX360 is my personal platform for architecture, delivery, and thought leadership, focused on cloud, AI, and enterprise-scale systems.<br>
+    All views shared here are my own, based on industry experience and independent research, and are shared to support learning and knowledge exchange across the professional community.
+    </span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
