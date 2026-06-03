@@ -7,3 +7,8 @@ On the AI side, I design practical LLM and AI workflows using Azure AI Foundry a
 My leadership style is grounded in predictable delivery, clear governance, and strong collaboration across engineering, security, data, and business teams. I care about building teams that work well together, simplifying complex architecture, and delivering systems that are secure, resilient, and ready for real-world use.
 
 At the end of the day, I enjoy solving complex problems and making technology work in a way that brings actual value to the organisations I partner with.
+
+git add -u
+git commit -m "Update existing site width"
+git push
+
