@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JCX360 — Series 2 Part 5 | Observing AI Systems</title>
+  <meta name="description" content="Observing AI Systems — Trust Requires More Than Logs. JCX360 Series 2." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(
+        1200px 600px at 10% -10%,
+        #13224a 0%,
+        var(--bg) 40%
+      ), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11,18,32,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    /* Blog Layout */
+
+    .post-content {
+      padding-top: 48px;
+    }
+
+    .post-content h2 {
+      margin: 0 0 32px;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .post-content p {
+      margin: 18px 0;
+      color: var(--text);
+    }
+
+    .post-content ul {
+      margin: 16px 0 24px 20px;
+      padding-left: 10px;
+    }
+
+    .post-content li {
+      margin-bottom: 10px;
+    }
+
+    .post-content hr {
+      margin: 40px 0 28px;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .post-external {
+      margin-top: 40px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .external-link {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .external-link:hover {
+      text-decoration: underline;
+    }
+
+    .external-link::after {
+      content: " ↗";
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .post-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .nav-links a {
+        margin-left: 10px;
+      }
+
+      .post-content h2 {
+        font-size: 27px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <div class="brand">
+
+      <a href="/" aria-label="JCX360 Home">
+        <img
+          src="/images/JCX360_orbit_logo_2.png"
+          alt="JCX360"
+          class="brand-logo"
+        />
+      </a>
+
+      <div>
+        <h1>John Christopher</h1>
+        <span>Hybrid Technology Leader (Arch + Delivery)</span>
+      </div>
+
+    </div>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/series/series-2/">Series 2</a>
+      <a href="/#contact">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+
+<main class="container">
+
+  <article class="post-content">
+
+    <h2>
+      🚀 Series 2 - Part 5 - Observing AI Systems — Trust Requires More Than Logs
+    </h2>
+
+    <p>
+      “If you can’t observe a system, you can’t trust it.”
+    </p>
+
+    <p>
+      That principle matters even more when AI becomes part of the platform.
+    </p>
+
+    <p>
+      Traditional observability answers operational questions:
+    </p>
+
+    <ul>
+      <li>📈 Is it up?</li>
+      <li>⏱️ Is it fast?</li>
+      <li>❌ Is it failing?</li>
+    </ul>
+
+    <p>
+      AI introduces different questions:
+    </p>
+
+    <ul>
+      <li>🧠 Why did the model respond this way?</li>
+      <li>📊 What influenced the decision?</li>
+      <li>📉 Has its behaviour changed over time?</li>
+      <li>👀 Can a human follow the decision path?</li>
+    </ul>
+
+    <p>
+      Logs alone can create a false sense of confidence.
+    </p>
+
+    <p>
+      They tell us that something happened — not necessarily why.
+    </p>
+
+    <p>
+      Observing AI systems requires:
+    </p>
+
+    <ul>
+      <li>🔎 Prompt and agent traces</li>
+      <li>📊 Evaluation checkpoints</li>
+      <li>📈 Quality signals over time</li>
+      <li>🔄 Feedback loops that include humans</li>
+    </ul>
+
+    <p>
+      Without this visibility, AI becomes a black box.
+    </p>
+
+    <p>
+      And black boxes do not belong in enterprise decision-making.
+    </p>
+
+    <p>
+      Observability is not optional.
+    </p>
+
+    <p>
+      It is the foundation of trust.
+    </p>
+
+    <hr>
+
+  </article>
+
+
+  <div class="post-external">
+
+    <a
+      href="https://www.linkedin.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >
+      View discussion on LinkedIn
+    </a>
+
+  </div>
+
+
+  <div class="post-footer-nav">
+
+    <div>
+      <a href="/series/series-2/series-2-post-4.html">
+        ← Previous
+      </a>
+    </div>
+
+    <div>
+      <a href="/series/series-2/series-2-post-6.html">
+        Next →
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+    © <span id="year"></span>
+    John Christopher · JCX360-3S (Secure · Scale · Sustain)
+  </div>
+
+  <span class="footer-note">
+    JCX360 is my personal platform for architecture, delivery, and thought leadership,
+    focused on cloud, AI, and enterprise-scale systems.<br>
+
+    All views shared here are my own, based on industry experience and independent
+    research, and are shared to support learning and knowledge exchange across the
+    professional community.
+  </span>
+
+</footer>
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
