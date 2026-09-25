@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JCX360 — From Programme Planning To Delivery Control</title>
+  <meta name="description" content="From Programme Planning To Delivery Control — practical lessons from complex technology and transformation programmes." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(
+        1200px 600px at 10% -10%,
+        #13224a 0%,
+        var(--bg) 40%
+      ), var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11,18,32,0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    /* Article */
+
+    .post-content {
+      padding: 48px 0 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .post-content h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 0 0 32px;
+      letter-spacing: -0.5px;
+    }
+
+    .post-content h3 {
+      margin-top: 48px;
+      margin-bottom: 18px;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.2px;
+    }
+
+    .post-content p {
+      margin: 18px 0;
+      color: var(--text);
+    }
+
+    .post-content strong {
+      font-weight: 600;
+    }
+
+    .post-content ul {
+      margin: 18px 0 24px 20px;
+      padding-left: 10px;
+    }
+
+    .post-content li {
+      margin-bottom: 10px;
+    }
+
+    .planning-model {
+      margin: 28px 0;
+      padding: 22px 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .planning-model span {
+      color: var(--accent);
+      padding: 0 8px;
+    }
+
+    .closing {
+      margin-top: 48px;
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .closing p {
+      margin: 10px 0;
+    }
+
+    .jcx-footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .post-external {
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .external-link {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .external-link:hover {
+      text-decoration: underline;
+    }
+
+    .external-link::after {
+      content: " ↗";
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Footer Navigation */
+
+    .post-footer-nav {
+      max-width: 900px;
+      margin: 24px auto 0;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    .footer-note {
+      display: block;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        margin-left: 10px;
+      }
+
+      .post-content {
+        padding-top: 32px;
+      }
+
+      .post-content h2 {
+        font-size: 28px;
+      }
+
+      .post-content h3 {
+        font-size: 21px;
+      }
+
+      .planning-model {
+        text-align: left;
+        line-height: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <div class="brand">
+
+      <a href="/" aria-label="JCX360 Home">
+        <img
+          src="/images/JCX360_orbit_logo_2.png"
+          alt="JCX360"
+          class="brand-logo"
+        />
+      </a>
+
+      <div>
+        <h1>John Christopher</h1>
+        <span>Hybrid Technology Leader (Arch + Delivery)</span>
+      </div>
+
+    </div>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#series">Series</a>
+      <a href="/#contact">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+
+<main class="container">
+
+  <article class="post-content">
+
+    <h2>From Programme Planning To Delivery Control</h2>
+
+    <p>
+      During my recent programme delivery work, one thing became very clear to me.
+    </p>
+
+    <p>
+      The challenge was not a lack of planning information. We had estimates,
+      capacity information, delivery plans, dependencies and PI commitments.
+    </p>
+
+    <p>
+      The challenge was bringing all of this together into a view that people
+      could actually use.
+    </p>
+
+    <p>
+      Different teams were looking at planning from different perspectives.
+      Some were working at a monthly level, delivery teams were working through
+      sprints, and programme planning was focused on PI commitments and
+      longer-term delivery.
+    </p>
+
+    <p>
+      All of these views were useful, but they were not always connected.
+    </p>
+
+    <p>
+      That made me think about programme planning differently.
+    </p>
+
+    <p>
+      For me, good programme planning is not about creating another project
+      plan or another report. It is about creating a connected view of
+      <strong>capacity, demand, delivery, dependencies and timing.</strong>
+    </p>
+
+    <p>
+      That is where planning starts to become delivery control.
+    </p>
+
+
+    <h3>Connecting The Planning View</h3>
+
+    <p>
+      The approach I worked with was based around four connected stages:
+    </p>
+
+    <div class="planning-model">
+      Capacity Projection
+      <span>→</span>
+      Integrated Plan
+      <span>→</span>
+      Resource Demand
+      <span>→</span>
+      Detailed Execution
+    </div>
+
+    <p>
+      The first step was understanding the capacity available across the programme.
+    </p>
+
+    <p>
+      Then came the delivery demand. What work are we expecting to deliver,
+      how much effort is involved, and when does it need to happen?
+    </p>
+
+    <p>
+      The integrated plan then brought these views together with sequencing,
+      dependencies, releases and forecast dates.
+    </p>
+
+    <p>
+      From there, the information could be taken into the level of detail
+      needed by delivery teams.
+    </p>
+
+    <p>
+      This sounds straightforward, but keeping these views connected is where
+      most of the effort goes.
+    </p>
+
+    <p>
+      A capacity number on its own does not tell you what you can deliver.
+      Equally, a delivery plan does not tell you whether you actually have
+      enough capacity to support it.
+    </p>
+
+    <p>
+      You need to look at both together.
+    </p>
+
+
+    <h3>Connecting Quarterly, Monthly, Weekly, Sprint And PI Planning</h3>
+
+    <p>
+      Another area I focused on was connecting the different planning horizons.
+    </p>
+
+    <div class="planning-model">
+      Quarterly
+      <span>→</span>
+      Monthly
+      <span>→</span>
+      Weekly
+      <span>→</span>
+      Sprint
+      <span>→</span>
+      PI
+    </div>
+
+    <p>
+      The intention was not to create five different plans.
+    </p>
+
+    <p>
+      It was to make sure that the different levels of planning were connected
+      and that the information remained consistent as you moved from the
+      programme level down into execution.
+    </p>
+
+    <p>
+      At the higher level, leadership needs to understand capacity, demand and
+      forecast delivery.
+    </p>
+
+    <p>
+      At the delivery level, teams need to understand what needs to happen next.
+    </p>
+
+    <p>
+      The difficulty is keeping those two views connected.
+    </p>
+
+    <p>
+      If the numbers change between them without a clear reason, confidence in
+      the plan starts to disappear.
+    </p>
+
+
+    <h3>Building The Integrated Programme Plan</h3>
+
+    <p>
+      As part of this work, I developed an integrated Microsoft Project view to
+      bring the different elements of programme delivery together.
+    </p>
+
+    <p>
+      It included the delivery lifecycle, estimated effort, sequencing,
+      dependencies, resource demand, capacity, release planning and forecast
+      delivery dates.
+    </p>
+
+    <p>
+      The intention was not to create another day-to-day delivery tracker.
+    </p>
+
+    <p>
+      It was to provide a programme-level view that could help answer some
+      fairly basic but important questions.
+    </p>
+
+    <ul>
+      <li>What are we trying to deliver?</li>
+      <li>How much effort is involved?</li>
+      <li>Do we have the capacity to support it?</li>
+      <li>Where are the constraints?</li>
+      <li>What dependencies could affect the timeline?</li>
+      <li>What does the current demand mean for the delivery forecast?</li>
+    </ul>
+
+    <p>
+      Having this information together made it easier to look at the programme
+      as a whole rather than looking at individual pieces of the plan in isolation.
+    </p>
+
+
+    <h3>PI Planning Is More Than Story Points</h3>
+
+    <p>
+      PI planning can sometimes become heavily focused on velocity and story
+      points.
+    </p>
+
+    <p>
+      They are useful measures, but they are only one part of the delivery picture.
+    </p>
+
+    <p>
+      From a programme perspective, I also need to understand the relationship
+      between <strong>available capacity and expected demand.</strong>
+    </p>
+
+    <p>
+      Even where a team appears to have enough capacity, delivery can still be
+      affected by dependencies, sequencing, external teams or platform readiness.
+    </p>
+
+    <p>
+      That is why I see PI planning as both a delivery planning activity and a
+      capacity management activity.
+    </p>
+
+    <p>
+      The question is not simply how much work we can commit to.
+    </p>
+
+    <p>
+      It is whether the planned work can realistically be delivered within the
+      capacity and constraints that exist.
+    </p>
+
+
+    <h3>The Planning Model Is Only As Good As The Data</h3>
+
+    <p>
+      One of the things I learned through this work is that building the
+      planning model is only part of the job.
+    </p>
+
+    <p>
+      The more difficult part is making sure the information behind it is reliable.
+    </p>
+
+    <ul>
+      <li>Who owns the estimate?</li>
+      <li>Who validates the capacity?</li>
+      <li>Who owns the dependency?</li>
+      <li>Who confirms the change?</li>
+      <li>How often is the information updated?</li>
+      <li>What is the source of truth?</li>
+    </ul>
+
+    <p>
+      These questions become increasingly important as the programme grows.
+    </p>
+
+    <p>
+      Without clear ownership, planning can quickly become an exercise in
+      chasing information and reconciling different versions of the same story.
+    </p>
+
+    <p>
+      That is where governance becomes important.
+    </p>
+
+    <p>
+      Not governance for the sake of governance, but enough structure to make
+      sure people know what they are responsible for and that the information
+      being used for decisions can be trusted.
+    </p>
+
+
+    <h3>Reusable Planning And Process Artefacts</h3>
+
+    <p>
+      Another part of the work was creating reusable planning and process
+      artefacts.
+    </p>
+
+    <p>
+      This included a PI calendar, capacity planning model, planning views
+      connecting monthly, weekly, sprint and PI planning, as well as reusable
+      process documentation templates.
+    </p>
+
+    <p>
+      The reason for doing this was simple.
+    </p>
+
+    <p>
+      I did not want the programme to depend on one person recreating the same
+      information every time.
+    </p>
+
+    <p>
+      A common structure makes it easier for teams to understand how planning
+      works and gives future teams something they can build on.
+    </p>
+
+    <p>
+      For me, that is one of the practical benefits of good programme delivery.
+      When you solve a problem once, try to turn the solution into something
+      that can be reused.
+    </p>
+
+
+    <h3>What I Learned</h3>
+
+    <p>
+      The biggest lesson for me was that <strong>creating the plan was actually
+      the easy part.</strong>
+    </p>
+
+    <p>
+      The harder part was keeping the information connected, current and trusted.
+    </p>
+
+    <p>
+      A useful programme planning model needs good data, clear ownership and
+      regular review. It also needs to stay close enough to actual delivery
+      that changes in the real world are reflected in the plan.
+    </p>
+
+    <p>
+      A programme plan should not become something that is created once and
+      then protected.
+    </p>
+
+    <p>
+      It needs to change as the programme changes.
+    </p>
+
+    <p>
+      That does not mean constantly changing the target.
+    </p>
+
+    <p>
+      It means having an honest view of where delivery is today and understanding
+      what needs to change when the reality is different from the original
+      assumption.
+    </p>
+
+
+    <h3>What I Would Do Differently</h3>
+
+    <p>
+      If I were starting the same exercise again, I would establish ownership
+      and definitions much earlier.
+    </p>
+
+    <p>
+      I would agree upfront what we mean by capacity, demand, effort, dependency
+      and forecast.
+    </p>
+
+    <p>
+      I would also establish the relationship between the different planning
+      horizons from the beginning rather than allowing each level of planning
+      to develop independently.
+    </p>
+
+    <p>
+      Most importantly, I would make the assumptions behind the plan visible.
+    </p>
+
+    <p>
+      Forecasts are always based on assumptions. Making those assumptions clear
+      makes it much easier to have the right conversations when something changes.
+    </p>
+
+
+    <h3>From Planning To Delivery Control</h3>
+
+    <p>
+      For me, this is the real difference between programme planning and
+      delivery control.
+    </p>
+
+    <p>
+      Planning gives you a view of what you expect to happen.
+    </p>
+
+    <p>
+      Capacity planning tells you whether you have the ability to support it.
+    </p>
+
+    <p>
+      Integrated planning connects the work, people, dependencies and timelines.
+    </p>
+
+    <p>
+      Delivery tracking tells you what is actually happening.
+    </p>
+
+    <p>
+      Delivery control brings those views together so that you can see where
+      the programme is and make informed decisions when things change.
+    </p>
+
+    <p>
+      That is ultimately what I want programme planning to achieve.
+    </p>
+
+    <p>
+      Not another report.
+    </p>
+
+    <p>
+      Not another spreadsheet.
+    </p>
+
+    <p>
+      Not another status meeting.
+    </p>
+
+    <p>
+      A reliable view of <strong>where we are, where we are going, what could
+      affect the outcome and what decisions need to be made.</strong>
+    </p>
+
+    <p>
+      After working across complex technology and transformation programmes,
+      I have come to see programme planning as much more than a planning activity.
+    </p>
+
+    <div class="closing">
+
+      <p>
+        <strong>A good plan gives you visibility.</strong>
+      </p>
+
+      <p>
+        <strong>Good delivery control gives you the ability to act on that visibility.</strong>
+      </p>
+
+      <div class="jcx-footer">
+
+        <p>
+          <strong>JCX360</strong>
+        </p>
+
+        <p>
+          Secure. Scale. Sustain.
+        </p>
+
+        <p>
+          Architecture. Cloud. AI. Technology Delivery.
+        </p>
+
+        <p>
+          No hype. Just practical thinking, experience and continuous learning.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <div class="post-external">
+
+    <a
+      href="https://www.linkedin.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >
+      View discussion on LinkedIn
+    </a>
+
+  </div>
+
+
+  <div class="post-footer-nav">
+
+    <div>
+      <a href="/#series">
+        ← Back To JCX360
+      </a>
+    </div>
+
+    <div>
+      <a href="/">
+        Home →
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © <span id="year"></span>
+    John Christopher · JCX360-3S (Secure · Scale · Sustain)
+
+    <span class="footer-note">
+      JCX360 is my personal platform for architecture, delivery, and thought leadership,
+      focused on cloud, AI, and enterprise-scale systems.<br>
+
+      All views shared here are my own, based on industry experience and independent
+      research, and are shared to support learning and knowledge exchange across the
+      professional community.
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
