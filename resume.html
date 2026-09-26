@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>John Christopher | Resume | JCX360</title>
+  <meta name="description" content="John Christopher — Technology Delivery Leader and Solution Architect with 20+ years of experience across technology delivery, cloud, SaaS, AI, data and enterprise transformation." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', sans-serif;
+      background:
+        radial-gradient(
+          1200px 600px at 10% -10%,
+          #13224a 0%,
+          var(--bg) 40%
+        ),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11, 18, 32, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Resume Header */
+
+    .resume-header {
+      padding: 56px 0 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resume-header h2 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .resume-title {
+      color: var(--accent);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .resume-intro {
+      color: var(--muted);
+      max-width: 900px;
+      font-size: 15px;
+    }
+
+    .resume-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      border-color: var(--primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+      );
+      color: #020617;
+      border: none;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-title {
+      font-size: 25px;
+      margin: 0 0 22px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Achievements */
+
+    .achievement-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .achievement-list li {
+      position: relative;
+      padding: 12px 0 12px 28px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .achievement-list li:last-child {
+      border-bottom: none;
+    }
+
+    .achievement-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 4px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .skill-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .skill-item h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .skill-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Thought Leadership */
+
+    .thought-leadership {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .thought-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .thought-link {
+      display: inline-block;
+      padding: 12px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .thought-link:hover {
+      border-color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Experience */
+
+    .experience-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 20px;
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-header {
+      margin-bottom: 18px;
+    }
+
+    .experience-header h4 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .experience-meta {
+      color: var(--accent);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .experience-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .experience-list li {
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .experience-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Education */
+
+    .education-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .education-item h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .education-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Certifications */
+
+    .certifications {
+      columns: 2;
+      column-gap: 40px;
+      padding-left: 20px;
+    }
+
+    .certifications li {
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    .footer-note {
+      display: block;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        height: auto;
+        min-height: 72px;
+        padding: 12px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resume-header h2 {
+        font-size: 32px;
+      }
+
+      .certifications {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <div class="brand">
+
+      <a href="/" aria-label="JCX360 Home">
+        <img
+          src="/images/JCX360_orbit_logo_2.png"
+          alt="JCX360"
+          class="brand-logo"
+        />
+      </a>
+
+      <div>
+        <h1>John Christopher</h1>
+        <span>Hybrid Technology Leader (Arch + Delivery)</span>
+      </div>
+
+    </div>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/series/series-1.html">Series</a>
+      <a href="/#contact">Contact</a>
+    </div>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- Resume Header -->
+
+  <section class="resume-header">
+
+    <div class="container">
+
+      <h2>John Christopher</h2>
+
+      <div class="resume-title">
+        Technology Delivery Leader &amp; Solution Architect
+      </div>
+
+      <div class="resume-intro">
+
+        20+ years of experience across software development,
+        systems integration, cloud transformation, SaaS implementations,
+        data engineering, cybersecurity and digital delivery.
+
+      </div>
+
+      <div class="resume-actions">
+
+        <a
+          class="btn btn-primary"
+          href="https://www.linkedin.com/in/mjohnchristopher/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          class="btn"
+          href="/#contact"
+        >
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Professional Summary -->
+
+  <section>
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Professional Summary
+      </h3>
+
+      <div class="card">
+
+        <p>
+          Technology Delivery Leader and Solution Architect with 20+ years
+          of experience across software development, systems integration,
+          cloud transformation, SaaS implementations, data engineering,
+          cybersecurity and digital delivery.
+        </p>
+
+        <p>
+          Proven experience leading and delivering complex,
+          multi-million-euro technology programmes for global clients
+          across financial services, energy, manufacturing, healthcare
+          and HR/payroll. I have led global engineering and technology
+          teams while remaining closely involved in solution architecture,
+          technical direction, delivery planning and engineering execution.
+        </p>
+
+        <p>
+          Strong experience in Agile and SAFe, with a focus on building
+          high-performing teams, managing complex technology delivery,
+          aligning technology and business teams, and taking solutions
+          from design through engineering, integration, UAT and production.
+        </p>
+
+        <p>
+          More recently, my focus has expanded into AI and intelligent
+          agent delivery, including Copilot Studio, Microsoft Fabric
+          and Fabric Notebooks. This includes end-to-end AI delivery,
+          automation and orchestration, with involvement across UAT,
+          production readiness, governance and production delivery.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Key Achievements -->
+
+  <section>
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Key Achievements
+      </h3>
+
+      <div class="card">
+
+        <ul class="achievement-list">
+
+          <li>
+            Directed <strong>~10 Agile data programme initiatives</strong>
+            for a leading banking client, leading <strong>10+ cross-functional
+            Scrum teams and 100+ data engineers</strong> under SAFe®.
+            Delivered large-scale data and regulatory transformation
+            programmes, improving data quality, compliance and delivery
+            predictability.
+          </li>
+
+          <li>
+            Delivered <strong>a global Direct-to-Consumer insurance platform
+            from Day 0 to launch</strong> for an Insurance client,
+            coordinating cross-functional teams across the USA, Europe,
+            India and APAC.
+          </li>
+
+          <li>
+            <strong>Migrated 25+ business-critical applications to Azure</strong>
+            for a major UK energy client, supporting cloud-first operations
+            and reducing infrastructure costs.
+          </li>
+
+          <li>
+            Delivered <strong>SaaS-based Global HCM and Payroll Control
+            Platform solutions</strong> for multiple global clients,
+            leading integrations across <strong>Workday, SAP SuccessFactors,
+            Oracle and ADP</strong> using API-driven architectures.
+          </li>
+
+          <li>
+            Led <strong>the end-to-end testing function</strong> for a
+            large-scale <strong>SAP HCM to Workday HCM transformation</strong>,
+            coordinating testing, integration and business readiness.
+          </li>
+
+          <li>
+            Architected and delivered a UK rail client's DRACAS system,
+            developed a telecom Contact Centre Agent Desktop, and created
+            an automated maintenance tool delivering <strong>$250K in
+            annual savings</strong>.
+          </li>
+
+          <li>
+            <strong>Provided technical leadership and mentorship to 50+
+            software engineers</strong>, overseeing concurrent software
+            development, integration, migration and transformation
+            initiatives.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Core Skills -->
+
+  <section>
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Core Skills
+      </h3>
+
+      <div class="skills-grid">
+
+        <div class="skill-item">
+          <h4>Programme &amp; Delivery</h4>
+          <p>
+            SDLC | Agile &amp; Waterfall | PI Planning |
+            Risk &amp; Issue Management | Governance &amp; Reporting |
+            Vendor Management | Regulatory &amp; Compliance |
+            SOC 1 | SOC 2
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <h4>Leadership &amp; Collaboration</h4>
+          <p>
+            Engineering Leadership | Team Building |
+            Stakeholder Engagement | C-Suite to Delivery Teams |
+            Change &amp; Transformation | Multi-Geography Delivery
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <h4>Cloud &amp; SaaS</h4>
+          <p>
+            Azure | AWS | Workday | SAP SuccessFactors |
+            Oracle | D365 | Salesforce | HCM/Payroll Integrations |
+            API Development | M&amp;A Technology Integration |
+            AKS | EC2 | SQS | Kubernetes | Docker
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <h4>Data &amp; Integration</h4>
+          <p>
+            Azure Data Factory | Data Lakes | ETL |
+            Data Governance | BI | PostgreSQL | SQL |
+            Teradata | Informatica | REST APIs | Kafka |
+            Event-Driven Architecture | API-Driven Integration
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <h4>AI &amp; Automation</h4>
+          <p>
+            Generative AI | LLM Applications | Microsoft Copilot Studio |
+            Microsoft Fabric | Azure AI Foundry | LangChain |
+            LangGraph | Agentic AI | RAG | AI Automation |
+            Prompt Engineering | Responsible AI
+          </p>
+        </div>
+
+        <div class="skill-item">
+          <h4>Engineering &amp; Tools</h4>
+          <p>
+            Azure DevOps | Jira | Confluence | GitHub |
+            Jenkins | Spring Boot | .NET Core | Microservices |
+            C# | Python | JavaScript | React | Node.js | Angular
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Thought Leadership -->
+
+  <section class="thought-leadership">
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Thought Leadership
+      </h3>
+
+      <p class="section-subtitle">
+        Selected architecture and technology thinking from JCX360.
+      </p>
+
+      <div class="thought-links">
+
+        <a
+          class="thought-link"
+          href="/series/series-1.html"
+        >
+          Cloud-Native &amp; Responsible AI
+        </a>
+
+        <a
+          class="thought-link"
+          href="/series/series-2/series-2.html"
+        >
+          Enterprise Architecture &amp; AI Systems
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Work Experience -->
+
+  <section>
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Work Experience
+      </h3>
+
+
+      <!-- Accenture -->
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h4>
+            Technical Delivery Lead Manager | Accenture
+          </h4>
+
+          <div class="experience-meta">
+            Jun 2021 – Jan 2025 &amp; Feb 2026 – Present
+          </div>
+
+        </div>
+
+        <ul class="experience-list">
+
+          <li>
+            Technology Delivery Lead – AI &amp; Agents Delivery:
+            Leading end-to-end delivery of AI agent solutions using
+            Microsoft Copilot Studio, Fabric Notebooks and Power BI,
+            covering UAT, data integration, AI validation, governance,
+            production readiness, deployment and hypercare.
+          </li>
+
+          <li>
+            Lead end-to-end delivery planning for a large-scale
+            Microsoft Dynamics 365 transformation within the health
+            insurance sector, establishing integrated delivery plans,
+            resource models, release roadmaps and engineering capacity
+            across multiple Value Streams.
+          </li>
+
+          <li>
+            Drive programme governance, cross-functional stakeholder
+            engagement and integrated delivery planning to support
+            phased releases, delivery predictability and senior client
+            decision-making.
+          </li>
+
+          <li>
+            Direct 10+ cross-functional Scrum teams and 100+ data
+            engineers as Technical Delivery Manager / RTE, delivering
+            enterprise-scale data programmes including BCBS239, Murex 3.0,
+            Athena, IFRS9, Basel IV, nCino and SRB for a leading Irish bank.
+          </li>
+
+          <li>
+            Manage the full SDLC, regulatory compliance and operational
+            readiness across 10+ major regulatory programmes.
+          </li>
+
+          <li>
+            Facilitate PI Planning, Scrum of Scrums, dependency management
+            and Agile metrics reporting, improving delivery visibility,
+            predictability and outcomes.
+          </li>
+
+          <li>
+            Mentor Engineering Technical Leads and Scrum Leads, supporting
+            their progression into next-level leadership roles.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Payslip -->
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h4>
+            Senior Manager – Technical Project Delivery | Payslip Ltd.
+          </h4>
+
+          <div class="experience-meta">
+            Jan 2025 – Nov 2025
+          </div>
+
+        </div>
+
+        <ul class="experience-list">
+
+          <li>
+            Lead SaaS payroll and HCM integrations across Workday,
+            SAP, Oracle and ADP, improving payroll efficiency by 40%
+            and supporting compliance across 10+ geographies.
+          </li>
+
+          <li>
+            Lead payroll transformation programmes, integrating
+            Workday HCM through PECI/GPC-DCoD with global payroll vendors,
+            enabling scalable and compliant payroll operations across
+            10+ countries while reducing processing errors.
+          </li>
+
+          <li>
+            Oversaw delivery of an AI-powered payroll platform,
+            automating manual workflows and reducing operational effort
+            by 35%.
+          </li>
+
+          <li>
+            Partnered with C-suite stakeholders to align technology
+            solutions with business objectives and delivery priorities.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Cognizant -->
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h4>
+            Technical Delivery Manager | Cognizant Technology Solutions
+          </h4>
+
+          <div class="experience-meta">
+            Nov 2008 – Jun 2021
+          </div>
+
+        </div>
+
+        <ul class="experience-list">
+
+          <li>
+            Led the end-to-end testing function for a large-scale
+            SAP HCM to Workday HCM transformation, ensuring seamless
+            transition of multiple business units to modern, compliant
+            HR and payroll systems with zero disruption to operations.
+          </li>
+
+          <li>
+            Delivered an end-to-end Day 0 to launch global
+            Direct-to-Consumer insurance platform for Insurance Client.
+          </li>
+
+          <li>
+            Led cloud migration initiative for UK energy client,
+            modernising core systems, reducing risk and improving
+            scalability.
+          </li>
+
+          <li>
+            Technically managed Microsoft Dynamics 365 delivery programs.
+          </li>
+
+          <li>
+            Oversaw engineering cross-functional teams, aligning
+            project deliverables to schedules, scope and business
+            objectives.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Servion -->
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h4>
+            Senior Software Engineer | Servion Global Solution
+          </h4>
+
+          <div class="experience-meta">
+            Dec 2006 – Oct 2008
+          </div>
+
+        </div>
+
+        <ul class="experience-list">
+
+          <li>
+            Technical Lead for Telecom Agent Desktop product;
+            designed and developed key components using .NET and SQL.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Netlink -->
+
+      <div class="experience-item">
+
+        <div class="experience-header">
+
+          <h4>
+            Analyst Programmer | Netlink Technologies
+          </h4>
+
+          <div class="experience-meta">
+            Sep 2005 – Dec 2006
+          </div>
+
+        </div>
+
+        <ul class="experience-list">
+
+          <li>
+            Developed ERP modules for textile manufacturing
+            application using .NET and SQL.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Education -->
+
+  <section>
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Education
+      </h3>
+
+      <div class="education-item">
+
+        <h4>
+          Bachelor of Technology in Information Technology
+        </h4>
+
+        <p>
+          2001 – 2004
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Certifications -->
+
+  <section>
+
+    <div class="container">
+
+      <h3 class="section-title">
+        Certifications &amp; Professional Development
+      </h3>
+
+      <div class="card">
+
+        <ul class="certifications">
+
+          <li>
+            Cognitive Project Management in AI (CPMAI)™
+          </li>
+
+          <li>
+            SAFe® 5 Scrum Master (SSM)
+          </li>
+
+          <li>
+            Agentic AI Fundamentals: Architectures, Frameworks, and Applications
+          </li>
+
+          <li>
+            Microsoft Azure AI Essentials Professional Certificate
+          </li>
+
+          <li>
+            Generative AI Overview for Project Managers – PMI®
+          </li>
+
+          <li>
+            Project Management Foundations: Risk – PMI® / NASBA
+          </li>
+
+          <li>
+            Project Planning for Successful Project Management – Microsoft / PMI®
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © <span id="year"></span>
+    John Christopher · JCX360-3S (Secure · Scale · Sustain)
+
+    <span class="footer-note">
+      JCX360 is my personal platform for architecture, delivery,
+      and thought leadership, focused on cloud, AI, and enterprise-scale systems.<br>
+      All views shared here are my own, based on industry experience
+      and independent research, and are shared to support learning
+      and knowledge exchange across the professional community.
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
