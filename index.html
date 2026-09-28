@@ -106,7 +106,7 @@
       align-items: center;
     }
 
-    .badge {
+    .badge1 {
       display: inline-block;
       padding: 6px 12px;
       border-radius: 999px;
@@ -116,6 +116,20 @@
       font-weight: 600;
       margin-bottom: 16px;
     }
+
+.badge {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: 16px;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(79,124,255,0.12);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
 
     .hero h2 {
       font-size: 42px;
@@ -321,35 +335,39 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="container">
         <div class="card">
-          <div class="badge">Architecture · Cloud · AI · Delivery</div>
-          <h2>Designing Secure, Scalable, And Sustainable Enterprise Platforms</h2>
+                              <div class="badge1">Technology Delivery & Transformation · AI · Cloud · Architecture</div>
+
+          <h3 class="section-title">Designing Secure, Scalable, and Sustainable Enterprise Platforms</h3>
           <p>
-I work at the intersection of enterprise architecture, cloud-native platforms, responsible AI and technology delivery. My focus is on building and delivering platforms that not only scale, but also operate reliably and hold up under real-world delivery and operational pressure.          </p>
-          <div class="cta">
-            <a class="btn btn-primary" href="#series">Explore Architecture Series</a>
+I work at the intersection of enterprise architecture, cloud-native platforms, responsible AI and technology delivery. My focus is on designing and delivering platforms that scale, operate reliably and work in the real world.
+<h4 class="section-title">Where architecture meets delivery reality and platforms actually ship.</h4>
+          <ul>
+            <p>1️⃣ <b>Architecture that ships</b> - Translating strategy into buildable, operable platform designs with clear ownership, delivery pathways, and operational readiness.</p>
+            <p>2️⃣ <b>Predictable delivery at scale</b> - Turning complex, multi-team programmes into structured, governed, and predictable delivery across regions and time zones.</p>
+            <p>3️⃣ <b>Simplifying enterprise complexity</b> - Reducing technical and organisational friction so platforms are easier to run, support, and scale over time.</p>
+          </ul>
+
+         
+<div class="cta">
+            <a class="btn btn-primary" href="#series">JCX360 Technology Insights</a>
             <a class="btn" href="https://www.linkedin.com/in/mjohnchristopher/" target="_blank">Connect On LinkedIn</a>
           </div>
         </div>
-        <div class="hero-card">
-          <h4>Where architecture meets delivery reality and platforms actually ship.</h4>
-          <ul>
-            <li>1️⃣ <b>Architecture that ships</b> - Translating strategy into buildable, operable platform designs with clear ownership, delivery pathways, and operational readiness.</li>
-            <li>2️⃣ <b>Predictable delivery at scale</b> - Turning complex, multi-team programmes into structured, governed, and predictable delivery across regions and time zones.</li>
-            <li>3️⃣ <b>Simplifying enterprise complexity</b> - Reducing technical and organisational friction so platforms are easier to run, support, and scale over time.</li>
-          </ul>
-        </div>
+    
       </div>
     </section>
+
 
 <!-- About -->
 <section id="about">
   <div class="container">
-    <h3 class="section-title">About Myself (JC)</h3>
     <div class="card">
+          <h3 class="section-title">About myself (JC)</h3>
+
       <p class="section-subtitle">
-    </p>
+    </p>  
       <p>
 I am a Hybrid Technology Delivery Leader and Solution Architect with over 20 years of experience turning complex technology programmes into solutions that work in the real world.      </p>
 
@@ -440,7 +458,7 @@ What I enjoy most is taking complex, sometimes messy problems and turning them i
 <!-- How I Work -->
 <section id="how-i-work">
   <div class="container">
-    <h3 class="section-title">How I Work</h3>
+    <h3 class="section-title">How I work?</h3>
     <p class="section-subtitle">
       A practical, delivery-focused approach grounded in real-world constraints.
     </p>
@@ -448,7 +466,7 @@ What I enjoy most is taking complex, sometimes messy problems and turning them i
     <div class="grid-3">
      
 <div class="card">
-        <h4>Delivery Reality First</h4>
+        <h4>Delivery reality first</h4>
         <p>
           I optimise for what will work in real organisations  with real people, constraints,
           and regulatory environments.
@@ -644,41 +662,41 @@ What I enjoy most is taking complex, sometimes messy problems and turning them i
     <!-- Series -->
     <section id="series" class="series">
       <div class="container">
-        <h3 class="section-title">Delivery Series, Architecture, AI & Technical Guides</h3>
+        <h3 class="section-title">Delivery · Architecture · AI · Technical Guides</h3>
         <p class="section-subtitle">
           A structured series exploring modern enterprise architecture, AI systems, and cloud-native platforms.
         </p>
         <div class="series-list">
           <div class="series-item">
             <div class="check">
-              <a href="/series/series-1.html"> <h5>🧠 Series 1  Cloud-Native & Responsible AI Foundations</h5></a>
+              <a href="/series/series-1.html"> <h5>Series 1:  Cloud-Native & Responsible AI Foundations</h5></a>
             </div>
             <span>AI-Powered Platform .AI Foundry .AI Decision Engine .Landing Zones & AI Orchestration · Observability · DevSecOps · JCX360-3S</span>
           </div>
           <div class="series-item">
             <div class="check">
-              <a href="/series/series-2/series-2.html"> <h5>🧠 Series 2  Advanced Enterprise Architecture & AI Systems </h5></a>
+              <a href="/series/series-2/series-2.html"> <h5>Series 2:  Advanced Enterprise Architecture & AI Systems </h5></a>
             </div>
             <span>Event-Driven AI · Multi-Agent Systems · Platform Engineering · Operating AI At Scale</span>
           </div>
           <div class="series-item">
-            <div class="check"><a href="/platform/platform-git-handbook.html"><h5>🛠 Platform GitHub Handbook</h5></a></div>
+            <div class="check"><a href="/platform/platform-git-handbook.html"><h5>Platform GitHub Handbook</h5></a></div>
             <span>GitHub Handbook</span>
           </div>
           <div class="series-item">
-            <div class="check"><a href="/platform/github-pages-custom-domain.html"><h5>🛠 Platform Setup</h5></a></div>
+            <div class="check"><a href="/platform/github-pages-custom-domain.html"><h5>Platform Setup</h5></a></div>
             <span>Hosting GitHub's Pages with a Custom Domain (for Free)</span>
           </div>
           <div class="series-item">
-            <div class="check"><a href="/series/intelligence-layer.html"><h5>🚀 The Intelligence Layer</h5></a></div>
+            <div class="check"><a href="/series/intelligence-layer.html"><h5>The Intelligence Layer</h5></a></div>
             <span>ML → DL → LLM → RAG → Vector DB</span>
           </div>
           <div class="series-item">
-            <div class="check"><a href="/platform/manual-maintenance-to-automation.html"><h5>🚀 Manual to Automated Operations</h5></a></div>
+            <div class="check"><a href="/platform/manual-maintenance-to-automation.html"><h5>Manual to Automated Operations</h5></a></div>
             <span>From Manual Maintenance to Full Automation  A Lesson from 2008</span>
           </div>
           <div class="series-item">
-            <div class="check"><a href="/delivery/programme-planning-to-delivery-control.html"><h5>🚀 Planning to Delivery Control</h5></a></div>
+            <div class="check"><a href="/delivery/programme-planning-to-delivery-control.html"><h5>Planning to Delivery Control</h5></a></div>
             <span>From Programme Planning to Delivery Control</span>
           </div>
         </div>
@@ -688,7 +706,7 @@ What I enjoy most is taking complex, sometimes messy problems and turning them i
     <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <h3 class="section-title">Get In Touch</h3>
+        <h3 class="section-title">Let’s Collaborate</h3>
         <p class="section-subtitle">
           If you are working on large-scale cloud, AI, or enterprise architecture initiatives, I’m always happy to exchange ideas.
         </p>
@@ -702,7 +720,7 @@ What I enjoy most is taking complex, sometimes messy problems and turning them i
 
   <footer>
     <div class="container">
-      © <span id="year"></span> John Christopher · JCX360—3S (Secure · Scale · Sustain)
+      © <span id="year"></span> John Christopher · JCX360 — 3S (Secure · Scale · Sustain)
     </div>
   <span class="footer-note">
     JCX360 is my personal platform for architecture, delivery, and thought leadership, focused on cloud, AI, and enterprise-scale systems.<br>

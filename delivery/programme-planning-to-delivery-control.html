@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>JCX360 — From Programme Planning To Delivery Control</title>
-  <meta name="description" content="From Programme Planning To Delivery Control — practical lessons from complex technology and transformation programmes." />
+  <meta name="description" content="From programme planning to delivery control — practical lessons from enterprise technology delivery." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,16 +20,20 @@
       --border: #1f2933;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(
-        1200px 600px at 10% -10%,
-        #13224a 0%,
-        var(--bg) 40%
-      ), var(--bg);
+      background:
+        radial-gradient(
+          1200px 600px at 10% -10%,
+          #13224a 0%,
+          var(--bg) 40%
+        ),
+        var(--bg);
       color: var(--text);
       line-height: 1.7;
     }
@@ -49,12 +53,10 @@
       padding: 0 24px;
     }
 
-    /* Header */
-
     header {
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(6px);
-      background: rgba(11,18,32,0.6);
+      background: rgba(11, 18, 32, 0.6);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -99,27 +101,52 @@
       display: block;
     }
 
-    /* Article */
+    a.brand-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a.brand-link:hover,
+    a.brand-link:focus,
+    a.brand-link:active {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Blog layout */
+
+    .post-header {
+      padding: 48px 0 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .post-header h2 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .post-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
 
     .post-content {
-      padding: 48px 0 0;
       max-width: 900px;
       margin: 0 auto;
     }
 
     .post-content h2 {
-      font-size: 36px;
-      line-height: 1.2;
-      margin: 0 0 32px;
-      letter-spacing: -0.5px;
+      margin-top: 40px;
+      font-size: 22px;
     }
 
     .post-content h3 {
-      margin-top: 48px;
-      margin-bottom: 18px;
-      font-size: 24px;
-      line-height: 1.3;
-      letter-spacing: -0.2px;
+      margin-top: 40px;
+      font-size: 22px;
+      line-height: 1.35;
     }
 
     .post-content p {
@@ -127,58 +154,30 @@
       color: var(--text);
     }
 
-    .post-content strong {
-      font-weight: 600;
-    }
-
     .post-content ul {
-      margin: 18px 0 24px 20px;
-      padding-left: 10px;
+      margin: 16px 0 24px 20px;
+      padding-left: 20px;
     }
 
     .post-content li {
       margin-bottom: 10px;
     }
 
-    .planning-model {
+    .planning-flow {
       margin: 28px 0;
-      padding: 22px 24px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      text-align: center;
+      padding: 20px 24px;
+      border-left: 3px solid var(--primary);
+      background: rgba(79, 124, 255, 0.06);
+      border-radius: 6px;
       font-weight: 600;
+      text-align: center;
       color: var(--text);
-    }
-
-    .planning-model span {
-      color: var(--accent);
-      padding: 0 8px;
-    }
-
-    .closing {
-      margin-top: 48px;
-      padding: 28px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .closing p {
-      margin: 10px 0;
-    }
-
-    .jcx-footer {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
     }
 
     .post-external {
       max-width: 900px;
       margin: 40px auto 0;
-      padding-top: 12px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
       font-size: 12px;
       color: var(--muted);
@@ -199,25 +198,16 @@
       color: var(--muted);
     }
 
-    .post-meta {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Footer Navigation */
-
     .post-footer-nav {
       max-width: 900px;
       margin: 24px auto 0;
-      padding-top: 12px;
+      padding-top: 16px;
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 13px;
     }
-
-    /* Footer */
 
     footer {
       padding: 40px 0;
@@ -230,45 +220,33 @@
 
     .footer-note {
       display: block;
-      margin-top: 8px;
+      max-width: 850px;
+      margin: 14px auto 0;
       line-height: 1.6;
     }
 
-    /* Responsive */
-
     @media (max-width: 700px) {
-
       .nav {
         height: auto;
         padding: 14px 0;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        flex-direction: column;
+        gap: 12px;
       }
 
       .nav-links a {
-        margin-left: 10px;
+        margin: 0 8px;
       }
 
-      .post-content {
-        padding-top: 32px;
-      }
-
-      .post-content h2 {
+      .post-header h2 {
         font-size: 28px;
       }
 
-      .post-content h3 {
-        font-size: 21px;
+      .post-content {
+        width: 100%;
       }
 
-      .planning-model {
-        text-align: left;
-        line-height: 2;
+      .planning-flow {
+        font-size: 14px;
       }
     }
   </style>
@@ -298,7 +276,7 @@
 
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="/#series">Series</a>
+      <a href="/series/series-1.html">Series</a>
       <a href="/#contact">Contact</a>
     </div>
 
@@ -310,8 +288,16 @@
 
   <article class="post-content">
 
-    <h2>From Programme Planning To Delivery Control</h2>
-    <div class="post-meta">Published on September 25, 2026</div>
+    <div class="post-header">
+
+      <h2>From programme planning to delivery control</h2>
+
+      <div class="post-meta">
+        Published on September 25, 2026
+      </div>
+
+    </div>
+
 
     <p>
       During my recent programme delivery work, one thing became very clear to me.
@@ -330,7 +316,7 @@
     <p>
       Different teams were looking at planning from different perspectives.
       Some were working at a monthly level, delivery teams were working through
-      sprints, and programme planning was focused on PI commitments and
+      sprints, while programme planning was focused on PI commitments and
       longer-term delivery.
     </p>
 
@@ -343,8 +329,8 @@
     </p>
 
     <p>
-      For me, good programme planning is not about creating another project
-      plan or another report. It is about creating a connected view of
+      For me, good programme planning is not about creating another project plan
+      or another report. It is about creating a connected view of
       <strong>capacity, demand, delivery, dependencies and timing.</strong>
     </p>
 
@@ -353,20 +339,14 @@
     </p>
 
 
-    <h3>Connecting The Planning View</h3>
+    <h3>Connecting the planning view</h3>
 
     <p>
       The approach I worked with was based around four connected stages:
     </p>
 
-    <div class="planning-model">
-      Capacity Projection
-      <span>→</span>
-      Integrated Plan
-      <span>→</span>
-      Resource Demand
-      <span>→</span>
-      Detailed Execution
+    <div class="planning-flow">
+      Capacity projection → Integrated plan → Resource demand → Detailed execution
     </div>
 
     <p>
@@ -404,22 +384,14 @@
     </p>
 
 
-    <h3>Connecting Quarterly, Monthly, Weekly, Sprint And PI Planning</h3>
+    <h3>Connecting quarterly, monthly, weekly, sprint and PI planning</h3>
 
     <p>
       Another area I focused on was connecting the different planning horizons.
     </p>
 
-    <div class="planning-model">
-      Quarterly
-      <span>→</span>
-      PI
-      <span>→</span>
-      Monthly
-      <span>→</span>
-      Weekly
-      <span>→</span>
-      Sprint
+    <div class="planning-flow">
+      Quarterly → PI → Monthly → Weekly → Sprint
     </div>
 
     <p>
@@ -433,8 +405,8 @@
     </p>
 
     <p>
-      At the higher level, leadership needs to understand capacity, demand and
-      forecast delivery.
+      At the higher level, leadership needs to understand capacity, demand
+      and forecast delivery.
     </p>
 
     <p>
@@ -446,16 +418,16 @@
     </p>
 
     <p>
-      If the numbers change between them without a clear reason, confidence in
-      the plan starts to disappear.
+      If the numbers change between them without a clear reason, confidence
+      in the plan starts to disappear.
     </p>
 
 
-    <h3>Building The Integrated Programme Plan</h3>
+    <h3>Building the integrated programme plan</h3>
 
     <p>
-      As part of this work, I developed an integrated Microsoft Project view to
-      bring the different elements of programme delivery together.
+      As part of this work, I developed an integrated Microsoft Project view
+      to bring the different elements of programme delivery together.
     </p>
 
     <p>
@@ -470,7 +442,7 @@
 
     <p>
       It was to provide a programme-level view that could help answer some
-      fairly basic but important questions.
+      fairly basic but important questions:
     </p>
 
     <ul>
@@ -488,11 +460,10 @@
     </p>
 
 
-    <h3>PI Planning Is More Than Story Points</h3>
+    <h3>PI planning is more than story points</h3>
 
     <p>
-      PI planning can sometimes become heavily focused on velocity and story
-      points.
+      PI planning can sometimes become heavily focused on velocity and story points.
     </p>
 
     <p>
@@ -510,8 +481,8 @@
     </p>
 
     <p>
-      That is why I see PI planning as both a delivery planning activity and a
-      capacity management activity.
+      That is why I see PI planning as both a delivery planning activity and
+      a capacity management activity.
     </p>
 
     <p>
@@ -519,12 +490,12 @@
     </p>
 
     <p>
-      It is whether the planned work can realistically be delivered within the
-      capacity and constraints that exist.
+      It is whether the planned work can realistically be delivered within
+      the capacity and constraints that exist.
     </p>
 
 
-    <h3>The Planning Model Is Only As Good As The Data</h3>
+    <h3>The planning model is only as good as the data</h3>
 
     <p>
       One of the things I learned through this work is that building the
@@ -564,11 +535,10 @@
     </p>
 
 
-    <h3>Reusable Planning And Process Artefacts</h3>
+    <h3>Reusable planning and process artefacts</h3>
 
     <p>
-      Another part of the work was creating reusable planning and process
-      artefacts.
+      Another part of the work was creating reusable planning and process artefacts.
     </p>
 
     <p>
@@ -582,8 +552,8 @@
     </p>
 
     <p>
-      I did not want the programme to depend on one person recreating the same
-      information every time.
+      I did not want the programme to depend on one person recreating the
+      same information every time.
     </p>
 
     <p>
@@ -598,11 +568,11 @@
     </p>
 
 
-    <h3>What I Learned</h3>
+    <h3>What I learned</h3>
 
     <p>
-      The biggest lesson for me was that <strong>creating the plan was actually
-      the easy part.</strong>
+      The biggest lesson for me was that
+      <strong>creating the plan was actually the easy part.</strong>
     </p>
 
     <p>
@@ -630,12 +600,11 @@
 
     <p>
       It means having an honest view of where delivery is today and understanding
-      what needs to change when the reality is different from the original
-      assumption.
+      what needs to change when the reality is different from the original assumption.
     </p>
 
 
-    <h3>What I Would Do Differently</h3>
+    <h3>What I would do differently</h3>
 
     <p>
       If I were starting the same exercise again, I would establish ownership
@@ -643,8 +612,8 @@
     </p>
 
     <p>
-      I would agree upfront what we mean by capacity, demand, effort, dependency
-      and forecast.
+      I would agree upfront what we mean by capacity, demand, effort,
+      dependency and forecast.
     </p>
 
     <p>
@@ -663,11 +632,10 @@
     </p>
 
 
-    <h3>From Planning To Delivery Control</h3>
+    <h3>From planning to delivery control</h3>
 
     <p>
-      For me, this is the real difference between programme planning and
-      delivery control.
+      For me, this is the real difference between programme planning and delivery control.
     </p>
 
     <p>
@@ -717,67 +685,51 @@
       I have come to see programme planning as much more than a planning activity.
     </p>
 
-    <div class="closing">
+    <p>
+      <strong>A good plan gives you visibility.</strong>
+    </p>
+
+    <p>
+      <strong>Good delivery control gives you the ability to act on that visibility.</strong>
+    </p>
+
+
+    <div style="
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    ">
 
       <p>
-        <strong>A good plan gives you visibility.</strong>
+        <strong>JCX360</strong>
       </p>
 
       <p>
-        <strong>Good delivery control gives you the ability to act on that visibility.</strong>
+        Secure. Scale. Sustain.
       </p>
 
-      <div class="jcx-footer">
+      <p>
+        Architecture. Cloud. AI. Technology Delivery.
+      </p>
 
-        <p>
-          <strong>JCX360</strong>
-        </p>
-
-        <p>
-          Secure. Scale. Sustain.
-        </p>
-
-        <p>
-          Architecture. Cloud. AI. Technology Delivery.
-        </p>
-
-        <p>
-          No hype. Just practical thinking, experience and continuous learning.
-        </p>
-
-      </div>
+      <p>
+        No hype. Just practical thinking, experience and continuous learning.
+      </p>
 
     </div>
 
   </article>
 
 
-  <div class="post-external">
-
-    <a
-      href="https://www.linkedin.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="external-link"
-    >
-      View discussion on LinkedIn
-    </a>
-
-  </div>
-
-
   <div class="post-footer-nav">
 
     <div>
-      <a href="/#series">
-        ← Back To Tech Space
-      </a>
+      <a href="/series/series-2/series-2.html">← Back to Series</a>
     </div>
 
     <div>
-      <a href="/">
-        Home →
-      </a>
+      <a href="/">Home →</a>
     </div>
 
   </div>
@@ -789,16 +741,14 @@
 
   <div class="container">
 
-    © <span id="year"></span>
-    John Christopher · JCX360-3S (Secure · Scale · Sustain)
+    © <span id="year"></span> John Christopher · JCX360-3S (Secure · Scale · Sustain)
 
     <span class="footer-note">
       JCX360 is my personal platform for architecture, delivery, and thought leadership,
       focused on cloud, AI, and enterprise-scale systems.<br>
-
       All views shared here are my own, based on industry experience and independent
-      research, and are shared to support learning and knowledge exchange across the
-      professional community.
+      research, and are shared to support learning and knowledge exchange across
+      the professional community.
     </span>
 
   </div>
