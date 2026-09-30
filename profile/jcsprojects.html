@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>JCX360 — Project Experience</title>
+
+  <meta
+    name="description"
+    content="JC's project experience across AI, enterprise technology, cloud transformation, data, insurance, HCM, telecom and software engineering."
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        'Inter',
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+
+      background:
+        radial-gradient(
+          1200px 600px at 10% -10%,
+          #13224a 0%,
+          var(--bg) 40%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11, 18, 32, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    /* =========================
+       PAGE INTRO
+       ========================= */
+
+    .page-header {
+      padding: 64px 0 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(79, 124, 255, 0.12);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .page-header h2 {
+      margin: 0 0 14px;
+      font-size: 38px;
+      line-height: 1.2;
+      letter-spacing: -0.6px;
+    }
+
+    .page-header p {
+      max-width: 850px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       CONTENT
+       ========================= */
+
+    main {
+      padding-bottom: 40px;
+    }
+
+    .intro {
+      padding: 34px 0 20px;
+    }
+
+    .intro p {
+      max-width: 900px;
+      margin: 0 0 18px;
+      color: var(--text);
+    }
+
+    .journey {
+      margin: 20px 0 44px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--primary);
+      background: rgba(17, 24, 39, 0.55);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .journey strong {
+      color: var(--text);
+    }
+
+    .journey span {
+      color: var(--muted);
+    }
+
+    /* =========================
+       PROJECT SECTIONS
+       ========================= */
+
+    .project-section {
+      margin-top: 48px;
+      padding-top: 12px;
+    }
+
+    .section-title {
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      line-height: 1.3;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project {
+      margin-bottom: 42px;
+      padding: 28px 30px;
+      background: rgba(17, 24, 39, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .project h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .project-role {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .project p {
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    .project p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project ul {
+      margin: 14px 0 0 20px;
+      padding: 0;
+    }
+
+    .project li {
+      margin-bottom: 9px;
+      padding-left: 4px;
+    }
+
+    .project li:last-child {
+      margin-bottom: 0;
+    }
+
+    .technology {
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .technology strong {
+      color: var(--text);
+    }
+
+    /* =========================
+       CAREER PROGRESSION
+       ========================= */
+
+    .progression {
+      margin-top: 54px;
+      padding: 30px;
+      background: rgba(15, 26, 48, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .progression h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+
+    .progression p {
+      margin: 0 0 16px;
+    }
+
+    .progression p:last-child {
+      margin-bottom: 0;
+    }
+
+    .progression-path {
+      margin-top: 22px;
+      padding: 18px;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+    }
+
+    .progression-path strong {
+      color: var(--text);
+    }
+
+    /* =========================
+       FOOTER NAV
+       ========================= */
+
+    .post-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    .footer-note {
+      display: block;
+      max-width: 850px;
+      margin: 14px auto 0;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 760px) {
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .page-header {
+        padding-top: 42px;
+      }
+
+      .page-header h2 {
+        font-size: 30px;
+      }
+
+      .project {
+        padding: 22px;
+      }
+
+      .post-footer-nav {
+        gap: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="container nav">
+
+    <div class="brand">
+
+      <a href="/" aria-label="JCX360 Home">
+        <img
+          src="/images/JCX360_orbit_logo_2.png"
+          alt="JCX360"
+          class="brand-logo"
+        />
+      </a>
+
+      <div>
+        <h1>John Christopher</h1>
+        <span>Hybrid Technology Leader (Arch + Delivery)</span>
+      </div>
+
+    </div>
+
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/resume">Profile</a>
+      <a href="/series/series-1.html">Series</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+  <!-- PAGE INTRO -->
+
+  <section class="page-header">
+
+    <div class="badge">
+      Project Experience · Engineering · Architecture · Delivery
+    </div>
+
+    <h2>
+      From Engineering To Technology Leadership
+    </h2>
+
+    <p>
+      A selection of real-world technology programmes and projects
+      across AI, cloud, data, enterprise applications, insurance,
+      financial services, energy, telecom and manufacturing.
+    </p>
+
+  </section>
+
+
+  <!-- INTRODUCTION -->
+
+  <section class="intro">
+
+    <p>
+      My career has developed across different layers of technology
+      delivery. I started with hands-on software engineering and
+      gradually moved into technical leadership, solution architecture,
+      programme delivery and enterprise technology transformation.
+    </p>
+
+    <p>
+      The projects below reflect that progression. They cover both
+      deep engineering work and large-scale technology delivery where
+      architecture, people, governance and execution need to work
+      together.
+    </p>
+
+    <div class="progression-path">
+
+      <strong>
+        Engineering → Technical Leadership → Solution Architecture
+        → Technology Delivery → Programme Leadership
+      </strong>
+
+      <br />
+
+      <span>
+        The role changed over time, but the engineering foundation
+        remained central to how I approach technology delivery.
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- AI -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>AI Programme And Intelligent Agent Delivery</h2>
+
+      <p>
+        Moving from traditional technology delivery into AI and
+        intelligent agent programmes.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>AI Programme And AI Automation</h3>
+
+      <div class="project-role">
+        AI Delivery Lead
+      </div>
+
+      <p>
+        Leading [ABC]s Ireland's AI programme across field operations,
+        compliance, customer services and knowledge management.
+      </p>
+
+      <p>
+        The portfolio includes Meter Dial Verification, Volume
+        Corrector Validation, Compliance Validation, FOI, Search and
+        Retrieval, CRM and Risk Management agents.
+      </p>
+
+      <p>
+        The role covers end-to-end delivery from requirements and
+        design through development, testing, UAT and production
+        readiness, working across AI engineers, data engineers,
+        architects, testers and business SMEs.
+      </p>
+
+      <p>
+        I established a common delivery approach for AI use cases and
+        manage programme governance, RAID, stakeholder coordination,
+        security, data protection and value realisation.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        Microsoft Copilot Studio · Microsoft Fabric · Fabric Notebooks
+        · Power BI · AI Agents . Power Platform · LLM Orchestration · Azure AI Foundry
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- D365 -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>D365 Transformation</h2>
+
+      <p>
+        Integrated programme planning across technology, engineering,
+        architecture and business delivery.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Microsoft Dynamics 365 Transformation</h3>
+
+      <div class="project-role">
+        Programme Intgration Manager
+      </div>
+
+      <p>
+        Led integrated delivery planning for a large-scale Microsoft
+        Dynamics 365 transformation within the health insurance sector.
+      </p>
+
+      <p>
+        Established an integrated planning model bringing together
+        capacity planning, resource demand, release planning and
+        execution across multiple Value Streams.
+      </p>
+
+      <p>
+        The work included integrated delivery plans, resource models
+        and release roadmaps, providing leadership with a single view
+        of delivery progress, capacity, dependencies and resource
+        requirements.
+      </p>
+
+      <p>
+        Coordinated delivery teams, architects, engineering leads and
+        programme stakeholders to improve planning discipline and
+        delivery predictability.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        Microsoft Dynamics 365 · CRM · Customer Service · Integrations
+        · Omnichannel · Power Platform
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- HCM -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>HCM And Payroll SaaS Transformation</h2>
+
+      <p>
+        Enterprise SaaS delivery, global payroll integration and
+        technology transformation.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Global HCM And Payroll Platform</h3>
+
+      <div class="project-role">
+        Senior Manager, Technical Project Delivery
+      </div>
+
+      <p>
+        Led SaaS implementation projects integrating Workday,
+        SAP SuccessFactors, Oracle and ADP across more than 10
+        geographies, supporting sensitive employee and payroll data.
+      </p>
+
+      <p>
+        Delivered scalable automated integrations supporting payroll
+        processing and worked across client, security, architecture
+        and integration teams to address security, privacy, compliance
+        and value realisation.
+      </p>
+
+      <p>
+        Also oversaw delivery of an AI-powered payroll platform,
+        automating manual workflows and supporting operational
+        efficiency.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        Workday · SAP SuccessFactors · Oracle · ADP · APIs · SaaS
+        Integration · Payroll Platforms
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- FINANCIAL SERVICES -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>Data, Regulatory And Financial Services Transformation</h2>
+
+      <p>
+        Large-scale data delivery, regulatory transformation and
+        Agile programme leadership.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Enterprise Data And Regulatory Programmes</h3>
+
+      <div class="project-role">
+        Technical Delivery Lead Manager
+      </div>
+
+      <p>
+        Led technology delivery and programme governance across
+        large-scale data, regulatory, D365 and AI and Agents programmes.
+      </p>
+
+      <p>
+        Directed more than 10 cross-functional Scrum teams and more
+        than 100 data engineers, managing more than 20 regulatory and
+        strategic initiatives.
+      </p>
+
+      <p>
+        Programmes included BCBS239, Murex 3.0, Athena, IFRS9,
+        Basel IV, nCino and SRB.
+      </p>
+
+      <p>
+        Responsibilities included programme governance, RAID,
+        PI Planning, executive reporting, dependency management,
+        Agile metrics, regulatory compliance and operational readiness.
+      </p>
+
+      <div class="technology">
+        <strong>Delivery:</strong>
+        SAFe® · Agile · PI Planning · Data Transformation · Regulatory
+        Programmes · Governance · Executive Reporting
+      </div>
+
+    </article>
+
+  </section>
+
+    <!-- INSURANCE -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>Global Insurance Platform</h2>
+
+      <p>
+        End-to-end delivery from mobilisation through production launch.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Global Direct-To-Consumer Insurance Platform</h3>
+
+      <div class="project-role">
+        Technical Delivery Manager
+      </div>
+
+      <p>
+        Led end-to-end delivery of a global Direct-to-Consumer
+        insurance platform from Day 0 mobilisation through production
+        launch.
+      </p>
+
+      <p>
+        Coordinated business and technology teams across Europe,
+        USA, India and Singapore.
+      </p>
+
+      <p>
+        Responsibility covered delivery planning, requirements,
+        solution blueprinting, governance, development, testing,
+        production readiness and deployment.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        Java Microservices · MuleSoft · React · PostgreSQL · AWS ·
+        Azure · Ingenico · Adobe Analytics · Insurance Policy
+        Administration Systems
+      </div>
+
+    </article>
+
+  </section>
+
+  <!-- ENERGY -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>Energy Sector Transformation</h2>
+
+      <p>
+        Cloud transformation, application modernisation and security
+        readiness across business-critical platforms.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Cloud Transformation And Application Modernisation</h3>
+
+      <div class="project-role">
+        Cloud Transformation Technical Manager
+      </div>
+
+      <p>
+        Led cloud transformation and application modernisation,
+        including migration of more than 25 business-critical
+        applications to Microsoft Azure.
+      </p>
+
+      <p>
+        Worked closely with Information Security teams to ensure
+        applications met required security and compliance standards.
+      </p>
+
+      <p>
+        This included coordinating security assessments, vulnerability
+        scanning, penetration testing, remediation activities and
+        validation of security fixes before production deployment.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        Microsoft Azure · Cloud Migration · Application Modernisation
+        · Information Security · Vulnerability Management . Penataration Testing . Static and Dynamic Application Security Testing (SAST/DAST)
+      </div>
+
+    </article>
+
+
+    <article class="project">
+
+      <h3>SAP HR To Workday Transformation</h3>
+
+      <div class="project-role">
+        Programme Test Manager
+      </div>
+
+      <p>
+        Led the testing workstream for the SAP HR to Workday
+        transformation across Client's UK business units.
+      </p>
+
+      <p>
+        Responsible for test strategy, planning, governance, defect
+        management, environment coordination and stakeholder reporting.
+      </p>
+
+      <p>
+        Worked closely with business, HR, Workday delivery and
+        technical teams to support the transition to the new
+        HCM platform.
+      </p>
+
+    </article>
+
+
+    <article class="project">
+
+      <h3>Dynamics CRM And Field Service Transformation</h3>
+
+      <div class="project-role">
+        Technical Delivery Manager
+      </div>
+
+      <p>
+        Led delivery of a Microsoft Dynamics CRM solution supporting
+        field service operations within the Service and Repairs
+        function.
+      </p>
+
+      <p>
+        The solution supported Dyno CRM and mobile applications used
+        by field engineers.
+      </p>
+
+      <p>
+        The role covered delivery coordination across business and
+        technology teams including planning, integration, testing
+        and implementation.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        Microsoft Dynamics CRM · Field Service · Mobile Applications
+        · Integration
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- TELECOM -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>Telecom SaaS And Contact Centre Engineering</h2>
+
+      <p>
+        Deep hands-on software engineering and technical leadership.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Telecom SaaS Platform</h3>
+
+      <div class="project-role">
+        Technical Lead / Senior Software Engineer
+      </div>
+
+      <p>
+        Worked as Technical Lead and Senior Software Engineer on a
+        SaaS-based telecommunications platform supporting customer
+        contact centre operations.
+      </p>
+
+      <p>
+        Designed and developed solutions using C#, .NET, .NET Core
+        and SQL Server, with significant hands-on development
+        responsibility across core platform components.
+      </p>
+
+      <p>
+        Developed telephony switch-level functionality for call
+        routing and customer interaction management using .NET
+        Remoting and Socket Programming, supporting real-time
+        communication and customer service workflows.
+      </p>
+
+      <p>
+        Led the design and development of a multi-channel Agent
+        Desktop application used by customer service agents,
+        providing a single interface for Voice, SMS and Email
+        interactions.
+      </p>
+
+      <p>
+        Worked closely with product, operations and engineering teams
+        to design scalable solutions supporting high-volume customer
+        engagement and service delivery.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        C# · .NET · .NET Core · SQL Server · .NET Remoting · Socket
+        Programming · Voice · SMS · Email
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- MANUFACTURING -->
+
+  <section class="project-section">
+
+    <div class="section-title">
+
+      <h2>Manufacturing And ERP Engineering</h2>
+
+      <p>
+        Early engineering experience building enterprise software
+        close to business operations.
+      </p>
+
+    </div>
+
+
+    <article class="project">
+
+      <h3>Textile Manufacturing ERP Platform</h3>
+
+      <div class="project-role">
+        .NET / SQL Developer
+      </div>
+
+      <p>
+        Developed the Inventory Management module for an enterprise
+        ERP platform supporting textile manufacturing operations.
+      </p>
+
+      <p>
+        Responsible for the design, development and implementation of
+        inventory management capabilities covering stock control,
+        inventory tracking, procurement and operational reporting.
+      </p>
+
+      <p>
+        Developed solutions using C#, Microsoft .NET, SQL Server and
+        .NET Remoting, working across application, business and
+        database layers.
+      </p>
+
+      <p>
+        Worked closely with business users and technical teams to
+        understand operational requirements and translate them into
+        ERP solutions supporting manufacturing and supply chain
+        processes.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        C# · .NET · SQL Server · .NET Remoting · ERP · Inventory
+        Management · Manufacturing
+      </div>
+
+    </article>
+
+
+    <article class="project">
+
+      <h3>DRACAS Enterprise Platform</h3>
+
+      <div class="project-role">
+        Microsoft Technical Solution Architect
+      </div>
+
+      <p>
+        Designed and delivered the Defect Recording, Analysis and
+        Corrective Action System (DRACAS), providing end-to-end
+        solution architecture across .NET, SQL Server and MuleSoft.
+      </p>
+
+      <p>
+        Worked with business stakeholders, development teams and
+        integration partners to define requirements, design technical
+        solutions and integrate multiple applications and data
+        sources.
+      </p>
+
+      <div class="technology">
+        <strong>Technology:</strong>
+        .NET · SQL Server · MuleSoft · Enterprise Integration ·
+        Solution Architecture
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- CAREER PROGRESSION -->
+
+  <section class="progression">
+
+    <h2>From Engineering To Technology Leadership</h2>
+
+    <p>
+      Looking across these projects, the progression is not simply
+      from one job title to another.
+    </p>
+
+    <p>
+      It is a progression in the scale and nature of the problems
+      being solved.
+    </p>
+
+    <p>
+      The early work was deeply technical — designing applications,
+      writing code, working with databases, building integrations and
+      understanding how systems operate at a detailed level.
+    </p>
+
+    <p>
+      That engineering foundation developed into technical leadership,
+      solution architecture, cloud transformation, programme delivery
+      and eventually enterprise-scale technology and AI delivery.
+    </p>
+
+    <div class="progression-path">
+
+      <strong>
+        Code → Systems → Architecture → Engineering Leadership
+        → Delivery Leadership → Enterprise Transformation → AI
+      </strong>
+
+      <br />
+
+      The technology changed significantly over the years.
+      The underlying focus remained the same: understanding the
+      problem, designing the right solution and making sure it can
+      actually be delivered.
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER NAV -->
+
+  <div class="post-footer-nav">
+
+    <div>
+      <a href="/profile/resume.html">
+        ← Back to Profile
+      </a>
+    </div>
+
+    <div>
+      <a href="/">
+        Home →
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © <span id="year"></span>
+    John Christopher · JCX360 - 3S (Secure · Scale · Sustain)
+
+    <span class="footer-note">
+
+      JCX360 is my personal platform for architecture, delivery,
+      and thought leadership, focused on cloud, AI and
+      enterprise-scale systems.
+
+      <br>
+
+      All views shared here are my own, based on industry experience
+      and independent research, and are shared to support learning
+      and knowledge exchange across the professional community.
+
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
