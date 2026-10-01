@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add platform/platform-git-handbook.html
+git add series/JCstechspace.html
 git commit -m "Update Git handbook"
 git push
 
