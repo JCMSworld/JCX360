@@ -242,6 +242,12 @@
       font-weight: 600;
     }
 
+    .series {
+      background: var(--bg-alt);
+      border-top: 5px solid var(--border);
+      border-bottom: 5px solid var(--border);
+    }
+
 
     /* Latest Thinking */
 
@@ -316,6 +322,28 @@
       font-size: 14px;
     }
 
+     .series-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .series-item h5 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .series-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+       .series-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
 
     /* Footer */
 
@@ -334,6 +362,17 @@
       line-height: 1.6;
     }
 
+    .check a {
+  color: var(--text);
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.check a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
 
     /* Mobile */
 
@@ -557,7 +596,7 @@
           and responsible AI-enabled enterprise platforms.
         </p>
 
-        <div class="series-link">
+        <div class="check">
 
           <a href="/series/series-1.html">
             Explore Series 1 →
@@ -586,7 +625,7 @@
           individual solutions.
         </p>
 
-        <div class="series-link">
+        <div class="check">
 
           <a href="/series/series-2/series-2.html">
             Explore Series 2 →
@@ -615,7 +654,7 @@
           improve AI in enterprise environments.
         </p>
 
-        <div class="series-link">
+        <div class="check">
 
           <a href="/series/series-3/series-3.html">
             Explore Series 3 →
@@ -628,6 +667,36 @@
 
     </div>
 
+      <!-- Series -->
+    <section class="thinking">
+      <div class="container">
+        <h3 class="section-title">Delivery · Architecture · AI · Technical Guides</h3>
+        <p class="section-subtitle">
+Practical lessons, ideas and approaches from working across technology delivery, architecture, AI and cloud-native platforms.        </p>
+        <div class="series-list">
+          <div class="series-item">
+            <div class="check"><a href="/platform/platform-git-handbook.html"><h5>Platform GitHub Handbook</h5></a></div>
+            <span>GitHub Handbook</span>
+          </div>
+          <div class="series-item">
+            <div class="check"><a href="/platform/github-pages-custom-domain.html"><h5>Platform Setup</h5></a></div>
+            <span>Hosting GitHub's Pages with a Custom Domain (for Free)</span>
+          </div>
+          <div class="series-item">
+            <div class="check"><a href="/series/intelligence-layer.html"><h5>The Intelligence Layer</h5></a></div>
+            <span>ML → DL → LLM → RAG → Vector DB</span>
+          </div>
+          <div class="series-item">
+            <div class="check"><a href="/platform/manual-maintenance-to-automation.html"><h5>Manual to Automated Operations</h5></a></div>
+            <span>From Manual Maintenance to Full Automation  A Lesson from 2008</span>
+          </div>
+          <div class="series-item">
+            <div class="check"><a href="/delivery/programme-planning-to-delivery-control.html"><h5>Planning to Delivery Control</h5></a></div>
+            <span>From Programme Planning to Delivery Control</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- The Thinking Behind JCX360 -->
 
@@ -658,10 +727,6 @@
       <p>
         That is the thinking behind JCX360.
       </p>
-
-      <div class="principles">
-        3S - Secure. Scale. Sustain.
-      </div>
 
     </div>
 
@@ -695,7 +760,7 @@
   <div class="container">
 
     © <span id="year"></span>
-    John Christopher · JCX360-3S (Secure · Scale · Sustain)
+    John Christopher · JCX360 - 3S (Secure · Scale · Sustain)
 
     <span class="footer-note">
 
