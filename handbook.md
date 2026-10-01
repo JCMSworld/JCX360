@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add series/JCstechspace.html
+git add series/JCX360stechspace.html
 git commit -m "Update Git handbook"
 git push
 
