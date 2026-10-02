@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>JCX360 — Feedback Is Useful When It Is Timely</title>
+
+  <meta
+    name="description"
+    content="An observation on feedback, timing and accountability in technology delivery."
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #0b1220;
+      --bg-alt: #0f1a30;
+      --primary: #4f7cff;
+      --accent: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system,
+        BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      background:
+        radial-gradient(
+          1200px 600px at 10% -10%,
+          #13224a 0%,
+          var(--bg) 40%
+        ),
+        var(--bg);
+
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+
+    /* Header */
+
+    header {
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      background: rgba(11, 18, 32, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand-logo {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    a.brand-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a.brand-link:hover,
+    a.brand-link:focus,
+    a.brand-link:active {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    /* Article Header */
+
+    .post-header {
+      padding: 52px 0 28px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(79, 124, 255, 0.12);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .post-header h2 {
+      font-size: 38px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .post-intro {
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .post-meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+
+    /* Article Content */
+
+    .post-content {
+      max-width: 900px;
+    }
+
+    .post-content h3 {
+      margin-top: 42px;
+      margin-bottom: 16px;
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    .post-content p {
+      margin: 18px 0;
+      color: var(--text);
+    }
+
+    .post-content ul {
+      margin: 16px 0 24px 20px;
+      padding-left: 18px;
+    }
+
+    .post-content li {
+      margin-bottom: 10px;
+    }
+
+    .post-content strong {
+      font-weight: 600;
+    }
+
+
+    /* Flow */
+
+    .flow {
+      margin: 24px 0;
+      padding: 20px 24px;
+      border-left: 3px solid var(--accent);
+      background: rgba(17, 24, 39, 0.45);
+      border-radius: 4px;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+
+    /* Closing Statement */
+
+    .closing-statement {
+      margin-top: 28px !important;
+      padding: 22px 24px;
+      border-left: 3px solid var(--accent);
+      background: rgba(34, 211, 238, 0.04);
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+
+    /* External Link */
+
+    .post-external {
+      max-width: 900px;
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .external-link {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .external-link:hover {
+      text-decoration: underline;
+    }
+
+    .external-link::after {
+      content: " ↗";
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+
+    /* Footer Navigation */
+
+    .post-footer-nav {
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+
+    /* Footer */
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    .footer-note {
+      display: block;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .container {
+        padding: 0 18px;
+      }
+
+      .post-header h2 {
+        font-size: 30px;
+      }
+
+      .post-content h3 {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="container nav">
+
+    <div class="brand">
+
+      <a href="/" aria-label="JCX360 Home">
+
+        <img
+          src="/images/JCX360_orbit_logo_2.png"
+          alt="JCX360"
+          class="brand-logo"
+        />
+
+      </a>
+
+      <div>
+
+        <h1>John Christopher</h1>
+
+        <span>
+          Hybrid Technology Leader (Arch + Delivery)
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+      <a href="/">Home</a>
+
+      <a href="/series/series-1.html">
+        Series
+      </a>
+
+      <a href="/#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+
+  <!-- Article Header -->
+
+  <section class="post-header">
+
+    <div class="badge">
+      Delivery · Leadership · Governance
+    </div>
+
+    <h2>
+      Feedback is useful when it is timely
+    </h2>
+
+    <p class="post-intro">
+      An observation on feedback, timing and accountability in technology delivery.
+    </p>
+
+    <div class="post-meta">
+      Published on October 2, 2026
+    </div>
+
+  </section>
+
+
+  <!-- Article -->
+
+  <article class="post-content">
+
+
+    <p>
+      Feedback is one of the most useful tools in any delivery environment.
+    </p>
+
+    <p>
+      When it is timely, specific and connected to the work, it gives people
+      an opportunity to understand what is working, what needs to improve and
+      where expectations may need to change.
+    </p>
+
+    <p>
+      But what happens when feedback comes much later?
+    </p>
+
+    <p>
+      That is where things become more complicated.
+    </p>
+
+
+    <h3>
+      Feedback has a time dimension
+    </h3>
+
+    <p>
+      During a programme, people are constantly making decisions, managing
+      stakeholders, solving problems and dealing with changing priorities.
+    </p>
+
+    <p>
+      If something is not working, timely feedback gives the person an
+      opportunity to respond.
+    </p>
+
+    <p>
+      A simple conversation can often resolve an issue before it becomes
+      a bigger problem.
+    </p>
+
+    <p>
+      But if the same feedback appears several months later, the situation
+      is different.
+    </p>
+
+    <p>
+      People may not remember the specific circumstances.
+    </p>
+
+    <p>
+      Priorities may have changed.
+    </p>
+
+    <p>
+      The people involved may have moved to different roles.
+    </p>
+
+    <p>
+      And the opportunity to correct the behaviour at the time has already
+      passed.
+    </p>
+
+    <p>
+      This does not make later feedback invalid.
+    </p>
+
+    <p>
+      It does mean that <strong>context becomes much more important.</strong>
+    </p>
+
+
+    <h3>
+      Feedback should not be a surprise
+    </h3>
+
+    <p>
+      One principle I have learned through delivery is that people should
+      not normally discover a significant performance concern for the first
+      time during a formal review.
+    </p>
+
+    <p>
+      If something matters enough to influence an assessment, it is usually
+      better to discuss it when it happens.
+    </p>
+
+    <p>
+      That creates an opportunity for:
+    </p>
+
+    <div class="flow">
+      Expectation → Observation → Feedback → Action → Follow-up
+    </div>
+
+    <p>
+      Rather than:
+    </p>
+
+    <div class="flow">
+      Event → Silence → Months pass → Formal feedback
+    </div>
+
+    <p>
+      The second approach makes it much harder for everyone involved.
+    </p>
+
+
+    <h3>
+      Who owns the feedback?
+    </h3>
+
+    <p>
+      There is another interesting question.
+    </p>
+
+    <p>
+      If stakeholder feedback is required as part of a performance or
+      delivery review, who owns collecting it?
+    </p>
+
+    <p>
+      The individual can certainly ask stakeholders for feedback.
+    </p>
+
+    <p>
+      But the manager or organisation responsible for the review also has
+      a role in making sure that the feedback process happens at the right
+      time and that expectations are clear.
+    </p>
+
+    <p>
+      Otherwise, there is a risk of putting the individual in a strange
+      position.
+    </p>
+
+    <p>
+      They are effectively being asked to create the evidence that will
+      later be used to assess them.
+    </p>
+
+    <p>
+      That does not always produce the best outcome.
+    </p>
+
+
+    <h3>
+      Feedback should be evidence based
+    </h3>
+
+    <p>
+      Good feedback should answer some simple questions:
+    </p>
+
+    <ul>
+
+      <li>What happened?</li>
+
+      <li>When did it happen?</li>
+
+      <li>What was expected?</li>
+
+      <li>What was observed?</li>
+
+      <li>What was the impact?</li>
+
+      <li>Was the feedback communicated at the time?</li>
+
+      <li>What changed afterwards?</li>
+
+    </ul>
+
+    <p>
+      Without this context, feedback can easily become subjective.
+    </p>
+
+    <p>
+      This is particularly important in complex programmes where different
+      stakeholders may have very different views of the same situation.
+    </p>
+
+    <p>
+      One stakeholder may see a delivery decision as effective.
+    </p>
+
+    <p>
+      Another may have preferred a different approach.
+    </p>
+
+    <p>
+      Neither view automatically represents the complete picture.
+    </p>
+
+
+    <h3>
+      The lesson for delivery leaders
+    </h3>
+
+    <p>
+      For me, the lesson is not that late feedback is always wrong.
+    </p>
+
+    <p>
+      Sometimes feedback genuinely becomes available later.
+    </p>
+
+    <p>
+      The lesson is that
+      <strong>good feedback needs context, timing and accountability.</strong>
+    </p>
+
+    <p>
+      If something needs to improve, say it early.
+    </p>
+
+    <p>
+      If something is working well, recognise it while the contribution
+      is still visible.
+    </p>
+
+    <p>
+      If formal feedback is required, make the expectations and ownership clear.
+    </p>
+
+    <p>
+      And if feedback arrives much later, understand the circumstances before
+      turning it into a conclusion.
+    </p>
+
+
+    <h3>
+      From feedback to learning
+    </h3>
+
+    <p>
+      Technology delivery is full of situations where the process is only
+      understood properly after experiencing it.
+    </p>
+
+    <p>
+      That is one of the reasons I believe experienced delivery leaders
+      should continue reflecting on how things actually work, not just how
+      the process is supposed to work.
+    </p>
+
+    <p>
+      Sometimes the biggest learning comes from the uncomfortable questions:
+    </p>
+
+    <div class="flow">
+
+      Was the expectation clear?<br><br>
+
+      Was the feedback timely?<br><br>
+
+      Was there an opportunity to respond?<br><br>
+
+      Was the evidence specific?<br><br>
+
+      Who owned the process?
+
+    </div>
+
+    <p>
+      Those questions are useful far beyond performance reviews.
+    </p>
+
+    <p>
+      They apply to delivery governance, stakeholder management, programme
+      controls and leadership.
+    </p>
+
+    <p>
+      For me, that is the real value of feedback.
+    </p>
+
+    <p class="closing-statement">
+      <strong>
+        It should not simply document what happened.
+        It should help people improve while there is still time to act.
+      </strong>
+    </p>
+
+
+    <p>
+      <em>
+        If you really care about the company, the client and the quality
+        of delivery, timely feedback matters.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        Whether the feedback is good or bad, positive or negative, success
+        or failure, it has an impact.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        Good feedback can reinforce what is working.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        Constructive feedback gives people a chance to correct something
+        while there is still time to act.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        And difficult feedback, when given early and with the right context,
+        can prevent a small issue from becoming a bigger one.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        Once the work is finished and months have passed, the value of
+        feedback can be very different.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        The opportunity to act on it may already be gone.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        For me, that is why feedback is not just a performance process.
+      </em>
+    </p>
+
+    <p class="closing-statement">
+      <strong>
+        It is part of delivery quality.
+      </strong>
+    </p>
+
+    <p>
+      <em>
+        Whether the outcome is success or failure, good or bad,
+        beautiful or ugly 😂, timely feedback helps people understand
+        what is happening while they can still do something about it.
+      </em>
+    </p>
+
+    <p>
+      <em>
+        “No hype. Just practical thinking, experience and continuous learning”
+      </em>
+    </p>
+
+
+  </article>
+
+
+  <!-- External Link -->
+
+  <div class="post-external">
+
+    <a
+      href="https://www.linkedin.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >
+      View discussion on LinkedIn
+    </a>
+
+  </div>
+
+
+  <!-- Footer Navigation -->
+
+  <div class="post-footer-nav">
+
+    <div>
+      <a href="/">
+        ← Back to Tech Space
+      </a>
+    </div>
+
+    <div>
+      <a href="/">
+        Home →
+      </a>
+    </div>
+
+  </div>
+
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © <span id="year"></span>
+    John Christopher · JCX360-3S (Secure · Scale · Sustain)
+
+    <span class="footer-note">
+
+      JCX360 is my personal platform for architecture, delivery,
+      and thought leadership, focused on cloud, AI, and enterprise-scale systems.
+
+      <br>
+
+      All views shared here are my own, based on industry experience
+      and independent research, and are shared to support learning
+      and knowledge exchange across the professional community.
+
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>
