@@ -1,8 +1,8 @@
 This is for update
 
 git pull
-git add series/delivery/reg-to-data-engineering.html
-git commit -m "Update Git handbook"
+git add assests/css/jcx360.css
+git commit -m "Update"
 git push
 
 For adding new file
