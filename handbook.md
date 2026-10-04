@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add delivery/planning-to-delivery-control.html
+git add platform/github-to-custom-domain.html
 git commit -m "Update"
 git push
 
