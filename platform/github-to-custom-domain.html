@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="From zero to production: hosting a secure site on GitHub Pages with a custom domain for free."
+  >
+
+  <title>
+    From zero to production: hosting a secure site on GitHub Pages with a custom domain | JCX360
+  </title>
+
+  <!-- =====================================================
+       JCX360 MASTER STYLESHEET
+       ===================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://jcx360.com/assets/css/jcx360.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="container nav">
+
+      <div class="brand">
+
+        <a href="/" aria-label="JCX360 home">
+
+          <img
+            src="/images/JCX360_orbit_logo_2.png"
+            alt="JCX360"
+            class="brand-logo"
+          >
+
+        </a>
+
+        <div>
+
+          <h1>John Christopher</h1>
+
+          <span>
+            Hybrid Technology Leader (Arch + Delivery)
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <nav
+        class="nav-links"
+        aria-label="Main navigation"
+      >
+
+        <a href="/#about">
+          About JC
+        </a>
+
+        <a href="/series/JCX360stechspace.html">
+          Tech Insights
+        </a>
+
+        <a href="/#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="post">
+
+          <!-- ===============================================
+               ARTICLE HEADER
+               =============================================== -->
+
+          <div class="post-header">
+
+            <div class="badge1">
+              Platform &amp; Delivery · GitHub Pages · DNS · HTTPS · Personal Platform
+            </div>
+
+
+            <h2>
+              From zero to production: hosting a secure site on GitHub Pages with a custom domain (for Free)
+            </h2>
+
+
+            <div class="post-meta">
+              Published on October 4, 2026 by JCX360
+            </div>
+
+          </div>
+
+
+
+          <!-- ===============================================
+               ARTICLE CONTENT
+               =============================================== -->
+
+          <div class="post-content">
+
+
+            <p>
+              I built and deployed my personal platform
+              (<strong>JCX360.com</strong>) using GitHub Pages,
+              a custom domain, and HTTPS, all without paying for hosting.
+            </p>
+
+
+            <p>
+              What surprised me wasn’t how powerful the setup is,
+              but how many small, non-obvious steps are required to get it right.
+              I’ve already had several friends ask how I did it, so here’s a practical,
+              end-to-end guide based on real-world experience.
+            </p>
+
+
+            <p>
+              This isn’t a marketing checklist, it’s the exact workflow I used,
+              including the common pitfalls.
+            </p>
+
+
+
+            <!-- =============================================
+                 WHY GITHUB PAGES
+                 ============================================= -->
+
+            <h3>
+              Why GitHub Pages + Custom Domain?
+            </h3>
+
+
+            <p>
+              For architects, consultants, and engineers, this setup is ideal:
+            </p>
+
+
+            <ul>
+
+              <li>
+                Free static hosting
+              </li>
+
+              <li>
+                Built-in global CDN
+              </li>
+
+              <li>
+                Native HTTPS via Let’s Encrypt
+              </li>
+
+              <li>
+                Tight integration with GitHub workflows
+              </li>
+
+              <li>
+                Perfect for blogs, portfolios, documentation, and technical platforms
+              </li>
+
+            </ul>
+
+
+
+            <!-- =============================================
+                 HIGH-LEVEL ARCHITECTURE
+                 ============================================= -->
+
+            <h3>
+              High-Level Architecture
+            </h3>
+
+
+            <p>
+              At a high level, the setup looks like this:
+            </p>
+
+
+            <p>
+              <strong>
+                Domain Registrar → DNS (A + CNAME) → GitHub Pages → TLS Certificate → Static Site
+              </strong>
+            </p>
+
+
+            <p>
+              Simple in theory. Finicky in practice.
+            </p>
+
+
+
+            <!-- =============================================
+                 STEP 1
+                 ============================================= -->
+
+            <h3>
+              Step 1 — Create Your GitHub Pages Repository
+            </h3>
+
+
+            <ul>
+
+              <li>
+                Create a public GitHub repo
+              </li>
+
+              <li>
+                Add an <code>index.html</code> at the root
+              </li>
+
+              <li>
+                Go to: Settings → Pages
+              </li>
+
+              <li>
+                Set Source = main branch
+              </li>
+
+              <li>
+                Confirm your site works on <code>github.io</code>
+              </li>
+
+            </ul>
+
+
+
+            <!-- =============================================
+                 STEP 2
+                 ============================================= -->
+
+            <h3>
+              Step 2 — Add a Custom Domain in GitHub
+            </h3>
+
+
+            <ul>
+
+              <li>
+                Settings → Pages → Custom domain
+              </li>
+
+              <li>
+                Add: <code>yourdomain.com</code>
+              </li>
+
+              <li>
+                GitHub will create a CNAME file automatically
+              </li>
+
+            </ul>
+
+
+
+            <!-- =============================================
+                 STEP 3
+                 ============================================= -->
+
+            <h3>
+              Step 3 — Configure DNS (The Critical Bit)
+            </h3>
+
+
+            <p>
+              <strong>
+                A Records (root domain):
+              </strong>
+            </p>
+
+
+            <p>
+              185.199.108.153<br>
+              185.199.109.153<br>
+              185.199.110.153<br>
+              185.199.111.153
+            </p>
+
+
+            <p>
+              <strong>
+                CNAME for www:
+              </strong>
+            </p>
+
+
+            <p>
+              www → &lt;username&gt;.github.io
+            </p>
+
+
+
+            <!-- =============================================
+                 STEP 4
+                 ============================================= -->
+
+            <h3>
+              Step 4 — Wait for DNS Propagation
+            </h3>
+
+
+            <p>
+              This is where most people panic. DNS can take minutes or hours.
+              Until it’s correct:
+            </p>
+
+
+            <ul>
+
+              <li>
+                HTTPS will be unavailable
+              </li>
+
+              <li>
+                You may see certificate errors
+              </li>
+
+              <li>
+                GitHub will show “DNS check in progress”
+              </li>
+
+            </ul>
+
+
+
+            <!-- =============================================
+                 STEP 5
+                 ============================================= -->
+
+            <h3>
+              Step 5 — Enable HTTPS
+            </h3>
+
+
+            <p>
+              Once GitHub shows DNS check successful, you can:
+            </p>
+
+
+            <p>
+              ☑ Enforce HTTPS
+            </p>
+
+
+            <p>
+              GitHub will automatically issue and bind a TLS certificate.
+            </p>
+
+
+
+            <!-- =============================================
+                 COMMON PITFALLS
+                 ============================================= -->
+
+            <h3>
+              Common Pitfalls (I Hit These)
+            </h3>
+
+
+            <ul>
+
+              <li>
+                Incorrect A records
+              </li>
+
+              <li>
+                CNAME pointing to wrong repo
+              </li>
+
+              <li>
+                HTTPS unavailable until DNS is 100% correct
+              </li>
+
+              <li>
+                Browser caching old cert errors
+              </li>
+
+              <li>
+                Confusion between apex and www domains
+              </li>
+
+            </ul>
+
+
+
+            <!-- =============================================
+                 WHY THIS MATTERS
+                 ============================================= -->
+
+            <h3>
+              Why This Matters Beyond a Personal Site
+            </h3>
+
+
+            <p>
+              This pattern mirrors real enterprise platform design:
+            </p>
+
+
+            <ul>
+
+              <li>
+                CDN-backed static hosting
+              </li>
+
+              <li>
+                DNS + TLS automation
+              </li>
+
+              <li>
+                Infrastructure as configuration
+              </li>
+
+              <li>
+                Zero-infrastructure operational overhead
+              </li>
+
+            </ul>
+
+
+
+            <!-- =============================================
+                 FINAL THOUGHTS
+                 ============================================= -->
+
+            <h3>
+              Final Thoughts
+            </h3>
+
+
+            <p>
+              What I like about this approach is that it combines strong architecture
+              principles with delivery pragmatism and security by default — without overengineering.
+            </p>
+
+
+            <p>
+              It’s a great lightweight pattern for personal platforms,
+              technical blogs, documentation, and internal portals.
+            </p>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================================
+       PAGE NAVIGATION
+       ===================================================== -->
+
+  <div class="container">
+
+    <nav
+      class="post-footer-nav"
+      aria-label="Article navigation"
+    >
+
+      <a href="/series/JCX360stechspace.html">
+        ← Back to Tech Insights
+      </a>
+
+      <a href="/index.html">
+        JCX360 Home →
+      </a>
+
+    </nav>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      © <span id="year"></span> John Christopher · JCX360 - 3S (Secure · Scale · Sustain)
+
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery, and thought leadership,
+        focused on cloud, AI, and enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience and independent
+        research, and are shared to support learning and knowledge exchange across
+        the professional community.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       YEAR
+       ===================================================== -->
+
+  <script>
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+  </script>
+
+
+</body>
+
+</html>
