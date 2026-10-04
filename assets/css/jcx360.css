@@ -1,11 +1,7 @@
-/*
-=========================================================
-JCX360 MASTER STYLESHEET
-Secure. Scale. Sustain.
-
-Single source of truth for JCX360 pages
-=========================================================
-*/
+/* =========================================================
+   JCX360 MASTER STYLESHEET
+   Secure. Scale. Sustain.
+   ========================================================= */
 
 
 /* =========================================================
@@ -14,41 +10,58 @@ Single source of truth for JCX360 pages
 
 :root {
 
-  /* JCX360 brand */
+  /* JCX360 Brand */
+
   --primary: #2563EB;
   --primary-dark: #1D4ED8;
   --ai-indigo: #4F46E5;
   --greenops: #16A34A;
   --amber: #F59E0B;
-  --accent: #22D3EE;
+
 
   /* Backgrounds */
+
   --bg: #0B1220;
   --bg-alt: #0F1A30;
   --surface: #0F172A;
   --card: #111827;
 
+
   /* Text */
+
   --text: #E5E7EB;
   --text-strong: #F8FAFC;
   --muted: #9CA3AF;
   --subtle: #64748B;
 
+
   /* Borders */
+
   --border: #1F2933;
   --border-light: #334155;
 
+
+  /* Accent */
+
+  --accent: #22D3EE;
+
+
   /* Layout */
+
   --container-width: 1100px;
   --article-width: 900px;
 
+
   /* Radius */
+
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 14px;
   --radius-pill: 999px;
 
+
   /* Spacing */
+
   --space-xs: 6px;
   --space-sm: 10px;
   --space-md: 16px;
@@ -56,13 +69,16 @@ Single source of truth for JCX360 pages
   --space-xl: 36px;
   --space-xxl: 56px;
 
-  /* Effects */
+
+  /* Shadows */
+
   --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.20);
+
 }
 
 
 /* =========================================================
-   2. RESET / GLOBAL
+   2. RESET
    ========================================================= */
 
 * {
@@ -77,11 +93,11 @@ body {
   margin: 0;
 
   font-family:
-    "Inter",
+    'Inter',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     sans-serif;
 
   background:
@@ -98,7 +114,6 @@ body {
 
 img {
   max-width: 100%;
-  height: auto;
 }
 
 strong {
@@ -144,20 +159,10 @@ a:hover {
 
 
 /* =========================================================
-   5. HEADER / NAVIGATION
+   5. HEADER
    ========================================================= */
 
-/*
-   IMPORTANT:
-   Only the actual site header is sticky.
-
-   Do not use:
-       header { position: sticky; }
-
-   because article/page headers can also use <header>.
-*/
-
-body > header {
+header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -168,12 +173,6 @@ body > header {
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .nav {
@@ -199,10 +198,10 @@ body > header {
 .brand h1 {
   margin: 0;
 
-  color: var(--text-strong);
-
   font-size: 16px;
   line-height: 1.3;
+
+  color: var(--text-strong);
 }
 
 .brand span {
@@ -227,7 +226,6 @@ body > header {
   color: var(--text);
 
   font-size: 14px;
-
   opacity: 0.85;
 
   transition:
@@ -276,7 +274,7 @@ body > header {
 
 
 /* =========================================================
-   7. BADGES / CHEVRONS
+   7. BADGE / CHEVRON
    ========================================================= */
 
 .badge,
@@ -296,6 +294,11 @@ body > header {
   font-weight: 600;
   line-height: 1.4;
 }
+
+
+/* =========================================================
+   8. CHEVRON LABEL
+   ========================================================= */
 
 .chevron {
   display: inline-flex;
@@ -318,12 +321,8 @@ body > header {
 
 
 /* =========================================================
-   8. GENERAL SECTIONS
+   9. GENERAL SECTIONS
    ========================================================= */
-
-section {
-  padding: 20px 0;
-}
 
 .section {
   margin: var(--space-xxl) 0;
@@ -336,49 +335,31 @@ section {
 .section-header h2 {
   margin: 0 0 8px;
 
-  color: var(--text-strong);
-
   font-size: 30px;
   line-height: 1.25;
+
+  color: var(--text-strong);
 }
 
 .section-header p {
   margin: 0;
-  color: var(--muted);
-}
-
-.section-title {
-  margin-bottom: 12px;
-
-  color: var(--text-strong);
-
-  font-size: 28px;
-  line-height: 1.25;
-
-  letter-spacing: -0.3px;
-}
-
-.section-subtitle {
-  max-width: 720px;
-
-  margin-bottom: 32px;
 
   color: var(--muted);
 }
 
 
 /* =========================================================
-   9. CARDS
+   10. CARDS
    ========================================================= */
 
 .card {
-  padding: 24px;
-
   background: var(--card);
 
   border: 1px solid var(--border);
 
   border-radius: var(--radius-lg);
+
+  padding: 24px;
 
   box-shadow: var(--shadow-card);
 }
@@ -386,6 +367,7 @@ section {
 .card h3,
 .card h4 {
   margin-top: 0;
+
   color: var(--text-strong);
 }
 
@@ -393,31 +375,33 @@ section {
   color: var(--muted);
 }
 
+
+/* =========================================================
+   11. CARD GRID
+   ========================================================= */
+
 .card-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 20px;
 }
 
 
 /* =========================================================
-   10. INTRODUCTION
+   12. INTRODUCTION
    ========================================================= */
 
 .intro {
   max-width: var(--article-width);
 
-  padding:
-    var(--space-xl)
-    0
-    var(--space-md);
+  padding: var(--space-xl) 0 var(--space-md);
 }
 
 .intro p {
   margin: 16px 0;
+
   color: var(--muted);
 }
 
@@ -427,422 +411,130 @@ section {
 
 
 /* =========================================================
-   11. HERO / LANDING PAGE
-   ========================================================= */
-
-.hero {
-  padding: 80px 0 64px;
-
-  position: relative;
-  overflow: hidden;
-}
-
-.hero h1 {
-  margin: 0 0 16px;
-
-  color: var(--text-strong);
-
-  font-size: clamp(38px, 6vw, 60px);
-  line-height: 1.08;
-
-  letter-spacing: -1px;
-}
-
-.hero h2 {
-  margin: 0 0 16px;
-
-  color: var(--text-strong);
-
-  font-size: 42px;
-  line-height: 1.2;
-
-  letter-spacing: -0.5px;
-}
-
-.hero h3 {
-  margin: 0 0 16px;
-
-  color: var(--text-strong);
-
-  font-size: 38px;
-  line-height: 1.15;
-
-  letter-spacing: -0.6px;
-}
-
-.hero h4 {
-  color: var(--text-strong);
-}
-
-.hero p {
-  max-width: 760px;
-
-  margin: 0 0 24px;
-
-  color: var(--muted);
-
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-.hero-grid {
-  display: grid;
-
-  grid-template-columns:
-    1.2fr 0.8fr;
-
-  gap: 40px;
-
-  align-items: center;
-}
-
-
-/* =========================================================
-   12. HERO CARD
-   ========================================================= */
-
-.hero-card {
-  padding: 28px;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--bg-alt),
-      var(--bg)
-    );
-
-  border: 1px solid var(--border);
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.25);
-}
-
-.hero-card h3 {
-  margin-top: 0;
-
-  color: var(--text-strong);
-
-  font-size: 18px;
-}
-
-.hero-card ul {
-  list-style: none;
-
-  padding: 0;
-  margin: 0;
-}
-
-.hero-card li {
-  padding: 10px 0;
-
-  border-bottom: 1px solid var(--border);
-
-  font-size: 14px;
-}
-
-.hero-card li:last-child {
-  border-bottom: none;
-}
-
-
-/* =========================================================
-   13. CTA / BUTTONS
-   ========================================================= */
-
-.cta,
-.hero-actions {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 12px;
-}
-
-.btn {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 18px;
-
-  border: 1px solid var(--border-light);
-
-  border-radius: var(--radius-sm);
-
-  background: var(--card);
-
-  color: var(--text);
-
-  font-size: 14px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.btn:hover {
-  background: var(--surface);
-
-  border-color: var(--primary);
-
-  color: var(--text);
-
-  text-decoration: none;
-
-  transform: translateY(-1px);
-}
-
-.btn-primary {
-  background: var(--primary);
-
-  border-color: var(--primary);
-
-  color: #FFFFFF;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-
-  border-color: var(--primary-dark);
-
-  color: #FFFFFF;
-}
-
-.btn-secondary {
-  background: transparent;
-
-  border-color: var(--border-light);
-
-  color: var(--text);
-}
-
-.btn-secondary:hover {
-  background: var(--surface);
-
-  border-color: var(--primary);
-
-  color: var(--text);
-}
-
-
-/* =========================================================
-   14. ARTICLE / BLOG
+   13. ARTICLE / BLOG
    ========================================================= */
 
 .post-content,
 .article {
-  width: 100%;
-
   max-width: var(--article-width);
 
   margin: 0 auto;
 
-  padding: 48px 0 0;
+  padding: 42px 0 70px;
 }
 
-/*
-   Article title area.
-
-   Use <div class="post-header"> rather than
-   <header class="post-header"> when the site header
-   is also present.
-*/
-
-.post-header {
-  margin-bottom: 40px;
-
-  padding-bottom: 32px;
-
-  border-bottom: 1px solid var(--border);
-}
-
-.post-category {
-  margin-bottom: 16px;
-
-  color: var(--primary);
-
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.post-header h1,
-.post-content > h1 {
-  margin: 0 0 24px;
-
-  color: var(--text-strong);
-
-  font-size: clamp(38px, 5vw, 56px);
-
-  line-height: 1.12;
-
-  letter-spacing: -1px;
-}
-
-.post-content h2 {
-  margin: 0 0 32px;
+.post-content h2,
+.article h1 {
+  margin: 48px 0 20px;
 
   color: var(--text-strong);
 
   font-size: 36px;
-
   line-height: 1.2;
 
   letter-spacing: -0.5px;
-}
-
-.post-content h3,
-.article h3 {
-  margin-top: 48px;
-  margin-bottom: 18px;
-
-  color: var(--text-strong);
-
-  font-size: 24px;
-
-  line-height: 1.3;
-
-  letter-spacing: -0.2px;
-}
-
-.article > .page-header h2 {
-  margin: 0 0 16px;
-
-  color: var(--text-strong);
-
-  font-size: 38px;
-
-  line-height: 1.2;
-
-  letter-spacing: -0.5px;
-}
-
-.article > .page-header p {
-  max-width: 850px;
-
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 16px;
-
-  line-height: 1.7;
-}
-
-.article h2:not(.page-header h2) {
-  margin-top: 48px;
-  margin-bottom: 18px;
-
-  color: var(--text-strong);
-
-  font-size: 24px;
-
-  line-height: 1.3;
-}
-
-.article p,
-.post-content p {
-  margin: 0 0 20px;
-
-  color: var(--muted);
-
-  font-size: 16px;
-
-  line-height: 1.8;
-}
-
-.article ul,
-.article ol,
-.post-content ul,
-.post-content ol {
-  margin: 18px 0 24px;
-
-  padding-left: 24px;
-
-  color: var(--muted);
-}
-
-.article li,
-.post-content li {
-  margin-bottom: 9px;
-}
-
-.post-subtitle {
-  max-width: 900px;
-
-  margin: 0 0 28px;
-
-  color: var(--muted);
-
-  font-size: 18px;
-
-  line-height: 1.7;
-}
-
-.post-meta {
-  margin-bottom: 0;
-
-  color: var(--muted);
-
-  font-size: 13px;
-}
-
-/* =====================================================
-   ARTICLE CONTENT - COMPACT JCX360 SPACING
-   ===================================================== */
-
-.post-content {
-  padding: 42px 0 70px;
-}
-
-.post-content h2 {
-  margin: 48px 0 20px;
 }
 
 .post-content h2:first-child {
   margin-top: 0;
 }
 
-.post-content h3 {
-  margin: 32px 0 14px;
+.post-content h3,
+.article h2 {
+  margin-top: 42px;
+  margin-bottom: 16px;
+
+  color: var(--text-strong);
+
+  font-size: 24px;
+  line-height: 1.3;
+
+  letter-spacing: -0.2px;
 }
 
-.post-content p {
+.article h3 {
+  margin-top: 32px;
+
+  color: var(--text-strong);
+
+  font-size: 20px;
+}
+
+.post-content p,
+.article p {
   margin: 0 0 18px;
+
+  color: var(--muted);
+
+  font-size: 16px;
   line-height: 1.75;
 }
 
 .post-content ul,
-.post-content ol {
-  margin: 0 0 22px;
-  padding-left: 28px;
+.post-content ol,
+.article ul,
+.article ol {
+  margin: 16px 0 22px;
+
+  padding-left: 24px;
+
+  color: var(--muted);
 }
 
-.post-content li {
+.post-content li,
+.article li {
   margin-bottom: 8px;
 }
 
-.post-content blockquote {
-  margin: 26px 0;
+.post-meta {
+  margin-bottom: 28px;
+
+  color: var(--muted);
+
+  font-size: 13px;
 }
 
-.post-content .architecture-flow {
-  margin: 28px 0;
+
+/* =========================================================
+   14. ARTICLE HEADER
+   ========================================================= */
+
+.post-header {
+  padding-bottom: 42px;
+
+  border-bottom: 1px solid var(--border);
 }
 
-.post-content .callout {
-  margin: 30px 0;
+.post-header h1 {
+  margin: 0 0 28px;
+
+  color: var(--text-strong);
+
+  font-size: clamp(42px, 5vw, 64px);
+
+  line-height: 1.08;
+
+  letter-spacing: -1.5px;
 }
 
-.post-content .card-grid {
-  margin: 30px 0;
+.post-subtitle {
+  max-width: 950px;
+
+  margin: 0 0 28px;
+
+  color: var(--muted);
+
+  font-size: 20px;
+
+  line-height: 1.65;
+}
+
+.post-header .post-meta {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
 }
 
 
@@ -851,12 +543,11 @@ section {
    ========================================================= */
 
 .callout {
-  margin: 28px 0;
+  margin: 30px 0;
 
   padding: 22px 24px;
 
-  background:
-    rgba(17, 24, 39, 0.60);
+  background: rgba(17, 24, 39, 0.60);
 
   border-left: 3px solid var(--primary);
 
@@ -865,26 +556,34 @@ section {
   color: var(--muted);
 }
 
-.callout p {
-  margin-bottom: 10px;
-}
 
-.callout p:last-child {
-  margin-bottom: 0;
+/* =========================================================
+   16. ARTICLE QUOTE
+   ========================================================= */
+
+blockquote {
+  margin: 26px 0;
+
+  padding: 20px 24px;
+
+  border-left: 3px solid var(--primary);
+
+  color: var(--muted);
+
+  background: rgba(15, 23, 42, 0.55);
 }
 
 
 /* =========================================================
-   16. ARCHITECTURE / FLOW BLOCK
+   17. ARTICLE ARCHITECTURE FLOW
    ========================================================= */
 
 .architecture-flow {
   margin: 28px 0;
 
-  padding: 22px 24px;
+  padding: 20px 24px;
 
-  background:
-    rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.70);
 
   border: 1px solid var(--border);
 
@@ -897,26 +596,6 @@ section {
   font-size: 15px;
 
   line-height: 1.8;
-
-  overflow-x: auto;
-}
-
-
-/* =========================================================
-   17. ARTICLE QUOTE
-   ========================================================= */
-
-blockquote {
-  margin: 32px 0;
-
-  padding: 20px 24px;
-
-  border-left: 3px solid var(--primary);
-
-  background:
-    rgba(15, 23, 42, 0.55);
-
-  color: var(--muted);
 }
 
 
@@ -953,7 +632,6 @@ blockquote {
   color: var(--text-strong);
 
   font-size: 23px;
-
   line-height: 1.3;
 }
 
@@ -1004,7 +682,6 @@ blockquote {
   color: var(--text-strong);
 
   font-size: 23px;
-
   line-height: 1.3;
 }
 
@@ -1032,8 +709,7 @@ blockquote {
 
   padding: 30px;
 
-  background:
-    rgba(17, 24, 39, 0.55);
+  background: rgba(17, 24, 39, 0.55);
 
   border: 1px solid var(--border);
 
@@ -1069,7 +745,6 @@ blockquote {
   position: relative;
 
   margin: 32px 0;
-
   padding-left: 30px;
 }
 
@@ -1131,9 +806,9 @@ blockquote {
 table {
   width: 100%;
 
-  margin: 24px 0;
-
   border-collapse: collapse;
+
+  margin: 24px 0;
 
   font-size: 14px;
 }
@@ -1232,8 +907,6 @@ pre code {
 
 .page-nav,
 .post-footer-nav {
-  width: 100%;
-
   max-width: var(--article-width);
 
   margin: 24px auto 0;
@@ -1245,17 +918,10 @@ pre code {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   font-size: 13px;
-}
-
-.post-footer-nav a {
-  color: var(--primary);
-}
-
-.post-footer-nav a:hover {
-  text-decoration: underline;
 }
 
 
@@ -1287,7 +953,65 @@ footer {
 
 
 /* =========================================================
-   28. HIGHLIGHTS
+   28. BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--primary);
+
+  color: #FFFFFF;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border: 1px solid var(--primary);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+
+  color: #FFFFFF;
+
+  text-decoration: none;
+
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+
+  border-color: var(--border-light);
+
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: var(--surface);
+
+  border-color: var(--primary);
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   29. HIGHLIGHT
    ========================================================= */
 
 .highlight {
@@ -1316,14 +1040,54 @@ footer {
 
 
 /* =========================================================
-   29. LANDING PAGE GRID
+   30. HERO / LANDING PAGE
+   ========================================================= */
+
+.hero {
+  padding: 80px 0 64px;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+
+  color: var(--text-strong);
+
+  font-size: clamp(38px, 6vw, 60px);
+
+  line-height: 1.08;
+
+  letter-spacing: -1px;
+}
+
+.hero p {
+  max-width: 760px;
+
+  margin: 0 0 24px;
+
+  color: var(--muted);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   31. LANDING PAGE GRID
    ========================================================= */
 
 .feature-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 20px;
 
@@ -1358,30 +1122,8 @@ footer {
 
 
 /* =========================================================
-   30. THREE-COLUMN GRID
+   32. SERIES
    ========================================================= */
-
-.grid-3 {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 24px;
-}
-
-
-/* =========================================================
-   31. SERIES
-   ========================================================= */
-
-.series {
-  background: var(--bg-alt);
-
-  border-top: 1px solid var(--border);
-
-  border-bottom: 1px solid var(--border);
-}
 
 .series-card {
   padding: 28px;
@@ -1407,24 +1149,10 @@ footer {
   color: var(--muted);
 }
 
-.series-list {
-  display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 20px;
-}
-
-.series-item {
-  padding: 24px;
-
-  background: var(--card);
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-}
+/* =========================================================
+   33. SERIES NAVIGATION
+   ========================================================= */
 
 .series-nav {
   display: flex;
@@ -1458,7 +1186,7 @@ footer {
 
 
 /* =========================================================
-   32. CONTACT
+   34. CONTACT
    ========================================================= */
 
 .contact {
@@ -1481,25 +1209,20 @@ footer {
 
 
 /* =========================================================
-   33. RESPONSIVE — TABLET
+   35. RESPONSIVE — TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
 
-  .feature-grid,
-  .grid-3 {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 
 /* =========================================================
-   34. RESPONSIVE — MOBILE
+   36. RESPONSIVE — MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -1509,22 +1232,42 @@ footer {
   }
 
 
-  /* Header */
+  /* -------------------------------------------------------
+     Header
+     ------------------------------------------------------- */
 
   .nav {
     min-height: auto;
 
-    padding: 14px 0;
+    padding: 16px 0 14px;
+
+    display: flex;
+
+    flex-direction: column;
 
     align-items: flex-start;
+
+    justify-content: flex-start;
+
+    gap: 14px;
   }
 
-  .nav-links {
-    display: none;
+  .brand {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
   }
 
   .brand-logo {
     height: 44px;
+
+    width: auto;
+
+    flex-shrink: 0;
   }
 
   .brand h1 {
@@ -1533,27 +1276,58 @@ footer {
 
   .brand span {
     font-size: 11px;
+
+    line-height: 1.35;
   }
 
 
-  /* Page header */
+  /* -------------------------------------------------------
+     Mobile Navigation
+     ------------------------------------------------------- */
+
+  .nav-links {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 10px 20px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+  }
+
+
+  /* -------------------------------------------------------
+     Page Header
+     ------------------------------------------------------- */
 
   .page-header {
     padding: 40px 0 28px;
   }
 
-  .page-header h2,
-  .article > .page-header h2 {
+  .page-header h2 {
     font-size: 30px;
   }
 
-  .page-header p,
-  .article > .page-header p {
+  .page-header p {
     font-size: 15px;
   }
 
 
-  /* Hero */
+  /* -------------------------------------------------------
+     Hero
+     ------------------------------------------------------- */
 
   .hero {
     padding: 56px 0 44px;
@@ -1563,53 +1337,52 @@ footer {
     font-size: 38px;
   }
 
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .hero h3 {
-    font-size: 30px;
-  }
-
   .hero p {
     font-size: 16px;
   }
 
 
-  /* Cards */
+  /* -------------------------------------------------------
+     Cards
+     ------------------------------------------------------- */
 
   .card {
     padding: 20px;
   }
 
   .card-grid,
-  .feature-grid,
-  .grid-3,
-  .series-list {
+  .feature-grid {
     grid-template-columns: 1fr;
   }
 
 
-  /* Article */
+  /* -------------------------------------------------------
+     Article
+     ------------------------------------------------------- */
 
   .post-content,
   .article {
     padding-top: 32px;
+
+    padding-bottom: 52px;
   }
 
-  .post-header h1,
-  .post-content > h1 {
-    font-size: 34px;
-  }
+  .post-content h2,
+  .article h1 {
+    margin-top: 42px;
 
-  .post-content h2 {
+    margin-bottom: 18px;
+
     font-size: 28px;
   }
 
+  .post-content h2:first-child {
+    margin-top: 0;
+  }
+
   .post-content h3,
-  .article h2:not(.page-header h2),
-  .article h3 {
-    margin-top: 36px;
+  .article h2 {
+    margin-top: 34px;
 
     font-size: 21px;
   }
@@ -1617,14 +1390,76 @@ footer {
   .post-content p,
   .article p {
     font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 16px;
+  }
+
+
+  /* -------------------------------------------------------
+     Article Header
+     ------------------------------------------------------- */
+
+  .post-header {
+    padding-bottom: 32px;
+  }
+
+  .post-header h1 {
+    margin-bottom: 22px;
+
+    font-size: 40px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
   }
 
   .post-subtitle {
-    font-size: 16px;
+    margin-bottom: 22px;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+  }
+
+  .post-header .post-meta {
+    font-size: 12px;
   }
 
 
-  /* Project experience */
+  /* -------------------------------------------------------
+     Article Components
+     ------------------------------------------------------- */
+
+  .callout {
+    margin: 24px 0;
+
+    padding: 18px 20px;
+  }
+
+  blockquote {
+    margin: 22px 0;
+
+    padding: 18px 20px;
+  }
+
+  .architecture-flow {
+    margin: 24px 0;
+
+    padding: 18px 20px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* -------------------------------------------------------
+     Project Experience
+     ------------------------------------------------------- */
 
   .experience-item {
     padding: 28px 0;
@@ -1636,7 +1471,9 @@ footer {
   }
 
 
-  /* Navigation */
+  /* -------------------------------------------------------
+     Navigation
+     ------------------------------------------------------- */
 
   .page-nav,
   .post-footer-nav {
@@ -1648,18 +1485,130 @@ footer {
   }
 
 
-  /* Footer */
+  /* -------------------------------------------------------
+     Footer
+     ------------------------------------------------------- */
 
   footer {
     margin-top: 48px;
 
     padding: 32px 0;
   }
+
 }
 
 
 /* =========================================================
-   35. ACCESSIBILITY
+   37. RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+
+  /* Header */
+
+  .nav {
+    padding: 14px 0 12px;
+
+    gap: 12px;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-logo {
+    height: 40px;
+  }
+
+  .brand h1 {
+    font-size: 14px;
+  }
+
+  .brand span {
+    font-size: 10px;
+  }
+
+  .nav-links {
+    gap: 8px 16px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+
+  /* Badge */
+
+  .badge,
+  .badge1 {
+    font-size: 11px;
+
+    padding: 6px 10px;
+
+    max-width: 100%;
+  }
+
+
+  /* Article title */
+
+  .post-header h1 {
+    font-size: 36px;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.8px;
+  }
+
+  .post-subtitle {
+    font-size: 16px;
+
+    line-height: 1.6;
+  }
+
+
+  /* Article */
+
+  .post-content h2,
+  .article h1 {
+    font-size: 26px;
+  }
+
+  .post-content h3,
+  .article h2 {
+    font-size: 20px;
+  }
+
+  .post-content p,
+  .article p {
+    font-size: 15px;
+  }
+
+
+  /* Cards */
+
+  .card {
+    padding: 18px;
+  }
+
+
+  /* Footer */
+
+  .footer-note {
+    font-size: 12px;
+
+    line-height: 1.55;
+  }
+
+}
+
+
+/* =========================================================
+   38. ACCESSIBILITY
    ========================================================= */
 
 :focus-visible {
