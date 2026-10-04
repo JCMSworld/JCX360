@@ -1,7 +1,10 @@
-/* =========================================================
-   JCX360 MASTER STYLESHEET
-   Secure. Scale. Sustain.
-   ========================================================= */
+/*
+=========================================================
+JCX360 MASTER STYLESHEET
+Secure. Scale. Sustain.
+Single source of truth for JCX360 pages
+=========================================================
+*/
 
 
 /* =========================================================
@@ -10,13 +13,14 @@
 
 :root {
 
-  /* JCX360 Brand */
+  /* JCX360 brand */
 
   --primary: #2563EB;
   --primary-dark: #1D4ED8;
   --ai-indigo: #4F46E5;
   --greenops: #16A34A;
   --amber: #F59E0B;
+  --accent: #22D3EE;
 
 
   /* Backgrounds */
@@ -39,11 +43,6 @@
 
   --border: #1F2933;
   --border-light: #334155;
-
-
-  /* Accent */
-
-  --accent: #22D3EE;
 
 
   /* Layout */
@@ -70,7 +69,7 @@
   --space-xxl: 56px;
 
 
-  /* Shadows */
+  /* Effects */
 
   --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.20);
 
@@ -78,7 +77,7 @@
 
 
 /* =========================================================
-   2. RESET
+   2. RESET / GLOBAL
    ========================================================= */
 
 * {
@@ -93,11 +92,11 @@ body {
   margin: 0;
 
   font-family:
-    'Inter',
+    "Inter",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
-    'Segoe UI',
+    "Segoe UI",
     sans-serif;
 
   background:
@@ -109,11 +108,13 @@ body {
     var(--bg);
 
   color: var(--text);
+
   line-height: 1.7;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 strong {
@@ -148,7 +149,9 @@ a:hover {
 .container {
   width: 100%;
   max-width: var(--container-width);
+
   margin: 0 auto;
+
   padding: 0 24px;
 }
 
@@ -159,7 +162,7 @@ a:hover {
 
 
 /* =========================================================
-   5. HEADER
+   5. HEADER / NAVIGATION
    ========================================================= */
 
 header {
@@ -175,33 +178,46 @@ header {
   -webkit-backdrop-filter: blur(8px);
 }
 
+
+/* Site navigation only */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .nav {
   min-height: 72px;
 
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 }
 
 .brand {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 }
 
 .brand-logo {
   height: 50px;
   width: auto;
+
   display: block;
 }
 
 .brand h1 {
   margin: 0;
 
+  color: var(--text-strong);
+
   font-size: 16px;
   line-height: 1.3;
-
-  color: var(--text-strong);
 }
 
 .brand span {
@@ -217,6 +233,7 @@ header {
 
 .nav-links {
   display: flex;
+
   align-items: center;
 }
 
@@ -226,6 +243,7 @@ header {
   color: var(--text);
 
   font-size: 14px;
+
   opacity: 0.85;
 
   transition:
@@ -235,7 +253,9 @@ header {
 
 .nav-links a:hover {
   color: var(--primary);
+
   opacity: 1;
+
   text-decoration: none;
 }
 
@@ -277,11 +297,11 @@ header {
    7. BADGE / CHEVRON
    ========================================================= */
 
-.badge,
-.badge1 {
+.badge {
   display: inline-block;
 
   padding: 6px 12px;
+
   margin-bottom: 16px;
 
   border-radius: var(--radius-pill);
@@ -291,18 +311,37 @@ header {
   color: var(--primary);
 
   font-size: 12px;
+
   font-weight: 600;
+
   line-height: 1.4;
 }
 
+.badge1 {
+  display: inline-block;
 
-/* =========================================================
-   8. CHEVRON LABEL
-   ========================================================= */
+  padding: 6px 12px;
+
+  margin-bottom: 16px;
+
+  border-radius: var(--radius-pill);
+
+  background: rgba(37, 99, 235, 0.12);
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
 
 .chevron {
   display: inline-flex;
+
   align-items: center;
+
   gap: 8px;
 
   padding: 7px 14px;
@@ -316,12 +355,13 @@ header {
   color: var(--primary);
 
   font-size: 12px;
+
   font-weight: 600;
 }
 
 
 /* =========================================================
-   9. GENERAL SECTIONS
+   8. GENERAL SECTIONS
    ========================================================= */
 
 .section {
@@ -335,10 +375,11 @@ header {
 .section-header h2 {
   margin: 0 0 8px;
 
-  font-size: 30px;
-  line-height: 1.25;
-
   color: var(--text-strong);
+
+  font-size: 30px;
+
+  line-height: 1.25;
 }
 
 .section-header p {
@@ -349,17 +390,17 @@ header {
 
 
 /* =========================================================
-   10. CARDS
+   9. CARDS
    ========================================================= */
 
 .card {
+  padding: 24px;
+
   background: var(--card);
 
   border: 1px solid var(--border);
 
   border-radius: var(--radius-lg);
-
-  padding: 24px;
 
   box-shadow: var(--shadow-card);
 }
@@ -375,22 +416,18 @@ header {
   color: var(--muted);
 }
 
-
-/* =========================================================
-   11. CARD GRID
-   ========================================================= */
-
 .card-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 20px;
 }
 
 
 /* =========================================================
-   12. INTRODUCTION
+   10. INTRODUCTION
    ========================================================= */
 
 .intro {
@@ -411,122 +448,178 @@ header {
 
 
 /* =========================================================
-   13. ARTICLE / BLOG
+   11. ARTICLE / BLOG
    ========================================================= */
 
+   
 .post-content,
 .article {
+  width: 100%;
+
   max-width: var(--article-width);
 
   margin: 0 auto;
 
-  padding: 42px 0 70px;
+  /*
+     Deliberately reduced from 48px.
+     The article header already provides the visual separation.
+  */
+
+  padding: 10px 0 0;
 }
 
-.post-content h2,
-.article h1 {
-  margin: 48px 0 20px;
+
+/* Article h2 */
+
+.post-content h2 {
+  margin: 0 0 24px;
 
   color: var(--text-strong);
 
   font-size: 36px;
+
   line-height: 1.2;
 
   letter-spacing: -0.5px;
 }
 
-.post-content h2:first-child {
-  margin-top: 0;
-}
+
+/* Article h3 */
 
 .post-content h3,
-.article h2 {
-  margin-top: 42px;
+.article h3 {
+  margin-top: 16px;
+
   margin-bottom: 16px;
 
   color: var(--text-strong);
 
   font-size: 24px;
+
   line-height: 1.3;
 
   letter-spacing: -0.2px;
 }
 
-.article h3 {
-  margin-top: 32px;
+
+/*
+   CRITICAL:
+   The first heading immediately follows the article header.
+   Do not add the normal section margin here.
+*/
+
+.post-content > h3:first-child {
+  margin-top: 0;
+}
+
+/*
+   Article headings are deliberately scoped so that the
+   .page-header h2 remains the page title size.
+*/
+
+.article > .page-header h2 {
+  margin: 0 0 16px;
 
   color: var(--text-strong);
 
-  font-size: 20px;
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
 }
 
-.post-content p,
-.article p {
+.article > .page-header p {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.article h2:not(.page-header h2) {
+  margin-top: 40px;
+
+  margin-bottom: 16px;
+
+  color: var(--text-strong);
+
+  font-size: 24px;
+
+  line-height: 1.3;
+}
+
+
+/* Article paragraphs */
+
+.article p,
+.post-content p {
   margin: 0 0 18px;
 
   color: var(--muted);
 
   font-size: 16px;
-  line-height: 1.75;
+
+  line-height: 1.0;
 }
 
-.post-content ul,
-.post-content ol,
+
+/* Article lists */
+
 .article ul,
-.article ol {
-  margin: 16px 0 22px;
+.article ol,
+.post-content ul,
+.post-content ol {
+  margin: 10px 0 10px;
 
-  padding-left: 24px;
+  padding-left: 10px;
 
   color: var(--muted);
 }
 
-.post-content li,
-.article li {
+.article li,
+.post-content li {
   margin-bottom: 8px;
-}
-
-.post-meta {
-  margin-bottom: 28px;
-
-  color: var(--muted);
-
-  font-size: 13px;
 }
 
 
 /* =========================================================
-   14. ARTICLE HEADER
+   12. ARTICLE HEADER
    ========================================================= */
 
 .post-header {
-  padding-bottom: 42px;
+  padding-bottom: 10px;
 
   border-bottom: 1px solid var(--border);
 }
 
-.post-header h1 {
-  margin: 0 0 28px;
+.post-header h1,
+.post-header h2 {
+  margin: 0 0 10px;
 
   color: var(--text-strong);
 
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: clamp(25px, 5vw, 35px);
 
-  line-height: 1.08;
+  line-height: 1.00;
 
-  letter-spacing: -1.5px;
+  letter-spacing: -1.0px;
 }
 
 .post-subtitle {
   max-width: 950px;
 
-  margin: 0 0 28px;
+  margin: 0 0 20px;
 
   color: var(--muted);
 
-  font-size: 20px;
+  font-size: 12px;
 
-  line-height: 1.65;
+  line-height: 1.0;
 }
 
 .post-header .post-meta {
@@ -534,73 +627,56 @@ header {
 
   color: var(--muted);
 
-  font-size: 13px;
+  font-size: 11px;
 }
 
 
 /* =========================================================
-   15. ARTICLE CALLOUT
+   13. ARTICLE CALLOUT
    ========================================================= */
 
 .callout {
-  margin: 30px 0;
+  margin: 2px 0;
 
   padding: 22px 24px;
 
   background: rgba(17, 24, 39, 0.60);
 
-  border-left: 3px solid var(--primary);
+  border-left: 1px solid var(--primary);
 
   border-radius: var(--radius-md);
 
   color: var(--muted);
 }
 
+.callout p {
+  margin-bottom: 10px;
+}
 
-/* =========================================================
-   16. ARTICLE QUOTE
-   ========================================================= */
-
-blockquote {
-  margin: 26px 0;
-
-  padding: 20px 24px;
-
-  border-left: 3px solid var(--primary);
-
-  color: var(--muted);
-
-  background: rgba(15, 23, 42, 0.55);
+.callout p:last-child {
+  margin-bottom: 0;
 }
 
 
 /* =========================================================
-   17. ARTICLE ARCHITECTURE FLOW
+   14. ARTICLE QUOTE
    ========================================================= */
 
-.architecture-flow {
+blockquote {
   margin: 28px 0;
 
   padding: 20px 24px;
 
-  background: rgba(15, 23, 42, 0.70);
-
-  border: 1px solid var(--border);
-
   border-left: 3px solid var(--primary);
 
-  border-radius: var(--radius-md);
+  background: rgba(15, 23, 42, 0.55);
 
-  color: var(--text);
-
-  font-size: 15px;
-
-  line-height: 1.8;
+  color: var(--muted);
 }
 
 
 /* =========================================================
-   18. PROJECT EXPERIENCE
+   15. PROJECT EXPERIENCE
    ========================================================= */
 
 .experience {
@@ -623,6 +699,7 @@ blockquote {
   color: var(--primary);
 
   font-size: 13px;
+
   font-weight: 600;
 }
 
@@ -632,6 +709,7 @@ blockquote {
   color: var(--text-strong);
 
   font-size: 23px;
+
   line-height: 1.3;
 }
 
@@ -663,7 +741,7 @@ blockquote {
 
 
 /* =========================================================
-   19. PROJECT SECTION
+   16. PROJECT SECTION
    ========================================================= */
 
 .project-section {
@@ -682,6 +760,7 @@ blockquote {
   color: var(--text-strong);
 
   font-size: 23px;
+
   line-height: 1.3;
 }
 
@@ -701,7 +780,7 @@ blockquote {
 
 
 /* =========================================================
-   20. CLOSING SECTION
+   17. CLOSING SECTION
    ========================================================= */
 
 .closing {
@@ -738,13 +817,14 @@ blockquote {
 
 
 /* =========================================================
-   21. TIMELINE
+   18. TIMELINE
    ========================================================= */
 
 .timeline {
   position: relative;
 
   margin: 32px 0;
+
   padding-left: 30px;
 }
 
@@ -800,15 +880,15 @@ blockquote {
 
 
 /* =========================================================
-   22. TABLES
+   19. TABLES
    ========================================================= */
 
 table {
   width: 100%;
 
-  border-collapse: collapse;
-
   margin: 24px 0;
+
+  border-collapse: collapse;
 
   font-size: 14px;
 }
@@ -836,7 +916,7 @@ td {
 
 
 /* =========================================================
-   23. LISTS
+   20. LISTS
    ========================================================= */
 
 ul,
@@ -850,7 +930,7 @@ li {
 
 
 /* =========================================================
-   24. CODE
+   21. CODE
    ========================================================= */
 
 code {
@@ -889,7 +969,7 @@ pre code {
 
 
 /* =========================================================
-   25. EXTERNAL LINKS
+   22. EXTERNAL LINKS
    ========================================================= */
 
 .external-link::after {
@@ -902,11 +982,13 @@ pre code {
 
 
 /* =========================================================
-   26. PAGE FOOTER NAVIGATION
+   23. PAGE FOOTER NAVIGATION
    ========================================================= */
 
 .page-nav,
 .post-footer-nav {
+  width: 100%;
+
   max-width: var(--article-width);
 
   margin: 24px auto 0;
@@ -924,9 +1006,17 @@ pre code {
   font-size: 13px;
 }
 
+.post-footer-nav a {
+  color: var(--primary);
+}
+
+.post-footer-nav a:hover {
+  text-decoration: underline;
+}
+
 
 /* =========================================================
-   27. FOOTER
+   24. FOOTER
    ========================================================= */
 
 footer {
@@ -953,7 +1043,7 @@ footer {
 
 
 /* =========================================================
-   28. BUTTONS
+   25. BUTTONS
    ========================================================= */
 
 .btn {
@@ -964,6 +1054,8 @@ footer {
 
   padding: 10px 18px;
 
+  border: 1px solid var(--primary);
+
   border-radius: var(--radius-sm);
 
   background: var(--primary);
@@ -971,9 +1063,8 @@ footer {
   color: #FFFFFF;
 
   font-size: 14px;
-  font-weight: 600;
 
-  border: 1px solid var(--primary);
+  font-weight: 600;
 
   transition:
     background 0.2s ease,
@@ -1011,7 +1102,7 @@ footer {
 
 
 /* =========================================================
-   29. HIGHLIGHT
+   26. HIGHLIGHTS
    ========================================================= */
 
 .highlight {
@@ -1040,11 +1131,17 @@ footer {
 
 
 /* =========================================================
-   30. HERO / LANDING PAGE
+   27. HERO / LANDING PAGE
    ========================================================= */
 
 .hero {
-  padding: 80px 0 64px;
+  /*
+     Reduced from 80px / 64px.
+     This keeps the page frame tighter without changing
+     the card itself.
+  */
+
+  padding: 48px 0 48px;
 }
 
 .hero h1 {
@@ -1081,13 +1178,14 @@ footer {
 
 
 /* =========================================================
-   31. LANDING PAGE GRID
+   28. LANDING PAGE GRID
    ========================================================= */
 
 .feature-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
   gap: 20px;
 
@@ -1122,7 +1220,7 @@ footer {
 
 
 /* =========================================================
-   32. SERIES
+   29. SERIES
    ========================================================= */
 
 .series-card {
@@ -1148,11 +1246,6 @@ footer {
 
   color: var(--muted);
 }
-
-
-/* =========================================================
-   33. SERIES NAVIGATION
-   ========================================================= */
 
 .series-nav {
   display: flex;
@@ -1186,7 +1279,7 @@ footer {
 
 
 /* =========================================================
-   34. CONTACT
+   30. CONTACT
    ========================================================= */
 
 .contact {
@@ -1209,20 +1302,21 @@ footer {
 
 
 /* =========================================================
-   35. RESPONSIVE — TABLET
+   31. RESPONSIVE — TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
 
   .feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
 /* =========================================================
-   36. RESPONSIVE — MOBILE
+   32. RESPONSIVE — MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -1239,33 +1333,53 @@ footer {
   .nav {
     min-height: auto;
 
-    padding: 16px 0 14px;
-
-    display: flex;
-
-    flex-direction: column;
+    padding: 14px 0;
 
     align-items: flex-start;
 
-    justify-content: flex-start;
+    flex-direction: column;
 
-    gap: 14px;
+    gap: 12px;
   }
 
-  .brand {
+
+  /*
+     Keep navigation visible on mobile.
+     It wraps underneath the brand rather than being
+     pushed outside the viewport.
+  */
+
+  .nav-links {
     width: 100%;
 
     display: flex;
 
     align-items: center;
 
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 8px 18px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+  }
+
+
+  .brand {
+    width: 100%;
+
     gap: 10px;
   }
 
   .brand-logo {
     height: 44px;
-
-    width: auto;
 
     flex-shrink: 0;
   }
@@ -1282,45 +1396,20 @@ footer {
 
 
   /* -------------------------------------------------------
-     Mobile Navigation
-     ------------------------------------------------------- */
-
-  .nav-links {
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-start;
-
-    flex-wrap: wrap;
-
-    gap: 10px 20px;
-  }
-
-  .nav-links a {
-    margin-left: 0;
-
-    font-size: 14px;
-
-    white-space: nowrap;
-  }
-
-
-  /* -------------------------------------------------------
-     Page Header
+     Page header
      ------------------------------------------------------- */
 
   .page-header {
     padding: 40px 0 28px;
   }
 
-  .page-header h2 {
+  .page-header h2,
+  .article > .page-header h2 {
     font-size: 30px;
   }
 
-  .page-header p {
+  .page-header p,
+  .article > .page-header p {
     font-size: 15px;
   }
 
@@ -1330,7 +1419,7 @@ footer {
      ------------------------------------------------------- */
 
   .hero {
-    padding: 56px 0 44px;
+    padding: 36px 0 36px;
   }
 
   .hero h1 {
@@ -1362,27 +1451,26 @@ footer {
 
   .post-content,
   .article {
-    padding-top: 32px;
-
-    padding-bottom: 52px;
+    padding-top: 22px;
   }
 
-  .post-content h2,
-  .article h1 {
-    margin-top: 42px;
 
-    margin-bottom: 18px;
+  /*
+     Critical first heading rule for mobile as well.
+  */
 
-    font-size: 28px;
-  }
-
-  .post-content h2:first-child {
+  .post-content > h3:first-child {
     margin-top: 0;
   }
 
+  .post-content h2 {
+    font-size: 28px;
+  }
+
   .post-content h3,
-  .article h2 {
-    margin-top: 34px;
+  .article h2:not(.page-header h2),
+  .article h3 {
+    margin-top: 32px;
 
     font-size: 21px;
   }
@@ -1392,21 +1480,20 @@ footer {
     font-size: 15px;
 
     line-height: 1.7;
-
-    margin-bottom: 16px;
   }
 
 
   /* -------------------------------------------------------
-     Article Header
+     Article header
      ------------------------------------------------------- */
 
   .post-header {
-    padding-bottom: 32px;
+    padding-bottom: 24px;
   }
 
-  .post-header h1 {
-    margin-bottom: 22px;
+  .post-header h1,
+  .post-header h2 {
+    margin-bottom: 18px;
 
     font-size: 40px;
 
@@ -1416,49 +1503,16 @@ footer {
   }
 
   .post-subtitle {
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 
     font-size: 17px;
 
     line-height: 1.6;
   }
 
-  .post-header .post-meta {
-    font-size: 12px;
-  }
-
 
   /* -------------------------------------------------------
-     Article Components
-     ------------------------------------------------------- */
-
-  .callout {
-    margin: 24px 0;
-
-    padding: 18px 20px;
-  }
-
-  blockquote {
-    margin: 22px 0;
-
-    padding: 18px 20px;
-  }
-
-  .architecture-flow {
-    margin: 24px 0;
-
-    padding: 18px 20px;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    overflow-wrap: anywhere;
-  }
-
-
-  /* -------------------------------------------------------
-     Project Experience
+     Project experience
      ------------------------------------------------------- */
 
   .experience-item {
@@ -1499,7 +1553,7 @@ footer {
 
 
 /* =========================================================
-   37. RESPONSIVE — SMALL MOBILE
+   33. RESPONSIVE — SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -1514,7 +1568,7 @@ footer {
   .nav {
     padding: 14px 0 12px;
 
-    gap: 12px;
+    gap: 10px;
   }
 
   .brand {
@@ -1556,7 +1610,8 @@ footer {
 
   /* Article title */
 
-  .post-header h1 {
+  .post-header h1,
+  .post-header h2 {
     font-size: 36px;
 
     line-height: 1.08;
@@ -1579,7 +1634,8 @@ footer {
   }
 
   .post-content h3,
-  .article h2 {
+  .article h2:not(.page-header h2),
+  .article h3 {
     font-size: 20px;
   }
 
@@ -1608,7 +1664,7 @@ footer {
 
 
 /* =========================================================
-   38. ACCESSIBILITY
+   34. ACCESSIBILITY
    ========================================================= */
 
 :focus-visible {
@@ -1618,6 +1674,8 @@ footer {
 }
 
 
-/* =========================================================
-   END OF JCX360 MASTER STYLESHEET
-   ========================================================= */
+/*
+=========================================================
+END OF JCX360 MASTER STYLESHEET
+=========================================================
+*/
