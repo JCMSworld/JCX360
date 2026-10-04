@@ -794,6 +794,57 @@ section {
   font-size: 13px;
 }
 
+/* =====================================================
+   ARTICLE CONTENT - COMPACT JCX360 SPACING
+   ===================================================== */
+
+.post-content {
+  padding: 42px 0 70px;
+}
+
+.post-content h2 {
+  margin: 48px 0 20px;
+}
+
+.post-content h2:first-child {
+  margin-top: 0;
+}
+
+.post-content h3 {
+  margin: 32px 0 14px;
+}
+
+.post-content p {
+  margin: 0 0 18px;
+  line-height: 1.75;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 0 0 22px;
+  padding-left: 28px;
+}
+
+.post-content li {
+  margin-bottom: 8px;
+}
+
+.post-content blockquote {
+  margin: 26px 0;
+}
+
+.post-content .architecture-flow {
+  margin: 28px 0;
+}
+
+.post-content .callout {
+  margin: 30px 0;
+}
+
+.post-content .card-grid {
+  margin: 30px 0;
+}
+
 
 /* =========================================================
    15. ARTICLE CALLOUT
