@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add series/series-3/series-3-post-1.html
+git add /delivery/reg-to-data-engineering.html
 git commit -m "Update"
 git push
 
