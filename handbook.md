@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add /delivery/reg-to-data-engineering.html
+git add delivery/planning-to-delivery-control.html
 git commit -m "Update"
 git push
 
