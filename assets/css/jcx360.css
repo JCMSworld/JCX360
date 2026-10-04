@@ -2,15 +2,18 @@
 =========================================================
 JCX360 MASTER STYLESHEET
 Secure. Scale. Sustain.
+
 Single source of truth for JCX360 pages
 =========================================================
 */
+
 
 /* =========================================================
    1. DESIGN TOKENS
    ========================================================= */
 
 :root {
+
   /* JCX360 brand */
   --primary: #2563EB;
   --primary-dark: #1D4ED8;
@@ -57,6 +60,7 @@ Single source of truth for JCX360 pages
   --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.20);
 }
 
+
 /* =========================================================
    2. RESET / GLOBAL
    ========================================================= */
@@ -71,6 +75,7 @@ html {
 
 body {
   margin: 0;
+
   font-family:
     "Inter",
     system-ui,
@@ -78,6 +83,7 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
   background:
     radial-gradient(
       1200px 600px at 10% -10%,
@@ -85,6 +91,7 @@ body {
       var(--bg) 40%
     ),
     var(--bg);
+
   color: var(--text);
   line-height: 1.7;
 }
@@ -103,6 +110,7 @@ strong {
   color: var(--text-strong);
 }
 
+
 /* =========================================================
    3. LINKS
    ========================================================= */
@@ -116,6 +124,7 @@ a:hover {
   color: #60A5FA;
   text-decoration: underline;
 }
+
 
 /* =========================================================
    4. GLOBAL CONTAINER
@@ -133,22 +142,43 @@ a:hover {
   margin: 0 auto;
 }
 
+
 /* =========================================================
    5. HEADER / NAVIGATION
    ========================================================= */
 
-header {
+/*
+   IMPORTANT:
+   Only the actual site header is sticky.
+
+   Do not use:
+       header { position: sticky; }
+
+   because article/page headers can also use <header>.
+*/
+
+body > header {
   position: sticky;
   top: 0;
   z-index: 100;
+
   border-bottom: 1px solid var(--border);
+
   background: rgba(11, 18, 32, 0.78);
+
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .nav {
   min-height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -168,15 +198,20 @@ header {
 
 .brand h1 {
   margin: 0;
+
   color: var(--text-strong);
+
   font-size: 16px;
   line-height: 1.3;
 }
 
 .brand span {
   display: block;
+
   margin-top: 2px;
+
   color: var(--muted);
+
   font-size: 12px;
   font-weight: 400;
 }
@@ -188,10 +223,16 @@ header {
 
 .nav-links a {
   margin-left: 20px;
+
   color: var(--text);
+
   font-size: 14px;
+
   opacity: 0.85;
-  transition: color 0.2s ease, opacity 0.2s ease;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -200,42 +241,57 @@ header {
   text-decoration: none;
 }
 
+
 /* =========================================================
    6. PAGE HEADER
    ========================================================= */
 
 .page-header {
   padding: var(--space-xxl) 0 var(--space-xl);
+
   border-bottom: 1px solid var(--border);
 }
 
 .page-header h2 {
   margin: 0 0 16px;
+
   color: var(--text-strong);
+
   font-size: 38px;
   line-height: 1.2;
+
   letter-spacing: -0.5px;
 }
 
 .page-header p {
   max-width: 850px;
+
   margin: 0;
+
   color: var(--muted);
+
   font-size: 16px;
   line-height: 1.7;
 }
 
+
 /* =========================================================
-   7. BADGE / CHEVRON
+   7. BADGES / CHEVRONS
    ========================================================= */
 
-.badge {
+.badge,
+.badge1 {
   display: inline-block;
+
   padding: 6px 12px;
   margin-bottom: 16px;
+
   border-radius: var(--radius-pill);
+
   background: rgba(37, 99, 235, 0.12);
+
   color: var(--primary);
+
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
@@ -245,18 +301,29 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   padding: 7px 14px;
+
   background: rgba(37, 99, 235, 0.10);
+
   border: 1px solid rgba(37, 99, 235, 0.22);
+
   border-radius: var(--radius-pill);
+
   color: var(--primary);
+
   font-size: 12px;
   font-weight: 600;
 }
 
+
 /* =========================================================
    8. GENERAL SECTIONS
    ========================================================= */
+
+section {
+  padding: 20px 0;
+}
 
 .section {
   margin: var(--space-xxl) 0;
@@ -268,7 +335,9 @@ header {
 
 .section-header h2 {
   margin: 0 0 8px;
+
   color: var(--text-strong);
+
   font-size: 30px;
   line-height: 1.25;
 }
@@ -278,15 +347,39 @@ header {
   color: var(--muted);
 }
 
+.section-title {
+  margin-bottom: 12px;
+
+  color: var(--text-strong);
+
+  font-size: 28px;
+  line-height: 1.25;
+
+  letter-spacing: -0.3px;
+}
+
+.section-subtitle {
+  max-width: 720px;
+
+  margin-bottom: 32px;
+
+  color: var(--muted);
+}
+
+
 /* =========================================================
    9. CARDS
    ========================================================= */
 
 .card {
   padding: 24px;
+
   background: var(--card);
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius-lg);
+
   box-shadow: var(--shadow-card);
 }
 
@@ -302,9 +395,13 @@ header {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 20px;
 }
+
 
 /* =========================================================
    10. INTRODUCTION
@@ -312,7 +409,11 @@ header {
 
 .intro {
   max-width: var(--article-width);
-  padding: var(--space-xl) 0 var(--space-md);
+
+  padding:
+    var(--space-xl)
+    0
+    var(--space-md);
 }
 
 .intro p {
@@ -324,23 +425,276 @@ header {
   color: var(--text-strong);
 }
 
+
 /* =========================================================
-   11. ARTICLE / BLOG
+   11. HERO / LANDING PAGE
+   ========================================================= */
+
+.hero {
+  padding: 80px 0 64px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+
+  color: var(--text-strong);
+
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1.08;
+
+  letter-spacing: -1px;
+}
+
+.hero h2 {
+  margin: 0 0 16px;
+
+  color: var(--text-strong);
+
+  font-size: 42px;
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+.hero h3 {
+  margin: 0 0 16px;
+
+  color: var(--text-strong);
+
+  font-size: 38px;
+  line-height: 1.15;
+
+  letter-spacing: -0.6px;
+}
+
+.hero h4 {
+  color: var(--text-strong);
+}
+
+.hero p {
+  max-width: 760px;
+
+  margin: 0 0 24px;
+
+  color: var(--muted);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr 0.8fr;
+
+  gap: 40px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   12. HERO CARD
+   ========================================================= */
+
+.hero-card {
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--bg-alt),
+      var(--bg)
+    );
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-card h3 {
+  margin-top: 0;
+
+  color: var(--text-strong);
+
+  font-size: 18px;
+}
+
+.hero-card ul {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.hero-card li {
+  padding: 10px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  font-size: 14px;
+}
+
+.hero-card li:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   13. CTA / BUTTONS
+   ========================================================= */
+
+.cta,
+.hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border: 1px solid var(--border-light);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--card);
+
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--surface);
+
+  border-color: var(--primary);
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--primary);
+
+  border-color: var(--primary);
+
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background: transparent;
+
+  border-color: var(--border-light);
+
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: var(--surface);
+
+  border-color: var(--primary);
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   14. ARTICLE / BLOG
    ========================================================= */
 
 .post-content,
 .article {
   width: 100%;
+
   max-width: var(--article-width);
+
   margin: 0 auto;
+
   padding: 48px 0 0;
+}
+
+/*
+   Article title area.
+
+   Use <div class="post-header"> rather than
+   <header class="post-header"> when the site header
+   is also present.
+*/
+
+.post-header {
+  margin-bottom: 40px;
+
+  padding-bottom: 32px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.post-category {
+  margin-bottom: 16px;
+
+  color: var(--primary);
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.post-header h1,
+.post-content > h1 {
+  margin: 0 0 24px;
+
+  color: var(--text-strong);
+
+  font-size: clamp(38px, 5vw, 56px);
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
 }
 
 .post-content h2 {
   margin: 0 0 32px;
+
   color: var(--text-strong);
+
   font-size: 36px;
+
   line-height: 1.2;
+
   letter-spacing: -0.5px;
 }
 
@@ -348,47 +702,59 @@ header {
 .article h3 {
   margin-top: 48px;
   margin-bottom: 18px;
+
   color: var(--text-strong);
+
   font-size: 24px;
+
   line-height: 1.3;
+
   letter-spacing: -0.2px;
 }
 
-/*
-  Important:
-  Article headings are deliberately scoped so that the
-  .page-header h2 remains the page title size.
-*/
-
 .article > .page-header h2 {
   margin: 0 0 16px;
+
   color: var(--text-strong);
+
   font-size: 38px;
+
   line-height: 1.2;
+
   letter-spacing: -0.5px;
 }
 
 .article > .page-header p {
   max-width: 850px;
+
   margin: 0;
+
   color: var(--muted);
+
   font-size: 16px;
+
   line-height: 1.7;
 }
 
 .article h2:not(.page-header h2) {
   margin-top: 48px;
   margin-bottom: 18px;
+
   color: var(--text-strong);
+
   font-size: 24px;
+
   line-height: 1.3;
 }
 
 .article p,
 .post-content p {
   margin: 0 0 20px;
+
   color: var(--muted);
+
   font-size: 16px;
+
   line-height: 1.8;
 }
 
@@ -397,7 +763,9 @@ header {
 .post-content ul,
 .post-content ol {
   margin: 18px 0 24px;
+
   padding-left: 24px;
+
   color: var(--muted);
 }
 
@@ -406,22 +774,43 @@ header {
   margin-bottom: 9px;
 }
 
-.post-meta {
-  margin-bottom: 28px;
+.post-subtitle {
+  max-width: 900px;
+
+  margin: 0 0 28px;
+
   color: var(--muted);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.post-meta {
+  margin-bottom: 0;
+
+  color: var(--muted);
+
   font-size: 13px;
 }
 
+
 /* =========================================================
-   12. ARTICLE CALLOUT
+   15. ARTICLE CALLOUT
    ========================================================= */
 
 .callout {
   margin: 28px 0;
+
   padding: 22px 24px;
-  background: rgba(17, 24, 39, 0.60);
+
+  background:
+    rgba(17, 24, 39, 0.60);
+
   border-left: 3px solid var(--primary);
+
   border-radius: var(--radius-md);
+
   color: var(--muted);
 }
 
@@ -433,20 +822,55 @@ header {
   margin-bottom: 0;
 }
 
+
 /* =========================================================
-   13. ARTICLE QUOTE
+   16. ARCHITECTURE / FLOW BLOCK
+   ========================================================= */
+
+.architecture-flow {
+  margin: 28px 0;
+
+  padding: 22px 24px;
+
+  background:
+    rgba(15, 23, 42, 0.75);
+
+  border: 1px solid var(--border);
+
+  border-left: 3px solid var(--primary);
+
+  border-radius: var(--radius-md);
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   17. ARTICLE QUOTE
    ========================================================= */
 
 blockquote {
   margin: 32px 0;
+
   padding: 20px 24px;
+
   border-left: 3px solid var(--primary);
-  background: rgba(15, 23, 42, 0.55);
+
+  background:
+    rgba(15, 23, 42, 0.55);
+
   color: var(--muted);
 }
 
+
 /* =========================================================
-   14. PROJECT EXPERIENCE
+   18. PROJECT EXPERIENCE
    ========================================================= */
 
 .experience {
@@ -455,6 +879,7 @@ blockquote {
 
 .experience-item {
   padding: 34px 0;
+
   border-top: 1px solid var(--border);
 }
 
@@ -464,32 +889,42 @@ blockquote {
 
 .experience-meta {
   margin-bottom: 8px;
+
   color: var(--primary);
+
   font-size: 13px;
   font-weight: 600;
 }
 
 .experience-item h3 {
   margin: 0 0 4px;
+
   color: var(--text-strong);
+
   font-size: 23px;
+
   line-height: 1.3;
 }
 
 .experience-role {
   margin-bottom: 18px;
+
   color: var(--muted);
+
   font-size: 14px;
 }
 
 .experience-item p {
   margin: 14px 0;
+
   color: var(--muted);
 }
 
 .experience-item ul {
   margin: 16px 0;
+
   padding-left: 22px;
+
   color: var(--muted);
 }
 
@@ -497,12 +932,14 @@ blockquote {
   margin-bottom: 9px;
 }
 
+
 /* =========================================================
-   15. PROJECT SECTION
+   19. PROJECT SECTION
    ========================================================= */
 
 .project-section {
   padding: 34px 0;
+
   border-top: 1px solid var(--border);
 }
 
@@ -512,118 +949,158 @@ blockquote {
 
 .project-title h3 {
   margin: 0 0 4px;
+
   color: var(--text-strong);
+
   font-size: 23px;
+
   line-height: 1.3;
 }
 
 .project-role {
   color: var(--muted);
+
   font-size: 14px;
 }
 
 .project-description {
   max-width: 900px;
+
   margin: 18px 0;
+
   color: var(--muted);
 }
 
+
 /* =========================================================
-   16. CLOSING SECTION
+   20. CLOSING SECTION
    ========================================================= */
 
 .closing {
   margin: 30px 0 10px;
+
   padding: 30px;
-  background: rgba(17, 24, 39, 0.55);
+
+  background:
+    rgba(17, 24, 39, 0.55);
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius-md);
 }
 
 .closing h3 {
   margin-top: 0;
+
   color: var(--text-strong);
+
   font-size: 21px;
 }
 
 .closing p {
   margin-bottom: 12px;
+
   color: var(--muted);
 }
 
 .three-s {
   color: var(--primary);
+
   font-weight: 600;
 }
 
+
 /* =========================================================
-   17. TIMELINE
+   21. TIMELINE
    ========================================================= */
 
 .timeline {
   position: relative;
+
   margin: 32px 0;
+
   padding-left: 30px;
 }
 
 .timeline::before {
   content: "";
+
   position: absolute;
+
   top: 0;
   bottom: 0;
   left: 8px;
+
   width: 1px;
+
   background: var(--border-light);
 }
 
 .timeline-item {
   position: relative;
+
   margin-bottom: 32px;
 }
 
 .timeline-item::before {
   content: "";
+
   position: absolute;
+
   left: -26px;
   top: 7px;
+
   width: 9px;
   height: 9px;
+
   border-radius: 50%;
+
   background: var(--primary);
 }
 
 .timeline-item h3 {
   margin: 0 0 4px;
+
   color: var(--text-strong);
+
   font-size: 20px;
 }
 
 .timeline-item p {
   margin: 0;
+
   color: var(--muted);
 }
 
+
 /* =========================================================
-   18. TABLES
+   22. TABLES
    ========================================================= */
 
 table {
   width: 100%;
+
   margin: 24px 0;
+
   border-collapse: collapse;
+
   font-size: 14px;
 }
 
 th,
 td {
   padding: 12px 14px;
+
   border: 1px solid var(--border);
+
   text-align: left;
 }
 
 th {
   background: var(--surface);
+
   color: var(--text-strong);
+
   font-weight: 600;
 }
 
@@ -631,8 +1108,9 @@ td {
   color: var(--muted);
 }
 
+
 /* =========================================================
-   19. LISTS
+   23. LISTS
    ========================================================= */
 
 ul,
@@ -644,57 +1122,80 @@ li {
   margin-bottom: 8px;
 }
 
+
 /* =========================================================
-   20. CODE
+   24. CODE
    ========================================================= */
 
 code {
   padding: 2px 6px;
+
   background: var(--surface);
+
   border: 1px solid var(--border);
+
   border-radius: 5px;
+
   color: var(--text);
 }
 
 pre {
   overflow-x: auto;
+
   margin: 24px 0;
+
   padding: 20px;
+
   background: #070D18;
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius-md);
 }
 
 pre code {
   padding: 0;
+
   background: transparent;
+
   border: none;
 }
 
+
 /* =========================================================
-   21. EXTERNAL LINKS
+   25. EXTERNAL LINKS
    ========================================================= */
 
 .external-link::after {
   content: " ↗";
+
   color: var(--muted);
+
   font-size: 11px;
 }
 
+
 /* =========================================================
-   22. PAGE FOOTER NAVIGATION
+   26. PAGE FOOTER NAVIGATION
    ========================================================= */
 
 .page-nav,
 .post-footer-nav {
   width: 100%;
+
   max-width: var(--article-width);
+
   margin: 24px auto 0;
+
   padding: 24px 0;
+
   border-top: 1px solid var(--border);
+
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   font-size: 13px;
 }
 
@@ -706,205 +1207,220 @@ pre code {
   text-decoration: underline;
 }
 
+
 /* =========================================================
-   23. FOOTER
+   27. FOOTER
    ========================================================= */
 
 footer {
   margin-top: 60px;
+
   padding: 40px 0;
+
   border-top: 1px solid var(--border);
+
   text-align: center;
+
   color: var(--muted);
+
   font-size: 13px;
 }
 
 .footer-note {
   display: block;
+
   margin-top: 10px;
+
   line-height: 1.6;
 }
 
-/* =========================================================
-   24. BUTTONS
-   ========================================================= */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border: 1px solid var(--primary);
-  border-radius: var(--radius-sm);
-  background: var(--primary);
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 600;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.btn:hover {
-  background: var(--primary-dark);
-  border-color: var(--primary-dark);
-  color: #FFFFFF;
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.btn-secondary {
-  background: transparent;
-  border-color: var(--border-light);
-  color: var(--text);
-}
-
-.btn-secondary:hover {
-  background: var(--surface);
-  border-color: var(--primary);
-  color: var(--text);
-}
 
 /* =========================================================
-   25. HIGHLIGHTS
+   28. HIGHLIGHTS
    ========================================================= */
 
 .highlight {
   color: var(--primary);
+
   font-weight: 600;
 }
 
 .ai-highlight {
   color: var(--ai-indigo);
+
   font-weight: 600;
 }
 
 .greenops-highlight {
   color: var(--greenops);
+
   font-weight: 600;
 }
 
 .warning {
   color: var(--amber);
+
   font-weight: 600;
 }
 
-/* =========================================================
-   26. HERO / LANDING PAGE
-   ========================================================= */
-
-.hero {
-  padding: 80px 0 64px;
-}
-
-.hero h1 {
-  margin: 0 0 16px;
-  color: var(--text-strong);
-  font-size: clamp(38px, 6vw, 60px);
-  line-height: 1.08;
-  letter-spacing: -1px;
-}
-
-.hero p {
-  max-width: 760px;
-  margin: 0 0 24px;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
 
 /* =========================================================
-   27. LANDING PAGE GRID
+   29. LANDING PAGE GRID
    ========================================================= */
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 20px;
+
   margin: 40px 0;
 }
 
 .feature-card {
   padding: 24px;
+
   background: var(--card);
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius-md);
 }
 
 .feature-card h3 {
   margin: 0 0 10px;
+
   color: var(--text-strong);
+
   font-size: 19px;
 }
 
 .feature-card p {
   margin: 0;
+
   color: var(--muted);
+
   font-size: 14px;
 }
 
+
 /* =========================================================
-   28. SERIES
+   30. THREE-COLUMN GRID
    ========================================================= */
+
+.grid-3 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   31. SERIES
+   ========================================================= */
+
+.series {
+  background: var(--bg-alt);
+
+  border-top: 1px solid var(--border);
+
+  border-bottom: 1px solid var(--border);
+}
 
 .series-card {
   padding: 28px;
+
   background: var(--card);
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius-md);
 }
 
 .series-card h3 {
   margin: 0 0 8px;
+
   color: var(--text-strong);
+
   font-size: 22px;
 }
 
 .series-card p {
   margin: 0 0 16px;
+
   color: var(--muted);
+}
+
+.series-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.series-item {
+  padding: 24px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
 }
 
 .series-nav {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
   margin: 28px 0;
 }
 
 .series-nav a {
   padding: 8px 14px;
+
   border: 1px solid var(--border);
+
   border-radius: var(--radius-pill);
+
   color: var(--muted);
+
   font-size: 13px;
 }
 
 .series-nav a:hover {
   border-color: var(--primary);
+
   color: var(--primary);
+
   text-decoration: none;
 }
 
+
 /* =========================================================
-   29. CONTACT
+   32. CONTACT
    ========================================================= */
 
 .contact {
   max-width: 800px;
+
   margin: 0 auto;
+
   padding: 40px 0;
 }
 
 .contact h2 {
   margin-top: 0;
+
   color: var(--text-strong);
 }
 
@@ -912,29 +1428,43 @@ footer {
   color: var(--muted);
 }
 
+
 /* =========================================================
-   30. RESPONSIVE — TABLET
+   33. RESPONSIVE — TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
-  .feature-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  .feature-grid,
+  .grid-3 {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
   }
 }
 
+
 /* =========================================================
-   31. RESPONSIVE — MOBILE
+   34. RESPONSIVE — MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
+
   .container {
     padding: 0 18px;
   }
 
+
   /* Header */
+
   .nav {
     min-height: auto;
+
     padding: 14px 0;
+
     align-items: flex-start;
   }
 
@@ -954,7 +1484,9 @@ footer {
     font-size: 11px;
   }
 
+
   /* Page header */
+
   .page-header {
     padding: 40px 0 28px;
   }
@@ -969,7 +1501,9 @@ footer {
     font-size: 15px;
   }
 
+
   /* Hero */
+
   .hero {
     padding: 56px 0 44px;
   }
@@ -978,24 +1512,43 @@ footer {
     font-size: 38px;
   }
 
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero h3 {
+    font-size: 30px;
+  }
+
   .hero p {
     font-size: 16px;
   }
 
+
   /* Cards */
+
   .card {
     padding: 20px;
   }
 
   .card-grid,
-  .feature-grid {
+  .feature-grid,
+  .grid-3,
+  .series-list {
     grid-template-columns: 1fr;
   }
 
+
   /* Article */
+
   .post-content,
   .article {
     padding-top: 32px;
+  }
+
+  .post-header h1,
+  .post-content > h1 {
+    font-size: 34px;
   }
 
   .post-content h2 {
@@ -1006,6 +1559,7 @@ footer {
   .article h2:not(.page-header h2),
   .article h3 {
     margin-top: 36px;
+
     font-size: 21px;
   }
 
@@ -1014,7 +1568,13 @@ footer {
     font-size: 15px;
   }
 
+  .post-subtitle {
+    font-size: 16px;
+  }
+
+
   /* Project experience */
+
   .experience-item {
     padding: 28px 0;
   }
@@ -1024,66 +1584,40 @@ footer {
     font-size: 21px;
   }
 
+
   /* Navigation */
+
   .page-nav,
   .post-footer-nav {
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 12px;
   }
 
+
   /* Footer */
+
   footer {
     margin-top: 48px;
+
     padding: 32px 0;
   }
 }
 
+
 /* =========================================================
-   32. ACCESSIBILITY
+   35. ACCESSIBILITY
    ========================================================= */
 
 :focus-visible {
   outline: 2px solid var(--primary);
+
   outline-offset: 3px;
 }
 
+
 /* =========================================================
    END OF JCX360 MASTER STYLESHEET
-   =========================================================
-*/
-
-
-/* =========================================================
-   Page-specific: Tech Space / Series overview
    ========================================================= */
-
-/* Series */
-    .series {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .series-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .series-item {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .series-item h5 {
-      margin: 0 0 6px;
-      font-size: 15px;
-    }
-
-    .series-item span {
-      font-size: 12px;
-      color: var(--muted);
-    }
