@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add platform/github-to-custom-domain.html
+git add series-3/series-intro.html
 git commit -m "Update"
 git push
 
