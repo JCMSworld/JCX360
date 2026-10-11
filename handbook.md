@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add series/series-3/series-intro.html
+git add series/tech/ai-intelligence-layer.html
 git commit -m "Update"
 git push
 
