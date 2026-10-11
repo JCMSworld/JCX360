@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add series/tech/eu-sovereign-cloud.html
+git add delivery/reg-to-data.html
 git commit -m "Update"
 git push
 
