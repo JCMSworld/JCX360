@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add delivery/reg-to-data.html
+git add delivery/arch-approval-prod-readiness.html
 git commit -m "Update"
 git push
 

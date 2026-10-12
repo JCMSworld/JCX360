@@ -44,7 +44,7 @@
   <main>
     <section class="hero">
       <div class="container">
-        <article class="post">
+        <article class="card">
 
          <div class="post-header">
             <div class="badge1">
@@ -145,6 +145,9 @@
 <p>This creates a need for reconciled data and a clear understanding of which information is authoritative for a particular reporting purpose.</p>
 <p>Different systems can contain different versions of the same information. The organisation needs to establish which version should be used and ensure that downstream reporting uses the controlled data.</p>
 <p>This does not necessarily mean there is one system that owns every data element. It means there is a clear understanding of ownership, authority and permitted use for each business or regulatory purpose.</p>
+
+<div class="callout">
+  
 <h3>The Medallion architecture approach</h3>
 <p>Modern data platforms often use a layered architecture to manage data at different stages of processing.</p>
 <h4>Bronze</h4>
@@ -155,6 +158,8 @@
 <p>This layer contains curated datasets designed for defined business and reporting needs. These datasets may support risk reporting, finance, regulatory reporting and analytics.</p>
 <p>The architecture itself does not make a platform compliant. The controls around the architecture matter.</p>
 <p>A modern data platform does not solve the regulatory problem if the organisation cannot explain where data came from, who owns it, how it was transformed or whether it reconciles.</p>
+</div>
+
 <h3>The downstream side matters too</h3>
 <p>Large data programmes can focus heavily on upstream ingestion while giving less attention to downstream consumers.</p>
 <p>Regulatory data may feed reporting platforms, risk engines, finance systems, management reporting and other business processes.</p>
@@ -272,6 +277,9 @@ Risk, finance and regulatory reporting</p>
 <h4>Auditability</h4>
 <p>Can the organisation reproduce what happened at a particular reporting date?</p>
 <p>This becomes important when questions are raised after a reporting cycle has completed.</p>
+
+<div class="callout">
+  
 <h3>The role of a data engineering manager</h3>
 <p>The role is not limited to managing engineering teams. It connects regulatory requirements, data architecture, engineering delivery and programme governance into a coordinated delivery model.</p>
 <p>The data delivery lifecycle can be represented as:</p>
@@ -293,9 +301,14 @@ Risk, finance and regulatory reporting</p>
 <p>The engineering challenge is only one part of the role. The broader challenge is connecting people, processes, data and technology across a complex environment.</p>
 <p>For me, the role of a Data Engineering Manager in a regulatory programme is about more than delivering data pipelines. It is about creating confidence that the right data reaches the right place, at the right time, with the right controls and a clear audit trail.</p>
 <p>That is where data engineering moves beyond technology delivery and becomes part of regulatory confidence and business decision-making.</p>
+</div>
+
 <h3>One version of the truth</h3>
 <p>The phrase “single source of truth” is often used too casually.</p>
 <p>I prefer to think about it as:</p>
+
+
+
 <blockquote>
 <p>One controlled version of the truth for a defined business purpose.</p>
 </blockquote>
