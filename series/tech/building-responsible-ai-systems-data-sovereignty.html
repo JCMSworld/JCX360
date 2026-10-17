@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An experience-driven view of engineering responsible enterprise AI, from Azure AI Foundry and traceability to data sovereignty and EU AI Act considerations.">
+  <title>JCX360 - Building responsible AI systems: From Azure AI Foundry to data sovereignty</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="/" aria-label="JCX360 home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo">
+        </a>
+        <div>
+          <h1>John Christopher</h1>
+          <span>Hybrid Technology Leader (Arch + Delivery)</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#about">About JC</a>
+        <a href="/series/JCX360stechspace.html">Tech Space</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <article class="card">
+          <div class="post-header">
+            <div class="badge1">Responsible AI · Azure AI Foundry · Data Sovereignty</div>
+            <h2>Building responsible AI systems: From Azure AI Foundry to data sovereignty</h2>
+            <p class="post-subtitle">My experience in AI delivery has reinforced one important lesson. Building an AI solution that works is only the beginning. Making it reliable, traceable, secure and ready for enterprise use requires a much wider architecture.</p>
+            <div class="post-meta">
+              Published on [publication date] by JCX360
+            </div>
+          </div>
+          <div class="post-content">
+            <h3>From AI capability to production readiness</h3>
+            <p>In my recent work on an Image Analysis platform, the focus has been on using AI to support validation activities, improve data quality and reduce manual effort.</p>
+            <p>The platform brings together image processing, business data, Microsoft Fabric, validation logic and reporting. The use cases include meter dial verification, volume corrector dial verification and compliance validation.</p>
+            <p>The technical challenge is not simply to analyse an image and produce a result. The result must be useful to the business, sufficiently accurate for its intended purpose and supported by evidence that allows the outcome to be checked.</p>
+            <p>This is where Responsible AI becomes part of the engineering and delivery model.</p>
+
+            <h3>Responsible AI starts with traceability</h3>
+            <p>When an AI system produces a result, we need to understand more than the final output.</p>
+            <p>What image was processed? Which source data was used? What validation rules were applied? Which model and prompt versions were active? What happens when the result does not meet the expected criteria?</p>
+            <p><strong>Observability</strong> helps us understand how the system behaves in production, including errors, processing performance and output quality.</p>
+            <p><strong>Data lineage</strong> helps trace the source data, transformations and information used during validation.</p>
+            <p><strong>Explainability</strong> helps business users understand the result, the supporting evidence and the reason a validation passed or failed.</p>
+            <p><strong>Human oversight</strong> ensures that exceptions and uncertain results can be reviewed by an appropriate person rather than automatically accepted.</p>
+            <aside class="callout">
+              <strong>Key takeaway</strong>
+              <p>These controls work together. Monitoring alone cannot explain a decision, and an explanation alone cannot prove that the decision was correct. Production AI needs technical evidence and a clear process for reviewing the outcome.</p>
+            </aside>
+
+            <h3>Where Azure AI Foundry fits</h3>
+            <p>Azure AI Foundry provides capabilities that support the engineering lifecycle of AI applications, including model evaluation, safety assessments, tracing and operational monitoring, depending on the services and configuration used.</p>
+            <p>I see it as part of the wider AI control and engineering architecture.</p>
+            <p>The application still needs to define how data is retrieved, how business rules are applied, how results are validated and when a human must intervene.</p>
+            <p>For example, an image validation workflow can compare a detected reading against expected business data and defined validation criteria. The comparison and accuracy calculation should use deterministic rules wherever possible. The LLM can then help explain the findings, summarise discrepancies or support further investigation.</p>
+            <p>This separation matters. We should not depend on an LLM alone to determine whether a critical business result is correct.</p>
+            <p>Evaluation must be based on representative test data, agreed acceptance criteria and measurable outcomes. Production monitoring should then help identify where performance changes or additional validation is required.</p>
+
+            <h3>Data sovereignty is part of the architecture</h3>
+            <p>Responsible AI also requires us to consider where data is stored, where inference is processed and who can access the environment.</p>
+            <p>This becomes particularly important when enterprise AI systems handle customer information, operational records, sensitive images or regulated business data.</p>
+            <p>Selecting an Azure region is only one part of the assessment.</p>
+            <p>The architecture must also consider:</p>
+            <ul>
+              <li>Data residency and inference processing locations.</li>
+              <li>Storage of prompts, responses, logs, embeddings and retrieved information.</li>
+              <li>Identity, access control and encryption key management.</li>
+              <li>Administrative access and operational control.</li>
+              <li>Data retention, audit evidence and applicable jurisdictional requirements.</li>
+            </ul>
+            <p>Azure AI Foundry deployment options can help address particular processing requirements, but the selected deployment and its data flows must be checked against the organisation's requirements.</p>
+            <aside class="callout">
+              <strong>Architecture consideration</strong>
+              <p>A system that stores data in an EU region does not automatically establish complete data sovereignty. Processing location, privileged access, service dependencies and contractual arrangements also matter.</p>
+            </aside>
+            <p>For me, these are architecture decisions that need to be made early, not checks left until production deployment.</p>
+
+            <h3>Connecting Responsible AI with the EU AI Act</h3>
+            <p>The EU AI Act adds another important dimension to enterprise AI delivery.</p>
+            <p>Depending on the system's intended purpose, classification and the organisation's role, applicable requirements may include risk management, data governance, technical documentation, logging, transparency, human oversight, accuracy and robustness.</p>
+            <p>Azure AI Foundry can help implement and evidence some of the technical controls supporting these requirements. However, platform capabilities alone do not establish compliance.</p>
+            <p>The wider delivery model must identify the applicable obligations, map them to architectural and operational controls, assign ownership and retain appropriate evidence.</p>
+            <p>That means connecting architecture decisions with testing, release governance, production monitoring and ongoing risk management.</p>
+            <p>The goal is not simply to say that an AI system has been built responsibly. It is to demonstrate how the relevant risks are managed throughout its lifecycle.</p>
+
+            <h3>Bringing it together</h3>
+            <p>I approach enterprise AI through the same principle that guides my wider technology work: <strong>Secure. Scale. Sustain.</strong></p>
+            <p><strong>Secure:</strong> Protect data, identities, access and AI interactions. Address sovereignty and regulatory requirements according to the system's risk profile.</p>
+            <p><strong>Scale:</strong> Build repeatable architecture patterns, evaluation processes and deployment controls that can support additional use cases.</p>
+            <p><strong>Sustain:</strong> Monitor quality, retain traceable evidence, manage changes and improve the system based on production outcomes.</p>
+            <p>Responsible AI is not a separate activity that sits alongside engineering. It is part of how we design, deliver and operate AI systems.</p>
+            <p>The real test is not whether a model can produce an impressive result in a demonstration. It is whether the system can produce useful results consistently, provide evidence when challenged, protect the data it handles and operate within the controls required by the business.</p>
+            <p>That is the difference between building an AI capability and engineering an AI system for the real world.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="container">
+    <nav class="post-footer-nav" aria-label="Article navigation">
+      <a href="/series/JCX360stechspace.html">← Back to Tech Space</a>
+      <a href="/index.html">JCX360 Home →</a>
+    </nav>
+  </div>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 - 3S
+      (Secure · Scale · Sustain)
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery,
+        and thought leadership, focused on cloud, AI, and
+        enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience
+        and independent research, and are shared to support learning
+        and knowledge exchange across the professional community.
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
