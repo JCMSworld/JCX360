@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add delivery/arch-approval-prod-readiness.html
+git add series/tech/responsible-ai-beyond-the-model.html
 git commit -m "Update"
 git push
 
