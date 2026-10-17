@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Building enterprise AI requires more than accuracy. It requires traceability, security, governance and control.">
+  <title>JCX360 - Responsible AI: Beyond the model</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="/" aria-label="JCX360 home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo">
+        </a>
+        <div>
+          <h1>John Christopher</h1>
+          <span>Hybrid Technology Leader (Arch + Delivery)</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#about">About JC</a>
+        <a href="/series/JCX360stechspace.html">Tech Space</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <article class="card">
+          <div class="post-header">
+            <div class="badge1">Responsible AI · Azure AI Foundry · Governance</div>
+            <h2>Responsible AI: Beyond the model</h2>
+            <p class="post-subtitle">Building enterprise AI requires more than accuracy. It requires traceability, security, governance and control.</p>
+            <div class="post-meta">
+              Published on [publication date] by JCX360
+            </div>
+          </div>
+          <div class="post-content">
+            <h3>From AI capability to production</h3>
+<p>In my AI delivery work, one thing is clear. Building an AI solution that works is only the beginning. Making it reliable and ready for enterprise use requires a wider architecture.</p>
+<p>Consider an Image Analysis platform that validates meter readings from images. Producing a result is not enough. We need to understand what data was used, how the result was validated, how accuracy is measured and what happens when the system identifies a discrepancy.</p>
+<p>This is where Responsible AI becomes part of engineering.</p>
+
+<h3>Four controls that matter</h3>
+<p><strong>Observability:</strong> Monitor performance, errors and output quality in production.</p>
+<p><strong>Data lineage:</strong> Trace the source data, transformations and information used to produce a result.</p>
+<p><strong>Explainability and human oversight:</strong> Provide supporting evidence for decisions and ensure that uncertain or critical outcomes can be reviewed by a person.</p>
+<p><strong>Security and sovereignty:</strong> Control data access, storage and processing locations, including how prompts, responses, logs and retrieved information are handled.</p>
+
+<aside class="callout">
+  <strong>Key takeaway</strong>
+  <p>These controls work together. Monitoring shows how a system behaves, while traceability and supporting evidence help us investigate why a result occurred.</p>
+</aside>
+
+<h3>Where Azure AI Foundry fits</h3>
+<p>Azure AI Foundry provides capabilities that support AI development, evaluation, safety testing and operational monitoring, depending on the services and configuration used.</p>
+<p>It is part of the engineering architecture, not a replacement for enterprise governance.</p>
+<p>For example, business rules should determine whether a meter reading passes validation. The LLM can help explain discrepancies, but it should not replace deterministic validation where accuracy is critical.</p>
+
+<h3>Connecting AI with compliance</h3>
+<p>The EU AI Act introduces requirements that depend on the system's intended purpose, risk classification and the organisation's role.</p>
+<p>Azure AI Foundry can help implement and evidence some technical controls. However, compliance also requires risk assessment, appropriate documentation, defined human oversight and ongoing governance.</p>
+<p>Data sovereignty is another important consideration. Selecting an EU cloud region alone does not guarantee that every storage, processing and access requirement is satisfied. These need to be assessed as part of the architecture.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="container">
+    <nav class="post-footer-nav" aria-label="Article navigation">
+      <a href="/series/JCX360stechspace.html">← Back to Tech Space</a>
+      <a href="/index.html">JCX360 Home →</a>
+    </nav>
+  </div>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 - 3S
+      (Secure · Scale · Sustain)
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery,
+        and thought leadership, focused on cloud, AI, and
+        enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience
+        and independent research, and are shared to support learning
+        and knowledge exchange across the professional community.
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
