@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why AI systems need reliability engineering when models become production dependencies, including SLOs, fallbacks, graceful degradation and business outcome protection.">
+  <title>JCX360 - AI Reliability Engineering: When Models Become Production Dependencies</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="/" aria-label="JCX360 home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo">
+        </a>
+        <div>
+          <h1>John Christopher</h1>
+          <span>Hybrid Technology Leader (Arch + Delivery)</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#about">About JC</a>
+        <a href="/series/JCX360stechspace.html">Tech Space</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <article class="card">
+          <div class="post-header">
+            <div class="badge1">Architecture Series 3 · 3.7</div>
+            <h2>AI Reliability Engineering: When Models Become Production Dependencies</h2>
+            <p class="post-subtitle">Keeping business outcomes reliable when AI models are unavailable, uncertain or produce incorrect answers.</p>
+            <div class="post-meta">Published on [publication date] by JCX360</div>
+          </div>
+
+          <div class="post-content">
+            <p>Once AI becomes part of a critical business process, something changes.</p>
+
+            <p>The model becomes a <strong>production dependency</strong>.</p>
+
+            <p>And production dependencies fail.</p>
+
+            <p>Models can become unavailable.</p>
+            <p>Responses can become slower.</p>
+            <p>Rate limits can be reached.</p>
+            <p>External services can fail.</p>
+            <p>And sometimes the model is available, but the answer is simply not good enough.</p>
+
+            <p>This means AI systems need reliability engineering too.</p>
+
+            <p>We need to think about:</p>
+            <ul>
+              <li>SLIs and SLOs</li>
+              <li>Latency</li>
+              <li>Retries and fallbacks</li>
+              <li>Graceful degradation</li>
+              <li>Monitoring</li>
+              <li>Incident response</li>
+              <li>Cost controls</li>
+            </ul>
+
+            <p>But AI introduces an additional question.</p>
+
+            <p>In a traditional application:</p>
+            <blockquote><strong>Service fails → retry or fallback</strong></blockquote>
+
+            <p>In an AI application:</p>
+            <blockquote><strong>Model fails → what happens to the business decision?</strong></blockquote>
+
+            <p>That is a very different problem.</p>
+
+            <aside class="callout">
+              <strong>Reliability principle</strong>
+              <p>Reliability is not just about keeping the model available. It is about keeping the <strong>business outcome reliable when the model is unavailable, uncertain, or wrong.</strong></p>
+            </aside>
+
+            <p>That is where AI engineering and SRE genuinely meet.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="post-footer-nav" aria-label="Article navigation">
+        <a href="/series/series-3/series-3-post-6.html">← Back to 3.6</a>
+        <a href="/series/series-3/series-3-post-8.html">Next 3.8 →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 - 3S
+      (Secure · Scale · Sustain)
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery,
+        and thought leadership, focused on cloud, AI, and
+        enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience
+        and independent research, and are shared to support learning
+        and knowledge exchange across the professional community.
+      </span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
