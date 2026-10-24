@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Why AI evaluation must measure quality across relevance, groundedness, accuracy, safety, fairness, latency and cost throughout the lifecycle.">
+  <title>JCX360 - AI Evaluation: Measuring Quality Before Production</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="/" aria-label="JCX360 home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo">
+        </a>
+        <div>
+          <h1>John Christopher</h1>
+          <span>Hybrid Technology Leader (Arch + Delivery)</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#about">About JC</a>
+        <a href="/series/JCX360stechspace.html">Tech Space</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <article class="card">
+          <div class="post-header">
+            <div class="badge1">Architecture Series 3 · 3.6</div>
+            <h2>AI Evaluation: Measuring Quality Before Production</h2>
+            <p class="post-subtitle">Measuring AI quality across multiple dimensions and continuing evaluation throughout the system lifecycle.</p>
+            <div class="post-meta">Published on [publication date] by JCX360</div>
+          </div>
+
+          <div class="post-content">
+            <p>One of the questions I hear often in AI projects is:</p>
+
+            <p><strong>“Does the model work?”</strong></p>
+
+            <p>That is not enough.</p>
+
+            <p>A better question is:</p>
+
+            <p><strong>“How well does it work, and can we prove it?”</strong></p>
+
+            <p>AI systems need to be evaluated across more than one dimension.</p>
+
+            <ul>
+              <li>Relevance</li>
+              <li>Groundedness</li>
+              <li>Accuracy</li>
+              <li>Safety</li>
+              <li>Fairness</li>
+              <li>Latency</li>
+              <li>Cost</li>
+            </ul>
+
+            <p>And evaluation should not happen only before production.</p>
+
+            <p>Models change.</p>
+            <p>Prompts change.</p>
+            <p>Data changes.</p>
+            <p>Retrieval changes.</p>
+            <p>Agent behaviour changes.</p>
+
+            <p>So evaluation needs to become part of the lifecycle:</p>
+
+            <blockquote><strong>Build → Test → Deploy → Observe → Evaluate → Improve</strong></blockquote>
+
+            <p>This is where AI engineering starts to look different from traditional software engineering.</p>
+
+            <p>A code change can be tested against expected behaviour.</p>
+
+            <p>An AI change may produce a different answer without breaking anything technically.</p>
+
+            <p>The system may still be running.</p>
+
+            <p>But the quality may have changed.</p>
+
+            <aside class="callout">
+              <strong>Why continuous evaluation matters</strong>
+              <p>AI quality can change even when the system is technically healthy. Evaluation helps detect those changes and supports reliable management over time.</p>
+            </aside>
+
+            <p><strong>If AI quality cannot be measured, it cannot be reliably managed.</strong></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="post-footer-nav" aria-label="Article navigation">
+        <a href="/series/series-3/series-3-post-5.html">← Back to 3.5</a>
+        <a href="/series/series-3/series-3-post-7.html">Next 3.7 →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 - 3S
+      (Secure · Scale · Sustain)
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery,
+        and thought leadership, focused on cloud, AI, and
+        enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience
+        and independent research, and are shared to support learning
+        and knowledge exchange across the professional community.
+      </span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
