@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical view of production RAG as an information architecture problem, from document preparation and retrieval to grounded answers.">
+  <title>JCX360 - RAG That Actually Works: From Documents To Reliable Context</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="/" aria-label="JCX360 home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo">
+        </a>
+        <div>
+          <h1>John Christopher</h1>
+          <span>Hybrid Technology Leader (Arch + Delivery)</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#about">About JC</a>
+        <a href="/series/JCX360stechspace.html">Tech Space</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <article class="card">
+          <div class="post-header">
+            <div class="badge1">Architecture Series 3 · 3.3</div>
+            <h2>RAG That Actually Works: From Documents To Reliable Context</h2>
+            <p class="post-subtitle">Why reliable retrieval and well-engineered context matter as much as the model in enterprise RAG.</p>
+            <div class="post-meta">Published on [publication date] by JCX360</div>
+          </div>
+
+          <div class="post-content">
+            <p>RAG is often explained very simply:</p>
+
+            <p>Retrieve.<br>
+            Inject.<br>
+            Generate.</p>
+
+            <p>But production RAG is rarely that simple.</p>
+
+            <p>The quality of the answer depends heavily on what happens before the LLM generates anything.</p>
+
+            <ul>
+              <li>How is the data prepared?</li>
+              <li>How is it chunked?</li>
+              <li>How are embeddings created?</li>
+              <li>How is the right information retrieved?</li>
+              <li>How much context is provided?</li>
+              <li>Is the response actually grounded in trusted information?</li>
+            </ul>
+
+            <p>A poorly designed retrieval layer can produce a poor answer even when the underlying model is excellent.</p>
+
+            <p>This is why I see RAG as more than an LLM pattern.</p>
+
+            <aside class="callout">
+              <strong>RAG is an information architecture problem</strong>
+              <p>The model provides the intelligence. The retrieval layer provides the context. And the quality of that context directly affects the quality of the outcome.</p>
+            </aside>
+
+            <p>This is especially important in enterprise environments where answers need to be:</p>
+
+            <ul>
+              <li>Controlled</li>
+              <li>Grounded</li>
+              <li>Traceable</li>
+              <li>Measurable</li>
+            </ul>
+
+            <p>RAG is not simply connecting an LLM to documents.</p>
+
+            <blockquote><strong>It is engineering the right context for the intelligence.</strong></blockquote>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="post-footer-nav" aria-label="Article navigation">
+        <a href="/series/series-3/series-3-post-2.html">← Back to 3.2</a>
+        <a href="/series/series-3/series-3-post-4.html">Next 3.4 →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 - 3S
+      (Secure · Scale · Sustain)
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery,
+        and thought leadership, focused on cloud, AI, and
+        enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience
+        and independent research, and are shared to support learning
+        and knowledge exchange across the professional community.
+      </span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
