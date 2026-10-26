@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add series/tech/responsible-ai-beyond-the-model.html
+git add series/tech/ai-latency-end-to-end-performance.html
 git commit -m "Update"
 git push
 
