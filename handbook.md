@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add series/tech/ai-latency-end-to-end-performance.html
+git add delivery/performance-support.html
 git commit -m "Update"
 git push
 
