@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deploying an AI solution is one milestone. Making it sustainable in production requires a clear support model, operational evidence and supportability built into the architecture.">
+  <title>JCX360 - Supporting AI in production: beyond deployment</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="/" aria-label="JCX360 home">
+          <img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo">
+        </a>
+        <div>
+          <h1>John Christopher</h1>
+          <span>Hybrid Technology Leader (Arch + Delivery)</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="/#about">About JC</a>
+        <a href="/series/JCX360stechspace.html">Tech Space</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <article class="card">
+          <div class="post-header">
+            <div class="badge1">Architecture · Cloud · AI · Delivery</div>
+            <h2>Supporting AI in production: beyond deployment</h2>
+            <p class="post-subtitle">Deploying an AI solution is one milestone. Making it sustainable in production is another challenge.</p>
+            <div class="post-meta">Published on [publication date] by JCX360</div>
+          </div>
+          <div class="post-content">
+            <h3>Production is not the end of delivery</h3>
+            <p>In many technology programmes, the focus is on building solutions, completing testing and getting them into production.</p>
+            <p>But one important question often comes later.</p>
+            <p><strong>Who will support these solutions once they are live?</strong></p>
+            <p>Moving a solution into production also introduces operational responsibilities. Someone needs to manage incidents, monitor performance, maintain integrations and ensure the service continues to operate as expected.</p>
+            <p>Without a clear support model, these responsibilities often remain with the development team.</p>
+
+            <h3>What happens when you have no baseline data?</h3>
+            <p>This is where another challenge starts.</p>
+            <p>How do you know how many resources are required when you have no historical incident data, support effort or operational workload?</p>
+            <p>A low number of reported incidents does not necessarily mean low support demand. Monitoring, maintenance, access requests, data issues and informal support activities may never be recorded as incidents.</p>
+            <p>Without a baseline, resource planning becomes an exercise based on assumptions rather than evidence.</p>
+            <p>You risk overestimating the support requirement, underestimating operational demand or creating unnecessary dependency on the development team.</p>
+
+            <h3>Start with evidence, not assumptions</h3>
+            <p>When historical data is unavailable, waiting for it is not the answer.</p>
+            <p>A practical approach is to establish an initial support arrangement, capture operational activities and measure the actual workload over an agreed period.</p>
+            <p>Some of the key measures include:</p>
+            <ul>
+              <li>Incident volumes, severity and resolution effort.</li>
+              <li>Application and platform monitoring.</li>
+              <li>Data and integration failures.</li>
+              <li>Maintenance and service requests.</li>
+              <li>Release and production support.</li>
+              <li>Development effort diverted to production issues.</li>
+            </ul>
+            <p>This creates an operational baseline that can be used to review resource requirements and improve the support model over time.</p>
+
+            <h3>Support starts with architecture</h3>
+            <p>Modern AI solutions are not isolated components. They depend on applications, integrations, data sources, orchestration and underlying platform services.</p>
+            <p>An issue reported at the application level may actually originate in one of these dependencies.</p>
+            <p>That is why supportability should be considered during solution design, not after deployment.</p>
+            <p>Monitoring, logging, clear ownership, operational documentation and escalation paths are important parts of production readiness.</p>
+
+            <aside class="callout">
+              <strong>The takeaway</strong>
+              <p>AI delivery does not end at deployment.</p>
+              <p>Building a solution is one responsibility. Operating, supporting and continuously improving it is another.</p>
+              <p><strong>When you have no baseline, start measuring. When you have evidence, use it to make better decisions.</strong></p>
+              <p>That is how we move from delivering AI solutions to sustaining reliable enterprise services.</p>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+    <div class="container">
+      <nav class="post-footer-nav" aria-label="Article navigation">
+        <a href="/series/JCX360stechspace.html">← Back to Tech Space</a>
+        <a href="/index.html">JCX360 Home →</a>
+      </nav>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> John Christopher · JCX360 - 3S
+      (Secure · Scale · Sustain)
+      <span class="footer-note">
+        JCX360 is my personal platform for architecture, delivery,
+        and thought leadership, focused on cloud, AI, and
+        enterprise-scale systems.<br>
+        All views shared here are my own, based on industry experience
+        and independent research, and are shared to support learning
+        and knowledge exchange across the professional community.
+      </span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
