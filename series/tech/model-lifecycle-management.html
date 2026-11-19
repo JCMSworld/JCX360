@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical guide to evaluating, governing, deploying and monitoring model changes in production AI systems.">
+  <title>JCX360 - Model lifecycle management: managing change in production AI systems</title>
+  <link rel="stylesheet" href="https://jcx360.com/assets/css/jcx360.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <div class="brand">
+      <a href="/" aria-label="JCX360 home"><img src="/images/JCX360_orbit_logo_2.png" alt="JCX360" class="brand-logo"></a>
+      <div><h1>John Christopher</h1><span>Hybrid Technology Leader (Arch + Delivery)</span></div>
+    </div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/#about">About JC</a>
+      <a href="/series/JCX360stechspace.html">Tech Space</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="container">
+      <article class="card">
+        <div class="post-header">
+          <div class="badge1">Architecture · Cloud · AI · Delivery</div>
+          <h2>Model lifecycle management: managing change in production AI systems</h2>
+          <p class="post-subtitle">AI models evolve rapidly. Managing model changes in production requires more than upgrading to the latest version. It requires evaluation, control and operational readiness.</p>
+          <div class="post-meta">Published on November 19, 2026 by JCX360</div>
+        </div>
+        <div class="post-content">
+<h2>Introduction</h2>
+<p>AI model providers regularly release new versions with improvements in reasoning, accuracy, performance and cost.</p>
+<p>For organisations already running AI solutions in production, this creates an important question.</p>
+<p><strong>When should we change the model, and how do we ensure the change does not affect existing business operations?</strong></p>
+<p>A newer model may perform better in benchmarks but behave differently within an enterprise application. It could affect prompts, response quality, tool execution, latency and operating costs.</p>
+<p>Model upgrades should therefore be treated as controlled production changes.</p>
+<h2>1. When should you change a model?</h2>
+<p>A new release does not automatically mean an upgrade is required.</p>
+<p>Consider changing a model when:</p>
+<ul>
+<li>The new version offers measurable improvements for your use case.</li>
+<li>The existing model is approaching retirement.</li>
+<li>Output quality or reliability needs improvement.</li>
+<li>A different model offers better performance or cost efficiency.</li>
+<li>New business requirements cannot be met by the existing model.</li>
+<li>Security or compliance requirements require a change.</li>
+</ul>
+<p>The decision should be based on business value, technical suitability and operational risk.</p>
+<h2>2. Evaluate before upgrading</h2>
+<p>Before changing a production model, compare the existing and proposed versions using representative business scenarios.</p>
+<p>Consider the following:</p>
+<table>
+<thead>
+<tr>
+  <th>Area</th>
+  <th>What to validate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Accuracy</td>
+  <td>Does it produce correct answers?</td>
+</tr>
+<tr>
+  <td>Groundedness</td>
+  <td>Does it use enterprise data correctly?</td>
+</tr>
+<tr>
+  <td>Prompts</td>
+  <td>Do existing instructions still work?</td>
+</tr>
+<tr>
+  <td>RAG</td>
+  <td>Does it interpret retrieved context correctly?</td>
+</tr>
+<tr>
+  <td>Tool calling</td>
+  <td>Does it execute tools and functions as expected?</td>
+</tr>
+<tr>
+  <td>Performance</td>
+  <td>Are latency and reliability acceptable?</td>
+</tr>
+<tr>
+  <td>Cost</td>
+  <td>What is the impact on token consumption?</td>
+</tr>
+<tr>
+  <td>Responsible AI</td>
+  <td>Does it meet safety, privacy and governance requirements?</td>
+</tr>
+</tbody>
+</table>
+<p>A model that performs better in general testing may not perform better for a specific business process.</p>
+<p>Evaluation must be use-case driven.</p>
+<h2>3. Manage the change through a controlled process</h2>
+<p>I would follow a simple model upgrade lifecycle:</p>
+<ol>
+<li><strong>Assess:</strong> Review release notes, capabilities, limitations, pricing and retirement dates.</li>
+<li><strong>Analyse:</strong> Identify affected applications, agents, prompts, integrations and data dependencies.</li>
+<li><strong>Test:</strong> Validate accuracy, performance, compatibility, safety and cost in non-production.</li>
+<li><strong>Approve:</strong> Obtain technical, security and business acceptance.</li>
+<li><strong>Deploy:</strong> Introduce the change through a controlled production rollout.</li>
+<li><strong>Monitor:</strong> Compare production performance against the agreed baseline.</li>
+<li><strong>Rollback:</strong> Retain a fallback configuration where the provider and platform support it.</li>
+</ol>
+<p>This provides traceability and reduces the risk of uncontrolled changes to production AI behaviour.</p>
+<h2>4. Design for continuous model change</h2>
+<p>Model selection and configuration should not be hardcoded across individual applications without central visibility.</p>
+<p>An enterprise AI architecture should support:</p>
+<ul>
+<li>Model and deployment version tracking.</li>
+<li>Centralised configuration where appropriate.</li>
+<li>Application-to-model dependency mapping.</li>
+<li>Environment-specific model selection.</li>
+<li>Evaluation and approval records.</li>
+<li>Usage and cost monitoring.</li>
+<li>Version history and rollback procedures.</li>
+</ul>
+<p>This allows different applications to use models suited to their requirements rather than forcing the entire AI portfolio onto the latest release.</p>
+<h2>5. Extend monitoring beyond model availability</h2>
+<p>A model can be technically available while producing poor answers.</p>
+<p>Production monitoring should therefore cover both platform health and AI behaviour.</p>
+<p>Important measures include:</p>
+<ul>
+<li>Model response latency and failure rates.</li>
+<li>Output quality and groundedness.</li>
+<li>Retrieval quality for RAG solutions.</li>
+<li>Tool and function execution failures.</li>
+<li>Safety and policy violations.</li>
+<li>Token consumption and operating cost.</li>
+<li>User feedback and human intervention.</li>
+</ul>
+<p>These measures help identify whether a model upgrade has genuinely improved the production service.</p>
+<h2>6. Establish operational ownership</h2>
+<p>Model lifecycle management is not just a development responsibility.</p>
+<p>Architecture, engineering, business, security and operations teams need clear ownership.</p>
+<table>
+<thead>
+<tr>
+  <th>Role</th>
+  <th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Solution Architect</td>
+  <td>Assess architecture impact and suitability.</td>
+</tr>
+<tr>
+  <td>AI Engineering</td>
+  <td>Configure, integrate and test.</td>
+</tr>
+<tr>
+  <td>Evaluation Team</td>
+  <td>Validate quality and performance.</td>
+</tr>
+<tr>
+  <td>Business Owner</td>
+  <td>Confirm business acceptance.</td>
+</tr>
+<tr>
+  <td>Security and Responsible AI</td>
+  <td>Review risk and compliance.</td>
+</tr>
+<tr>
+  <td>AI Operations</td>
+  <td>Monitor and support production.</td>
+</tr>
+<tr>
+  <td>Change Management</td>
+  <td>Coordinate approvals and deployment.</td>
+</tr>
+</tbody>
+</table>
+<p>Maintain a model lifecycle register covering model versions, consuming applications, owners, evaluation results, approvals, costs and retirement dates.</p>
+<p>A regular review cycle, supported by event-driven assessments for major releases and retirements, helps keep the portfolio under control.</p>
+<h2>The takeaway</h2>
+<p>AI models will continue to evolve. Enterprise architectures must be designed to accommodate that change without compromising reliability, security or business outcomes.</p>
+<p><strong>Do not upgrade simply because a newer model is available. Evaluate it against real business scenarios, understand the impact, obtain the necessary approvals and deploy it through a controlled process.</strong></p>
+<p>The objective is not to use the latest model. It is to use the right model for the right business purpose and manage it throughout its lifecycle.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div class="container">
+    <nav class="post-footer-nav" aria-label="Article navigation">
+      <a href="/series/JCX360stechspace.html">← Back to Tech Space</a>
+      <a href="/index.html">JCX360 Home →</a>
+    </nav>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    © <span id="year"></span> John Christopher · JCX360 - 3S
+    (Secure · Scale · Sustain)
+    <span class="footer-note">
+      JCX360 is my personal platform for architecture, delivery,
+      and thought leadership, focused on cloud, AI, and
+      enterprise-scale systems.<br>
+      All views shared here are my own, based on industry experience
+      and independent research, and are shared to support learning
+      and knowledge exchange across the professional community.
+    </span>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
