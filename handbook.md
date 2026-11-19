@@ -1,7 +1,7 @@
 This is for update
 
 git pull
-git add delivery/supporting-ai-in-production.html
+git add series/tech/model-lifecycle-management.html
 git commit -m "Update"
 git push
 
